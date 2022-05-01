@@ -151,7 +151,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Hall.cpp" />
+    <ClCompile Include="Show.cpp" />
+    <ClCompile Include="TicketOffice.cpp" />
     <ClCompile Include="UniversityProject.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Hall.h" />
+    <ClInclude Include="Show.h" />
+    <ClInclude Include="TicketOffice.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
