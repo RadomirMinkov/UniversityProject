@@ -9,8 +9,8 @@ Show::~Show()
 	clear();
 }
 
-Show::Show(const char* _name, const char* _date)
-	:name(nullptr)
+Show::Show(unsigned _hallNumber,const char* _name, const char* _date)
+	:hallNumber(_hallNumber),name(nullptr)
 {
 	name = new char[strlen(_name) + 1];
 	strcpy(name, _name);
@@ -23,6 +23,7 @@ void Show::copy(Show const& other)
 	name = new char[strlen(other.name)+1];
 	strcpy(name, other.name);
 	strcpy(date, other.date);
+	hallNumber = other.hallNumber;
 }
 
 Show::Show(Show const& other)
@@ -49,6 +50,10 @@ void Show::setName(const char* _name)
 	strcpy(name, _name);
 }
 
+void Show::setHallNumber(unsigned _hallNumber)
+{
+	hallNumber = _hallNumber;
+}
 std::istream& operator>>(std::istream& in, Show& other)
 {
 	unsigned length;
