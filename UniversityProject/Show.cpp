@@ -14,7 +14,7 @@ Show::Show(unsigned _hallNumber,const char* _name, const char* _date)
 {
 	name = new char[strlen(_name) + 1];
 	strcpy(name, _name);
-
+	setDate(_date);
 }
 
 void Show::copy(Show const& other)
@@ -57,10 +57,11 @@ void Show::setHallNumber(unsigned _hallNumber)
 std::istream& operator>>(std::istream& in, Show& other)
 {
 	unsigned length;
+	in >> other.hallNumber;
 	in >> length;
-	other.name = new char[length + 1];
 	in.get();
-	in.getline(other.name,length);
+	other.name = new char[length + 1];
+	in.getline(other.name,length+1);
 	in.getline(other.date, DateLength);
 	other.date[DateLength] = '\0';
 
@@ -70,6 +71,7 @@ std::istream& operator>>(std::istream& in, Show& other)
 std::ostream& operator<<(std::ostream& out, Show const& other)
 {
 	return out << "Show:\n"
+		<<"HallNumber: "<<other.getHallNumber()<<"\n"
 		<< "Name: " << other.getName() << '\n'
 		<< "Date: " << other.getDate() << '\n';
 }
