@@ -5,8 +5,11 @@ class TicketOffice
 {
 private:
 
-
+	Hall* halls;
+	unsigned capacity;
+	unsigned size;
 public:
+
 	void buyTicket();
 	void reserveTicket();
 	void cancelReservation();

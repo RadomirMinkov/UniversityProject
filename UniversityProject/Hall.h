@@ -1,6 +1,13 @@
 #ifndef _HALL__HPP
 #define _HALL_HPP
+#include <iostream>
 #include "Show.h"
+enum Seats
+{
+	empty = 0,
+	reserved=1,
+	bought=2
+};
 class Hall
 {
 private:
@@ -17,7 +24,7 @@ private:
 	//места на ред
 	unsigned seatsOnRow;
 	//масив със заети места в залата
-	bool** seats;
+	Seats** seats;
 	//списък с представления в залата
 	Show *show;
 
@@ -27,6 +34,9 @@ private:
 	void resize(unsigned newCapacity);
 	//функция за копиране на информацията от един клас в друг
 	void copy(Hall const& other);
+
+	//дава информация за мястото
+	char place(Seats seat) const;
 public:
 	//Конструктор с параметри по подразбиране
 	Hall(unsigned _hallNumber=0,unsigned _rows=0, unsigned _seatsOnRow=0, unsigned _showCapacity=2);
@@ -49,6 +59,10 @@ public:
 	//проверка дали залата е резервирана на дадена дата
 	bool isReserved(const char* date);
 
+	//запазване на места
+	void buyTickets(unsigned _hallNumber, int* seats, unsigned numberOfSeats);
+
+	//извеждане на информация за залата
 	void print() const;
 	//проверка дали има резервирани дати
 	bool isEmpty();
