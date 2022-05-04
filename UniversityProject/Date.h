@@ -39,7 +39,7 @@ public:
 	//промяна на деня
 	void setDay(unsigned _day);
 	//промяна на месеца
-	void setMonth(Month _month);
+	void setMonth(unsigned _month);
 	//промяна на годината
 	void setYear(unsigned _year);
 

@@ -2,6 +2,7 @@
 #define _HALL_HPP
 #include <iostream>
 #include "Show.h"
+#include "Reservation.h"
 enum Seats
 {
 	empty = 0,
@@ -26,7 +27,7 @@ private:
 	//масив със заети места в залата
 	Seats** seats;
 	//списък с представления в залата
-	Show *show;
+	Show *shows;
 
 	//изчистване на паметта
 	void clear();
@@ -59,9 +60,13 @@ public:
 	//проверка дали залата е резервирана на дадена дата
 	bool isReserved(const char* date);
 
-	//запазване на места
+	//добавяне на ново представление
+	void addNewShow(Show const& );
+	//купуване на места
 	void buyTickets(unsigned _hallNumber, int* seats, unsigned numberOfSeats);
 
+	//резервиране на билети
+	Reservation reserveTickets(unsigned _hallNumber, int* seats, unsigned numberOfSeats);
 	//извеждане на информация за залата
 	void print() const;
 	//проверка дали има резервирани дати
