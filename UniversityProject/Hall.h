@@ -51,7 +51,7 @@ public:
 	unsigned getShowSize() const { return showSize; }
 
 	//проверка дали залата е резервирана на дадена дата
-	bool isReserved(const char* date);
+	bool isReserved(Date _date);
 
 	//добавяне на ново представление
 	bool addNewShow(Show const& show);
@@ -60,7 +60,7 @@ public:
 
 	//показва списък с местата в залата
 	void showSeats(std::ostream& out,Show const& show) const;
-	void seatsReference(Show const& show) const;
+	void seatsReference(Show const& show, std::ostream& out=std::cout) const;
 	//резервиране на билети
 	Reservation reserveTickets(unsigned _hallNumber, int* seats, unsigned numberOfSeats);
 	//извеждане на информация за залата

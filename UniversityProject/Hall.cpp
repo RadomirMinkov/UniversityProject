@@ -89,10 +89,10 @@ Hall& Hall::operator=(Hall const& other)
 	return *this;
 }
 
-bool Hall::isReserved(const char* date)
+bool Hall::isReserved(Date _date)
 {
 	for (unsigned i = 0; i < showSize; i++)
-		if (strcmp(date, shows[i].getDate()) == 0)
+		if (_date==shows[i].getDate() == 0)
 			return true;
 	return false;
 }
@@ -117,8 +117,8 @@ int Hall::getNumberOfSeats() const
 {
 	return rows * seatsOnRow;
 }
-/*
-void Hall::seatsReference(Show const& show) const
+
+void Hall::seatsReference(Show const& show,std::ostream& out) const
 {
 	unsigned empty{0};
 	unsigned reserved{0};
@@ -127,7 +127,7 @@ void Hall::seatsReference(Show const& show) const
 	{
 		for (unsigned j = 0; j < seatsOnRow; j++)
 		{
-			switch (seats[i][j])
+			switch (place(show.getSeat(i,j)))
 			{
 			case 0:
 				empty++;
@@ -141,8 +141,11 @@ void Hall::seatsReference(Show const& show) const
 			}
 		}
 	}
-	
-}*/
+	out << "За представление " << show.getName() << "има "
+		<< empty << " свободни места, "
+		<< reserved << " резервирани и "
+		<< bought << " купени места ";
+}
 //реализация на функция за закупуване на билети
 /*void Hall::buyTickets(unsigned _rowNumber, int* _seats, unsigned numberOfSeats)
 {

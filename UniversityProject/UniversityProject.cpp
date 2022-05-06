@@ -4,11 +4,13 @@
 
 #include "Show.h"
 #include "Hall.h"
-
+#include "Reservation.h"
 
 void testShow()
 {
-	Show show(3, "Rado", "02/10/2002");
+	Date birth(2, october, 2002);
+	std::cout << birth;
+	Show show(birth,3, "Rado",2);
 	Show show1(show);
 	Show show2;
 	show2 = show1;
@@ -30,13 +32,20 @@ void testShow()
 
 }*/
 
+void testReservation()
+{
+	Reservation reserv("rado", "az sym tuk",3,4);
+	const char* name = "pesho";
+	reserv.addToNote(name);
+	std::cout << reserv.getNote();
+}
 int main()
 {
-	//Show show("Rado", "02/10/2002");
+	//Show show("Rado", Reservation"02/10/2002");
 	//testShow();
 	//std::cout << (char)251;
     //testHall();
-
+	testReservation();
 	return 0;
 }
 

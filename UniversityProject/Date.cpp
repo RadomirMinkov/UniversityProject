@@ -2,9 +2,9 @@
 
 Date::Date(unsigned _day, Month _month, unsigned _year)
 {
-	setDay(_day);
-	setMonth(_month);
 	setYear(_year);
+	setMonth(_month);
+	setDay(_day);
 }
 
 bool Date::isLeap(unsigned _year)
@@ -41,7 +41,7 @@ void Date::setDay(unsigned _day)
 	case augusts:
 	case october:
 	case december:
-		assert(_day >= 1 && day <= 31);
+		assert(_day >= 1 && _day <= 31);
 		break;
 	case april:
 	case june:
@@ -86,24 +86,60 @@ void Date::setMonth(unsigned _month)
 	case 9:
 		month = september;
 		break;
-		case 10:
+	case 10:
 		month = october;
 		break;
-		case 11:
-			month = november;
-			break;
-		case 12:
-			month - december;
-			break;
+	case 11:
+		month = november;
+		break;
+	case 12:
+		month - december;
+		break;
 	}
 }
 
 void  Date::setYear(unsigned _year)
 {
-	assert(_year >= 2000);
+	assert(_year >= 2000 && _year <= 2100);
 	year = _year;
 }
 
+const char* Date::printMonth(Month _month) const
+{
+	switch (_month)
+	{
+	case january:
+		return "january";	break;
+	case february:
+		return "february";	break;
+	case mmarch:
+		return "march"; 	break;
+	case april:
+		return "april"; 	break;
+	case may:
+		return "may";	    break;
+	case june:
+		return "june";  	break;
+	case july:
+		return "july";	    break;
+	case augusts:
+		return "august";    break;
+	case september:
+		return "september";	break;
+	case october:
+		return "octomber";  break;
+	case november:
+		return "november";  break;
+	case december:
+		return "december";	break;
+	default:
+		break;
+	}
+}
+bool Date::operator==(Date const& other) const
+{
+	return day == other.day && month == other.month && year == other.year;
+}
 std::istream& operator>>(std::istream& in, Date& date)
 {
 	unsigned day;
@@ -116,7 +152,8 @@ std::istream& operator>>(std::istream& in, Date& date)
 	return in;
 }
 
-std::ostream& operator<<(std::ostream& out, Date& date)
+std::ostream& operator<<(std::ostream& out, Date const& date)
 {
-	return out << date.getDay() << '/' << date.getMonth() << '/' << date.getYear() << 'ã.';
+	out << date.getDay() << '/' << date.getMonth() << '/' << date.getYear() << '\n';
+		return out;
 }

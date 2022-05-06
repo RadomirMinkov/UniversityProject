@@ -3,30 +3,52 @@
 void Show::clear()
 {
 	delete[] name;
+	delete[] reservations;
 }
 Show::~Show()
 {
 	clear();
 }
 
-Show::Show(unsigned _hallNumber,const char* _name, const char* _date)
-	:hallNumber(_hallNumber),name(nullptr),seats(nullptr)
+Show::Show()
+	:hallNumber(0), name(nullptr), seats(nullptr),reservations(nullptr),capacity(2),size(0)
 {
+	Date newDate;
+	date = newDate;
+}
+Show::Show(Date _date, unsigned _hallNumber, const char* _name,unsigned _capacity)
+	: hallNumber(_hallNumber), name(nullptr), seats(nullptr),size(0),capacity(_capacity),reservations(nullptr)
+{
+	reservations = new Reservation[capacity];
 	name = new char[strlen(_name) + 1];
 	strcpy(name, _name);
 	setDate(_date);
 }
 
-
-
+void Show::resize(unsigned newCap)
+{
+	if (capacity <= newCap)
+		return;
+	capacity = newCap;
+	Reservation* newArr = new Reservation[capacity];
+	for (unsigned i = 0; i < size; i++)
+		newArr[i] = reservations[i];
+	delete[] reservations;
+	reservations = newArr;
+}
 void Show::copy(Show const& other)
 {
 	clear();
-	name = new char[strlen(other.name)+1];
+	name = new char[strlen(other.name) + 1];
 	strcpy(name, other.name);
-	strcpy(date, other.date);
+	date = other.date;
 	hallNumber = other.hallNumber;
 	seats = nullptr;
+	capacity = other.capacity;
+	size = other.size;
+	reservations = new Reservation[capacity];
+	for (int i = 0; i < size; i++)
+		reservations[i] = other.reservations[i];
 	/*seats = new Seats*[rows];
 	for (unsigned i = 0; i < rows; i++)
 		seats[i] = new Seats[seatsOnRow];
@@ -51,7 +73,7 @@ char Show::place(Seats seat) const
 	}
 	return c;
 }
-void Show::printSeats(std::ostream& out,unsigned rows,unsigned seatsOnRow)const
+void Show::printSeats(std::ostream& out, unsigned rows, unsigned seatsOnRow)const
 {
 	for (unsigned i = 0; i < rows; i++)
 	{
@@ -61,6 +83,10 @@ void Show::printSeats(std::ostream& out,unsigned rows,unsigned seatsOnRow)const
 		}
 		out << '\n';
 	}
+}
+Seats Show::getSeat(unsigned rowNumber, unsigned seat) const
+{
+	return seats[rowNumber - 1][seat - 1];
 }
 void Show::createSeats(unsigned rows, unsigned seatsOnRow)
 {
@@ -82,15 +108,15 @@ Show::Show(Show const& other)
 
 Show& Show::operator=(Show const& other)
 {
-	if (this!=&other)
+	if (this != &other)
 	{
 		copy(other);
 	}
 	return *this;
 }
-void Show::setDate(const char* _date)
+void Show::setDate(Date newDate)
 {
-	strcpy(date, _date);
+	date = newDate;
 }
 void Show::setName(const char* _name)
 {
@@ -110,17 +136,15 @@ std::istream& operator>>(std::istream& in, Show& other)
 	in >> length;
 	in.get();
 	other.name = new char[length + 1];
-	in.getline(other.name,length+1);
-	in.getline(other.date, DateLength);
-	other.date[DateLength] = '\0';
-
+	in.getline(other.name, length + 1);
+	in >> other.date;
 	return in;
 }
 
 std::ostream& operator<<(std::ostream& out, Show const& other)
 {
 	return out << "Show:\n"
-		<<"HallNumber: "<<other.getHallNumber()<<"\n"
+		<< "Hall: " << other.getHallNumber() << "\n"
 		<< "Name: " << other.getName() << '\n'
 		<< "Date: " << other.getDate() << '\n';
 }
