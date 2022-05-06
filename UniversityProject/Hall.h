@@ -1,14 +1,10 @@
 #ifndef _HALL__HPP
 #define _HALL_HPP
 #include <iostream>
+#include <cassert>
+
 #include "Show.h"
 #include "Reservation.h"
-enum Seats
-{
-	empty = 0,
-	reserved=1,
-	bought=2
-};
 class Hall
 {
 private:
@@ -24,8 +20,6 @@ private:
 	unsigned showCapacity;
 	//места на ред
 	unsigned seatsOnRow;
-	//масив със заети места в залата
-	Seats** seats;
 	//списък с представления в залата
 	Show *shows;
 
@@ -35,9 +29,10 @@ private:
 	void resize(unsigned newCapacity);
 	//функция за копиране на информацията от един клас в друг
 	void copy(Hall const& other);
-
 	//дава информация за мястото
 	char place(Seats seat) const;
+	//връща колко места има в залата
+	int  getNumberOfSeats() const;
 public:
 	//Конструктор с параметри по подразбиране
 	Hall(unsigned _hallNumber=0,unsigned _rows=0, unsigned _seatsOnRow=0, unsigned _showCapacity=2);
@@ -55,16 +50,17 @@ public:
 	unsigned getShowCapacity() const { return showCapacity; }
 	unsigned getShowSize() const { return showSize; }
 
-	//показва списък с местата в залата
-	void showSeats(std::ostream& out) const;
 	//проверка дали залата е резервирана на дадена дата
 	bool isReserved(const char* date);
 
 	//добавяне на ново представление
-	void addNewShow(Show const& );
+	bool addNewShow(Show const& show);
 	//купуване на места
 	void buyTickets(unsigned _hallNumber, int* seats, unsigned numberOfSeats);
 
+	//показва списък с местата в залата
+	void showSeats(std::ostream& out,Show const& show) const;
+	void seatsReference(Show const& show) const;
 	//резервиране на билети
 	Reservation reserveTickets(unsigned _hallNumber, int* seats, unsigned numberOfSeats);
 	//извеждане на информация за залата

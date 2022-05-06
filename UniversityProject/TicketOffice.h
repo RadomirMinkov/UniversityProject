@@ -10,11 +10,11 @@ private:
 	unsigned size;
 public:
 
+	void CreateShow();
 	void buyTicket();
 	void reserveTicket();
 	void cancelReservation();
 };
-
 #endif // !_TICKETOFFICE_HPP
 
 

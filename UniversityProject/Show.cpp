@@ -10,12 +10,14 @@ Show::~Show()
 }
 
 Show::Show(unsigned _hallNumber,const char* _name, const char* _date)
-	:hallNumber(_hallNumber),name(nullptr)
+	:hallNumber(_hallNumber),name(nullptr),seats(nullptr)
 {
 	name = new char[strlen(_name) + 1];
 	strcpy(name, _name);
 	setDate(_date);
 }
+
+
 
 void Show::copy(Show const& other)
 {
@@ -24,8 +26,55 @@ void Show::copy(Show const& other)
 	strcpy(name, other.name);
 	strcpy(date, other.date);
 	hallNumber = other.hallNumber;
+	seats = nullptr;
+	/*seats = new Seats*[rows];
+	for (unsigned i = 0; i < rows; i++)
+		seats[i] = new Seats[seatsOnRow];
+	seats = other.seats;*/
 }
+char Show::place(Seats seat) const
+{
+	char c{};
+	switch (seat)
+	{
+	case empty:
+		c = 'E';
+		break;
+	case reserved:
+		c = 'R';
+		break;
+	case bought:
+		c = 'B';
+		break;
+	default:
+		break;
+	}
+	return c;
+}
+void Show::printSeats(std::ostream& out,unsigned rows,unsigned seatsOnRow)const
+{
+	for (unsigned i = 0; i < rows; i++)
+	{
+		for (unsigned j = 0; j < seatsOnRow; j++)
+		{
+			out << place(seats[i][j]) << ' ';
+		}
+		out << '\n';
+	}
+}
+void Show::createSeats(unsigned rows, unsigned seatsOnRow)
+{
+	seats = new Seats*[rows];
+	for (unsigned i = 0; i < rows; i++)
+	{
+		seats[i] = new Seats[seatsOnRow];
+		for (unsigned j = 0; j < seatsOnRow; j++)
+		{
+			seats[i][j] = empty;
+		}
+	}
 
+}
 Show::Show(Show const& other)
 {
 	copy(other);
