@@ -15,7 +15,7 @@ private:
 	void copy(Reservation const& other);
 	//void resize(unsigned newCap);
 public:
-	Reservation(const char* _password=nullptr, const char* _note=nullptr,unsigned rowNumber=0,unsigned seat=0);
+	Reservation(unsigned rowNumber=0,unsigned seat=0, const char* _password = nullptr, const char* _note = nullptr);
 	Reservation(Reservation const& other) = delete;
 	Reservation& operator=(Reservation const& other);
 	~Reservation();
@@ -26,6 +26,7 @@ public:
 	void addToNote(const char* text);
 	void replaceNote(const char* text);
 
+	bool operator==(Reservation const& other) const;
 	friend std::istream& operator>>(std::istream& in, Reservation& reservation);
 };
 

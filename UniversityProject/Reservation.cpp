@@ -22,7 +22,7 @@ void Reservation::copy(Reservation const& other)
 	seat = other.seat;
 
 }
-Reservation::Reservation(const char* _password, const char* _note,unsigned _rowNumber,unsigned _seat)
+Reservation::Reservation(unsigned _rowNumber,unsigned _seat, const char* _password, const char* _note)
 	:password(nullptr), note(nullptr),rowNumber(_rowNumber), seat(_seat)
 {
 	password = new char[strlen(_password) + 1];
@@ -64,6 +64,11 @@ std::ostream& operator<<(std::ostream& out, Reservation const& reservation)
 		<< "RowNumber: " << reservation.getRowNumber() << '\n'
 		<< "Seat: " << reservation.getSeat() << '\n'
 		<< "Note: " << reservation.getNote();
+}
+
+bool Reservation::operator==(Reservation const& other) const
+{
+	return rowNumber == other.rowNumber && strcmp(password, other.password) == 0 && strcmp(note, other.note) == 0 &&  seat == other.seat;
 }
 
 std::istream& operator>>(std::istream& in, Reservation& reservation)

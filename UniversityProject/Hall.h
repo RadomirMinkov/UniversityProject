@@ -5,6 +5,7 @@
 
 #include "Show.h"
 #include "Reservation.h"
+#include "MyVector.h"
 class Hall
 {
 private:
@@ -62,7 +63,7 @@ public:
 	void showSeats(std::ostream& out,Show const& show) const;
 	void seatsReference(Show const& show, std::ostream& out=std::cout) const;
 	//резервиране на билети
-	Reservation reserveTickets(unsigned _hallNumber, int* seats, unsigned numberOfSeats);
+	void reserveTickets(unsigned _hallNumber, int* seats, unsigned numberOfSeats);
 	//извеждане на информация за залата
 	void print() const;
 	//проверка дали има резервирани дати

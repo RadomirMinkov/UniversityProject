@@ -3,7 +3,6 @@
 void Show::clear()
 {
 	delete[] name;
-	delete[] reservations;
 }
 Show::~Show()
 {
@@ -15,6 +14,21 @@ Show::Show()
 {
 	Date newDate;
 	date = newDate;
+}
+bool Show::cancelReservation(Reservation reservation)
+{
+	for (unsigned i = 0; i < size; i++) {
+		if (reservations[i] == reservation)
+		{
+			for (unsigned j = i; j < size; j++)
+			{
+				reservations[j] = reservations[j + 1];
+			}
+			size--;
+			return true;
+		}
+	}
+	return false;
 }
 Show::Show(Date _date, unsigned _hallNumber, const char* _name,unsigned _capacity)
 	: hallNumber(_hallNumber), name(nullptr), seats(nullptr),size(0),capacity(_capacity),reservations(nullptr)
@@ -36,6 +50,20 @@ void Show::resize(unsigned newCap)
 	delete[] reservations;
 	reservations = newArr;
 }
+void Show::updateSeats(unsigned rowNumber, unsigned place,Seats seatType)
+{
+	seats[rowNumber - 1][place - 1] = seatType;
+}
+
+void Show::addReservation(Reservation reservation)
+{
+	if (size == capacity)
+		resize(2 * capacity);
+	reservations[size++] = reservation;
+	unsigned row = reservation.getRowNumber();
+	unsigned seat = reservation.getSeat();
+	updateSeats(row, seat, reserved);
+}
 void Show::copy(Show const& other)
 {
 	clear();
@@ -49,10 +77,6 @@ void Show::copy(Show const& other)
 	reservations = new Reservation[capacity];
 	for (int i = 0; i < size; i++)
 		reservations[i] = other.reservations[i];
-	/*seats = new Seats*[rows];
-	for (unsigned i = 0; i < rows; i++)
-		seats[i] = new Seats[seatsOnRow];
-	seats = other.seats;*/
 }
 char Show::place(Seats seat) const
 {
@@ -87,6 +111,10 @@ void Show::printSeats(std::ostream& out, unsigned rows, unsigned seatsOnRow)cons
 Seats Show::getSeat(unsigned rowNumber, unsigned seat) const
 {
 	return seats[rowNumber - 1][seat - 1];
+}
+void Show::buyTicket(unsigned rowNumber, unsigned seat)
+{
+	updateSeats(rowNumber, seat, bought);
 }
 void Show::createSeats(unsigned rows, unsigned seatsOnRow)
 {

@@ -3,9 +3,6 @@
 
 void Hall::clear()
 {
-	/*for (unsigned i = 0; i < rows; i++)
-		delete seats[i];
-	delete[] seats;*/
 	delete[] shows;
 }
 Hall::~Hall()

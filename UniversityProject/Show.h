@@ -5,6 +5,7 @@
 
 #include "Reservation.h"
 #include "Date.h"
+#include "MyVector.h"
 //#include "Hall.h"
 //const int DateLength = 11;
 
@@ -20,8 +21,6 @@ private:
 	 char* name;
 	  Date date;
 	  unsigned hallNumber;
-	  unsigned rows;
-	  unsigned columns;
 
 	  Reservation* reservations;
 	  unsigned capacity;
@@ -30,7 +29,7 @@ private:
 	  Seats** seats;
 	void clear();
 	void copy(Show const& other);
-	void resize();
+	void resize(unsigned newCap);
 	//дава информация за мястото
 	char place(Seats seat) const;
 public:
@@ -49,7 +48,10 @@ public:
 	void setDate(Date newDate);
 	void printSeats(std::ostream& out,unsigned rows,unsigned seatsOnRow)const;
 	void createSeats(unsigned rows,unsigned seatsOnRow);
-	//void updateSeats(unsigned rowNumber, )
+	void updateSeats(unsigned rowNumber, unsigned seat,Seats seatType);
+	void addReservation(Reservation reservation);
+	bool cancelReservation(Reservation reservation);
+	void buyTicket(unsigned rowNumber, unsigned seat);
 	//осигуряване на оператор за въвеждане
 	friend std::istream& operator>>(std::istream& in, Show& other);
 };

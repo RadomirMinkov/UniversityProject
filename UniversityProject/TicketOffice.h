@@ -1,16 +1,21 @@
 #ifndef _TICKETOFFICE_HPP
 #define _TICKETOFFICE_HPP
 #include "Hall.h"
+#include "MyVector.h"
 class TicketOffice
 {
 private:
 
-	Hall* halls;
-	unsigned capacity;
-	unsigned size;
+	MyVector<Hall> halls;
 public:
 
-	void CreateShow();
+	TicketOffice(unsigned _capacity = 2);
+	TicketOffice(TicketOffice const& other) = delete;
+	TicketOffice();
+	TicketOffice& operator=(TicketOffice const& other) = delete;
+
+
+	void createShow();
 	void buyTicket();
 	void reserveTicket();
 	void cancelReservation();
