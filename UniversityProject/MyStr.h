@@ -21,7 +21,8 @@ public:
 	size_t  getSize()const { return size; }
 
 	void copy(MyStr const& other);
-	bool cmp(MyStr const& other) const;
+	//bool cmp(MyStr const& other) const;
+	bool operator==(MyStr const& other)const;
 	 friend std::istream& operator>>(std::istream& in,MyStr& other);
 	 MyStr& operator+(MyStr const& other);
 };

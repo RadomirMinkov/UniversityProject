@@ -114,27 +114,41 @@ void Hall::seatsReference(Show const& show,std::ostream& out) const
 		<< bought << " купени места ";
 }
 //реализация на функция за закупуване на билети
-/*void Hall::buyTickets(unsigned _rowNumber, int* _seats, unsigned numberOfSeats)
+void Hall::buyTicket(unsigned _rowNumber, int _seat, Show show)
 {
-	for (unsigned i = 0; i < numberOfSeats; i++)
+	Seats place;
+	MyStr password;
+	MyStr userPassword;
+	for (unsigned i = 0; i < shows.getSize(); i++)
 	{
-		int place = _seats[i] + 1;
-		while (seats[_rowNumber - 1][place] == bought)
+		if (show==shows[i])
 		{
-			if (seats[_rowNumber - 1][place] == bought)
+			place= shows[i].getSeat(_rowNumber, _seat);
+			switch (place)
 			{
-				//TO DO
-			}
-			else
-			{
-				std::cout << "Мястото е вече запазено.\n Моля въведете ново място\n";
-				this->showSeats(std::cout);
-				std::cin >> place;
+			case empty:
+				shows[i].updateSeats(_rowNumber, _seat, bought);
+				break;
+			case reserved:
+				password=shows[i].getReservation(_rowNumber, _seat).getPassword();
+				std::cout << "The place is reserved. Enter password.";
+				std::cin >> password;
+				if (password==userPassword)
+				{
+					shows[i].updateSeats(_rowNumber, _seat, bought);
+					//shows[i].cancelReservation(shows[i].getReservation(_rowNumber,_seat));
+				}
+				break;
+			case bought:
+				std::cout << "The seat is already bought!";
+				return;
+				break;
+			default:
+				break;
 			}
 		}
-		seats[_rowNumber - 1][place] = bought;
 	}
-}*/
+}
 bool Hall::isEmpty()
 {
 	return showSize == 0;

@@ -10,20 +10,20 @@ Show::Show()
 }
 bool Show::cancelReservation(Reservation reservation)
 {
-	for (unsigned i = 0; i <reservations.getSize(); i++) {
+	for (unsigned i = 0; i < reservations.getSize(); i++) {
 		if (reservations[i] == reservation)
 		{
 			for (unsigned j = i; j < reservations.getSize(); j++)
 			{
 				reservations[j] = reservations[j + 1];
 			}
-			reservations.setSize(reservations.getSize()-1);
+			reservations.setSize(reservations.getSize() - 1);
 			return true;
 		}
 	}
 	return false;
 }
-Show::Show( unsigned _hallNumber,MyStr _name, Date _date,unsigned _capacity)
+Show::Show(unsigned _hallNumber, MyStr _name, Date _date, unsigned _capacity)
 	: hallNumber(_hallNumber), name(_name), seats(nullptr)
 {
 	reservations = MyVector<Reservation>(_capacity);
@@ -31,7 +31,7 @@ Show::Show( unsigned _hallNumber,MyStr _name, Date _date,unsigned _capacity)
 }
 
 
-void Show::updateSeats(unsigned rowNumber, unsigned place,Seats seatType)
+void Show::updateSeats(unsigned rowNumber, unsigned place, Seats seatType)
 {
 	seats[rowNumber - 1][place - 1] = seatType;
 }
@@ -103,7 +103,6 @@ Show::Show(Show const& other)
 {
 	copy(other);
 }
-
 Show& Show::operator=(Show const& other)
 {
 	if (this != &other)
@@ -120,10 +119,18 @@ void Show::setName(MyStr _name)
 {
 	name = _name;
 }
-
+void Show::printReservations(std::ostream& out)const
+{
+	for (unsigned i = 0; i < reservations.getSize(); i++)
+		out << reservations[i];
+}
 void Show::setHallNumber(unsigned _hallNumber)
 {
 	hallNumber = _hallNumber;
+}
+bool Show::operator==(Show const& other)const
+{
+	return hallNumber == hallNumber && name == name && date == other.date;
 }
 std::istream& operator>>(std::istream& in, Show& other)
 {
@@ -135,9 +142,10 @@ std::istream& operator>>(std::istream& in, Show& other)
 
 std::ostream& operator<<(std::ostream& out, Show const& other)
 {
-	return out << "Show:\n"
+	out << "Show:\n"
 		<< "Hall: " << other.getHallNumber() << "\n"
 		<< "Name: " << other.getName() << '\n'
 		<< "Date: " << other.getDate() << '\n';
-	
+	other.printReservations(out);
+	return out;
 }

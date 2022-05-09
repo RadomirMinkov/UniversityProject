@@ -55,11 +55,9 @@ MyStr& MyStr::operator+(MyStr const& other)
 	return *this;
 }
 
-bool MyStr::cmp(MyStr const& other)const
+bool MyStr::operator==(MyStr const& other)const
 {
-	if (strcmp(arr, other.arr) == 0)
-		return true;
-	return false;
+	return  strcmp(arr, other.arr) == 0;
 }
 std::ostream& operator<<(std::ostream& out, MyStr const& other)
 {

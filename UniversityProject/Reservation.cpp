@@ -32,7 +32,7 @@ void Reservation::addToNote(MyStr newNote)
 	note = note + newNote;
 }
 
-std::ostream& operator<<(std::ostream& out, Reservation const& reservation)
+std::ostream& operator<<(std::ostream& out, Reservation const& reservation) 
 {
 	return out << "Reservation: \n"
 		<< "RowNumber: " << reservation.getRowNumber() << '\n'
@@ -42,7 +42,7 @@ std::ostream& operator<<(std::ostream& out, Reservation const& reservation)
 
 bool Reservation::operator==(Reservation const& other) const
 {
-	return rowNumber == other.rowNumber && password.cmp(other.password) == 0 && note.cmp(other.note) == 0 &&  seat == other.seat;
+	return rowNumber == other.rowNumber && password==other.password && note==other.note &&  seat == other.seat;
 }
 
 std::istream& operator>>(std::istream& in, Reservation& reservation)

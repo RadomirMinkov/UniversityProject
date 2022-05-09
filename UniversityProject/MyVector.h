@@ -110,8 +110,8 @@ void MyVector<T>::print(std::ostream& out) const
 template <typename T>
 T& MyVector<T>::operator[](int index) const
 {
-	assert(index >= 1);
-	return data[index-1];
+	assert(index >= 0);
+	return data[index];
 }
 template <typename T>
 void MyVector<T>::addElement(T const& newEl)

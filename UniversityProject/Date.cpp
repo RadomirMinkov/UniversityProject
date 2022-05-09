@@ -151,7 +151,39 @@ std::istream& operator>>(std::istream& in, Date& date)
 	date.setDay(day);
 	return in;
 }
+bool Date::operator!=(Date const& other) const
+{
+	return !(*this == other);
+}
+bool Date::operator<=(Date const& other) const
+{
+	if (year>other.year )
+	{
+		return false;
+	}
+	else if (month > other.month)
+	{
+		return false;
+	}
+	else if (day > other.day)
+	{
+		return false;
+	}
+	return true;
+}
 
+bool Date::operator>(Date const& other) const
+{
+	return !(*this <= other);
+}
+bool Date::operator>=(Date const& other) const
+{
+	return !(*this > other);
+}
+bool Date::operator<(Date const& other) const
+{
+	return !(*this >= other);
+}
 std::ostream& operator<<(std::ostream& out, Date const& date)
 {
 	out << date.getDay() << '/' << date.getMonth() << '/' << date.getYear() << '\n';

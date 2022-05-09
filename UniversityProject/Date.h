@@ -44,6 +44,11 @@ public:
 	void setYear(unsigned _year);
 
 	bool operator==(Date const& other) const;
+	bool operator!=(Date const& other) const;
+	bool operator<=(Date const& other) const;
+	bool operator<(Date const& other) const;
+	bool operator>=(Date const& other) const;
+	bool operator>(Date const& other) const;
 };
 
 std::istream& operator>>(std::istream& in, Date& _date);

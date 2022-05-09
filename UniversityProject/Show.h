@@ -2,6 +2,7 @@
 #define _SHOW_HPP
 #include <cstring>
 #include <iostream>
+#include <fstream>
 
 #include "Reservation.h"
 #include "Date.h"
@@ -49,6 +50,8 @@ public:
 	void addReservation(Reservation const& reservation);
 	bool cancelReservation(Reservation reservation);
 	void buyTicket(unsigned rowNumber, unsigned seat);
+	void printReservations(std::ostream& out) const ;
+	bool operator==(Show const& other) const;
 	//осигуряване на оператор за въвеждане
 	friend std::istream& operator>>(std::istream& in, Show& other);
 };

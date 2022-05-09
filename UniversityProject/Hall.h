@@ -52,8 +52,9 @@ public:
 	//добавяне на ново представление
 	bool addNewShow(Show const& show);
 	//купуване на места
-	void buyTickets(unsigned _hallNumber, int* seats, unsigned numberOfSeats);
+	void buyTickets(unsigned _rowNumber, int seat,Show show);
 
+	//void sortShowsByDate();
 	//показва списък с местата в залата
 	void showSeats(std::ostream& out,Show const& show) const;
 	void seatsReference(Show const& show, std::ostream& out=std::cout) const;

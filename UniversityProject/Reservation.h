@@ -30,6 +30,6 @@ public:
 	friend std::istream& operator>>(std::istream& in, Reservation& reservation);
 };
 
-std::ostream& operator<<(std::ostream& out, Reservation& reservation);
+std::ostream& operator<<(std::ostream& out, Reservation const& reservation);
 #endif // !_RESERVATION__HPP
 

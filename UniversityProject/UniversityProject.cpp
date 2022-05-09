@@ -16,6 +16,20 @@ int main()
     //testHall();
 	//testReservation();
 
+	Date date5(2, october, 2002);
+	Date date1(2, october, 2002);
+	Date date2(2, october, 2001);
+	Date date3(2, november, 2002);
+	Date date4(21, october, 2002);
+	std::cout <<std::boolalpha<< (date5 == date1)<<'\n';
+	std::cout <<std::boolalpha<< (date5 != date1)<<'\n';
+	std::cout <<std::boolalpha<< (date3 <= date1)<<'\n';
+	std::cout <<std::boolalpha<< (date3 > date1)<<'\n';
+	std::cout <<std::boolalpha<< (date3 >= date1)<<'\n';
+	std::cout <<std::boolalpha<< (date3 < date1)<<'\n';
+
+
+
 	MyVector<int> arr(5);
 	arr.addElement(2);
 	arr.addElement(1);
@@ -27,6 +41,7 @@ int main()
 
 
 	Reservation reservation;
+	Reservation reser(3, 4, "rado", "Az obicham pasta");
 	reservation.replaceNote("Milko ");
 	reservation.addToNote("Kalaidjiev");
 	std::cout << reservation.getNote();
@@ -39,8 +54,11 @@ int main()
 	show.buyTicket(3, 4);
 	show.printSeats(std::cout, 3, 4);
     show.addReservation(reservation);
-	std::cout<<show.getName();
-	std::cout << show.getHallNumber() << show.getDate();
+	show.addReservation(reser);
+	std::cout << show;
+
+
+
 	return 0;
 }
 
