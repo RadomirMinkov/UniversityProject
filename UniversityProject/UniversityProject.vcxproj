@@ -154,6 +154,7 @@
   <ItemGroup>
     <ClCompile Include="Date.cpp" />
     <ClCompile Include="Hall.cpp" />
+    <ClCompile Include="MyStr.cpp" />
     <ClCompile Include="MyVector.cpp" />
     <ClCompile Include="Reservation.cpp" />
     <ClCompile Include="Show.cpp" />
@@ -163,6 +164,7 @@
   <ItemGroup>
     <ClInclude Include="Date.h" />
     <ClInclude Include="Hall.h" />
+    <ClInclude Include="MyStr.h" />
     <ClInclude Include="MyVector.h" />
     <ClInclude Include="Reservation.h" />
     <ClInclude Include="Show.h" />

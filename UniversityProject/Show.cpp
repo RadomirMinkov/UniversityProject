@@ -1,20 +1,12 @@
 #include "Show.h"
 
-void Show::clear()
-{
-	delete[] name;
-}
-Show::~Show()
-{
-	clear();
-}
 
 Show::Show()
 	:hallNumber(0), name(nullptr), seats(nullptr)
 {
 	Date newDate;
 	date = newDate;
-	reservations = MyVector<Reservation>();
+	reservations = MyVector<Reservation>(2);
 }
 bool Show::cancelReservation(Reservation reservation)
 {
@@ -31,12 +23,10 @@ bool Show::cancelReservation(Reservation reservation)
 	}
 	return false;
 }
-Show::Show(Date _date, unsigned _hallNumber, const char* _name)
-	: hallNumber(_hallNumber), name(nullptr), seats(nullptr)
+Show::Show( unsigned _hallNumber,MyStr _name, Date _date,unsigned _capacity)
+	: hallNumber(_hallNumber), name(_name), seats(nullptr)
 {
-	reservations = MyVector<Reservation>();
-	name = new char[strlen(_name) + 1];
-	strcpy(name, _name);
+	reservations = MyVector<Reservation>(_capacity);
 	setDate(_date);
 }
 
@@ -52,9 +42,7 @@ void Show::addReservation(Reservation const& reservation)
 }
 void Show::copy(Show const& other)
 {
-	clear();
-	name = new char[strlen(other.name) + 1];
-	strcpy(name, other.name);
+	name = other.name;
 	date = other.date;
 	hallNumber = other.hallNumber;
 	seats = nullptr;
@@ -128,11 +116,9 @@ void Show::setDate(Date newDate)
 {
 	date = newDate;
 }
-void Show::setName(const char* _name)
+void Show::setName(MyStr _name)
 {
-	clear();
-	name = new char[strlen(_name) + 1];
-	strcpy(name, _name);
+	name = _name;
 }
 
 void Show::setHallNumber(unsigned _hallNumber)
@@ -141,12 +127,8 @@ void Show::setHallNumber(unsigned _hallNumber)
 }
 std::istream& operator>>(std::istream& in, Show& other)
 {
-	unsigned length;
 	in >> other.hallNumber;
-	in >> length;
-	in.get();
-	other.name = new char[length + 1];
-	in.getline(other.name, length + 1);
+	in >> other.name;
 	in >> other.date;
 	return in;
 }

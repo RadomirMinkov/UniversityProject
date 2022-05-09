@@ -6,6 +6,7 @@
 #include "Show.h"
 #include "Reservation.h"
 #include "MyVector.h"
+#include "MyStr.h"
 class Hall
 {
 private:

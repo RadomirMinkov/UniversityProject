@@ -1,34 +1,17 @@
 #include "Reservation.h"
 
-void Reservation::clear()
-{
-	delete[] password;
-	delete[] note;
-}
-
-Reservation::~Reservation()
-{
-	clear();
-}
 
 void Reservation::copy(Reservation const& other)
 {
-	clear();
-	password = new char[strlen(other.password) + 1];
-	strcpy(password, other.password);
-	note = new char[strlen(other.note) + 1];
-	strcpy(note, other.note);
+	password = other.password;
+	note = other.note;
 	rowNumber = other.rowNumber;
 	seat = other.seat;
 
 }
-Reservation::Reservation(unsigned _rowNumber,unsigned _seat, const char* _password, const char* _note)
-	:password(nullptr), note(nullptr),rowNumber(_rowNumber), seat(_seat)
+Reservation::Reservation(unsigned _rowNumber,unsigned _seat, MyStr _password, MyStr _note)
+	:password(_password), note(_note),rowNumber(_rowNumber), seat(_seat)
 {
-	password = new char[strlen(_password) + 1];
-	strcpy(password, _password);
-	note = new char[strlen(_note) + 1];
-	strcpy(note, _note);
 }
 Reservation& Reservation::operator=(Reservation const& other)
 {
@@ -39,23 +22,14 @@ Reservation& Reservation::operator=(Reservation const& other)
 	return *this;
 }
 
-void Reservation::replaceNote(const char* newNote)
+void Reservation::replaceNote(MyStr newNote)
 {
-	delete[] note;
-	note = new char[strlen(newNote) + 1];
-	strcpy(note, newNote);
+	note = newNote;
 }
 
-void Reservation::addToNote(const char* newNote)
+void Reservation::addToNote(MyStr newNote)
 {
-	char* temp = new char[strlen(note) + strlen(newNote) +1];
-	strcpy(temp, note);
-	strcat(temp, newNote);
-	delete[] note;
-	note = new char[strlen(temp) + 1];
-	strcpy(note, temp);
-	//strcat(note, newNote);
-	//std::cout << ' ' << strlen(note) << ' ' << strlen(temp) << ' ' << strlen(newNote);
+	note = note + newNote;
 }
 
 std::ostream& operator<<(std::ostream& out, Reservation const& reservation)
@@ -68,19 +42,15 @@ std::ostream& operator<<(std::ostream& out, Reservation const& reservation)
 
 bool Reservation::operator==(Reservation const& other) const
 {
-	return rowNumber == other.rowNumber && strcmp(password, other.password) == 0 && strcmp(note, other.note) == 0 &&  seat == other.seat;
+	return rowNumber == other.rowNumber && password.cmp(other.password) == 0 && note.cmp(other.note) == 0 &&  seat == other.seat;
 }
 
 std::istream& operator>>(std::istream& in, Reservation& reservation)
 {
-	size_t length{ 0 };
-	in >> length;
-	reservation.password = new char[length + 1];
-	in.getline(reservation.password, length + 1);
+	in >> reservation.password;
 	in.get();
 	in >> reservation.rowNumber;
 	in >> reservation.seat;
-	in >> length;
-	reservation.note = nullptr;
+	reservation.note = " ";
 	return in;
 }

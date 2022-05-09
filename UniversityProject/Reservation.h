@@ -3,28 +3,28 @@
 #include <cstring>
 #include <iostream>
 
+#include "MyStr.h"
 class Reservation
 {
 private:
 
-	char* password;
-	char* note;
+	MyStr password;
+	MyStr note;
 	unsigned rowNumber;
 	unsigned seat;
-	void clear();
 	void copy(Reservation const& other);
 	//void resize(unsigned newCap);
 public:
-	Reservation(unsigned rowNumber=0,unsigned seat=0, const char* _password = nullptr, const char* _note = nullptr);
+	Reservation()=default;
+	Reservation(unsigned rowNumber,unsigned seat, MyStr _password , MyStr _note);
 	Reservation(Reservation const& other) = delete;
 	Reservation& operator=(Reservation const& other);
-	~Reservation();
-	const char* getPassword() const { return password; }
-	const char* getNote() const { return note; }
+	MyStr getPassword() const { return password; }
+	MyStr getNote() const { return note; }
 	unsigned getRowNumber() const { return rowNumber; }
 	unsigned getSeat() const { return seat; }
-	void addToNote(const char* text);
-	void replaceNote(const char* text);
+	void addToNote(MyStr text);
+	void replaceNote(MyStr newNote);
 
 	bool operator==(Reservation const& other) const;
 	friend std::istream& operator>>(std::istream& in, Reservation& reservation);

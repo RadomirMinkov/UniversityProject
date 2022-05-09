@@ -36,6 +36,9 @@
     <ClCompile Include="MyVector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MyStr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Hall.h">
@@ -54,6 +57,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MyVector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MyStr.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
