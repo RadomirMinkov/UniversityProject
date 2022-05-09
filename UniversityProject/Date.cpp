@@ -45,8 +45,8 @@ void Date::setDay(unsigned _day)
 		break;
 	case april:
 	case june:
-	september:
-	november:
+	case september:
+	case november:
 		assert(_day >= 1 && _day <= 30);
 	default:
 		break;
@@ -93,7 +93,7 @@ void Date::setMonth(unsigned _month)
 		month = november;
 		break;
 	case 12:
-		month - december;
+		month = december;
 		break;
 	}
 }
@@ -133,7 +133,7 @@ const char* Date::printMonth(Month _month) const
 	case december:
 		return "december";	break;
 	default:
-		break;
+		return "error"; break;
 	}
 }
 bool Date::operator==(Date const& other) const

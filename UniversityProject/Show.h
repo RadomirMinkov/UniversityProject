@@ -22,19 +22,17 @@ private:
 	  Date date;
 	  unsigned hallNumber;
 
-	  Reservation* reservations;
-	  unsigned capacity;
-	  unsigned size;
+	  //вектор с резервациите 
+	  MyVector<Reservation> reservations;
 	  //масив за местата за дадено шоу
 	  Seats** seats;
 	void clear();
 	void copy(Show const& other);
-	void resize(unsigned newCap);
 	//дава информация за мястото
 	char place(Seats seat) const;
 public:
 	Show();
-	Show(Date _date,unsigned _hallNumber, const char* _name,unsigned capacity);
+	Show(Date _date,unsigned _hallNumber, const char* _name);
 	Show(Show const& other);
 	~Show();
 	Show& operator=(Show const& other);
@@ -49,7 +47,7 @@ public:
 	void printSeats(std::ostream& out,unsigned rows,unsigned seatsOnRow)const;
 	void createSeats(unsigned rows,unsigned seatsOnRow);
 	void updateSeats(unsigned rowNumber, unsigned seat,Seats seatType);
-	void addReservation(Reservation reservation);
+	void addReservation(Reservation const& reservation);
 	bool cancelReservation(Reservation reservation);
 	void buyTicket(unsigned rowNumber, unsigned seat);
 	//осигуряване на оператор за въвеждане
@@ -58,7 +56,7 @@ public:
 
 
 //осигуряване на операор за извеждане
-std::ostream& operator<<(std::ostream&  out, Show const& other);
+std::ostream& operator<<(std::ostream&  out, Show const& other);//Not fully functioning
 
 #endif // !_SHOW_HPP
 

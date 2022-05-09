@@ -10,59 +10,45 @@ Show::~Show()
 }
 
 Show::Show()
-	:hallNumber(0), name(nullptr), seats(nullptr),reservations(nullptr),capacity(2),size(0)
+	:hallNumber(0), name(nullptr), seats(nullptr)
 {
 	Date newDate;
 	date = newDate;
+	reservations = MyVector<Reservation>();
 }
 bool Show::cancelReservation(Reservation reservation)
 {
-	for (unsigned i = 0; i < size; i++) {
+	for (unsigned i = 0; i <reservations.getSize(); i++) {
 		if (reservations[i] == reservation)
 		{
-			for (unsigned j = i; j < size; j++)
+			for (unsigned j = i; j < reservations.getSize(); j++)
 			{
 				reservations[j] = reservations[j + 1];
 			}
-			size--;
+			reservations.setSize(reservations.getSize()-1);
 			return true;
 		}
 	}
 	return false;
 }
-Show::Show(Date _date, unsigned _hallNumber, const char* _name,unsigned _capacity)
-	: hallNumber(_hallNumber), name(nullptr), seats(nullptr),size(0),capacity(_capacity),reservations(nullptr)
+Show::Show(Date _date, unsigned _hallNumber, const char* _name)
+	: hallNumber(_hallNumber), name(nullptr), seats(nullptr)
 {
-	reservations = new Reservation[capacity];
+	reservations = MyVector<Reservation>();
 	name = new char[strlen(_name) + 1];
 	strcpy(name, _name);
 	setDate(_date);
 }
 
-void Show::resize(unsigned newCap)
-{
-	if (capacity <= newCap)
-		return;
-	capacity = newCap;
-	Reservation* newArr = new Reservation[capacity];
-	for (unsigned i = 0; i < size; i++)
-		newArr[i] = reservations[i];
-	delete[] reservations;
-	reservations = newArr;
-}
+
 void Show::updateSeats(unsigned rowNumber, unsigned place,Seats seatType)
 {
 	seats[rowNumber - 1][place - 1] = seatType;
 }
 
-void Show::addReservation(Reservation reservation)
+void Show::addReservation(Reservation const& reservation)
 {
-	if (size == capacity)
-		resize(2 * capacity);
-	reservations[size++] = reservation;
-	unsigned row = reservation.getRowNumber();
-	unsigned seat = reservation.getSeat();
-	updateSeats(row, seat, reserved);
+	reservations.addElement(reservation);
 }
 void Show::copy(Show const& other)
 {
@@ -72,11 +58,7 @@ void Show::copy(Show const& other)
 	date = other.date;
 	hallNumber = other.hallNumber;
 	seats = nullptr;
-	capacity = other.capacity;
-	size = other.size;
-	reservations = new Reservation[capacity];
-	for (int i = 0; i < size; i++)
-		reservations[i] = other.reservations[i];
+	reservations = other.reservations;
 }
 char Show::place(Seats seat) const
 {
@@ -175,4 +157,5 @@ std::ostream& operator<<(std::ostream& out, Show const& other)
 		<< "Hall: " << other.getHallNumber() << "\n"
 		<< "Name: " << other.getName() << '\n'
 		<< "Date: " << other.getDate() << '\n';
+	
 }

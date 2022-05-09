@@ -22,12 +22,8 @@ private:
 	//места на ред
 	unsigned seatsOnRow;
 	//списък с представления в залата
-	Show *shows;
+	MyVector<Show> shows;
 
-	//изчистване на паметта
-	void clear();
-	//уголемяване на списъка от представления
-	void resize(unsigned newCapacity);
 	//функция за копиране на информацията от един клас в друг
 	void copy(Hall const& other);
 	//дава информация за мястото
@@ -41,8 +37,6 @@ public:
 	Hall(Hall const& other);
 	//оператор за присвояване
 	Hall& operator=(Hall const& other);
-	//деструктор
-	~Hall();
 
 	//връщане на информация относно  залата
 	unsigned getHallNumber() const { return hallNumber; }

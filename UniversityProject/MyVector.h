@@ -20,8 +20,12 @@ public:
 	MyVector& operator=(MyVector const& other);
 	~MyVector();
 
+	size_t getSize() const { return size; }
+	unsigned getCapacity() const { return capacity; }
+
+	void setSize(size_t newSize);
 	void print(std::ostream& out=std::cout) const;
-	void addElement(T newEl);
+	void addElement(T const& newEl);
 	bool removeElement(T element);
 
 	T& operator[](int index) const;
@@ -80,6 +84,11 @@ MyVector<T>::MyVector(MyVector const& other)
 }
 
 template <typename T>
+void MyVector<T>::setSize(size_t newSize)
+{
+	size = newSize;
+}
+template <typename T>
 MyVector<T>& MyVector<T>::operator=(MyVector<T> const& other)
 {
 	if (this != &other)
@@ -105,7 +114,7 @@ T& MyVector<T>::operator[](int index) const
 	return data[index-1];
 }
 template <typename T>
-void MyVector<T>::addElement(T newEl)
+void MyVector<T>::addElement(T const& newEl)
 {
 	if (size == capacity)
 		resize(2 * capacity);
