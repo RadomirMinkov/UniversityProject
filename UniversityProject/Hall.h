@@ -1,12 +1,15 @@
-#ifndef _HALL__HPP
+#ifndef _HALL_HPP
 #define _HALL_HPP
 #include <iostream>
 #include <cassert>
 
+//#include "Types.h"
+#include "MyVector.h"
 #include "Show.h"
 #include "Reservation.h"
-#include "MyVector.h"
 #include "MyStr.h"
+
+const int MAX_ANSWER_BUFFER = 3;
 class Hall
 {
 private:
@@ -16,10 +19,6 @@ private:
 	unsigned hallNumber;
 	//брой редове
 	unsigned rows;
-	//борй представления
-	size_t showSize;
-	//големина на списък от представления
-	unsigned showCapacity;
 	//места на ред
 	unsigned seatsOnRow;
 	//списък с представления в залата
@@ -27,13 +26,13 @@ private:
 
 	//функция за копиране на информацията от един клас в друг
 	void copy(Hall const& other);
-	//дава информация за мястото
-	char place(Seats seat) const;
+	
+	Show& getShow(Show const& show)const;
 	//връща колко места има в залата
 	int  getNumberOfSeats() const;
 public:
 	//Конструктор с параметри по подразбиране
-	Hall(unsigned _hallNumber=0,unsigned _rows=0, unsigned _seatsOnRow=0, unsigned _showCapacity=2);
+	Hall(unsigned _hallNumber=0,unsigned _rows=0, unsigned _seatsOnRow=0);
 	//копи конструктор, който не кпира заетите места
 	Hall(Hall const& other);
 	//оператор за присвояване
@@ -43,27 +42,28 @@ public:
 	unsigned getHallNumber() const { return hallNumber; }
 	unsigned getRows() const { return rows; }
 	unsigned getSeatsOnRows() const { return seatsOnRow; }
-	unsigned getShowCapacity() const { return showCapacity; }
-	unsigned getShowSize() const { return showSize; }
-
+	MyVector<Show> getShows() const { return shows; }
 	//проверка дали залата е резервирана на дадена дата
 	bool isReserved(Date _date);
 
 	//добавяне на ново представление
 	bool addNewShow(Show const& show);
 	//купуване на места
-	void buyTickets(unsigned _rowNumber, int seat,Show show);
+	void buyTicket(Show show,unsigned _rowNumber,unsigned _seat);
 
 	//void sortShowsByDate();
 	//показва списък с местата в залата
 	void showSeats(std::ostream& out,Show const& show) const;
 	void seatsReference(Show const& show, std::ostream& out=std::cout) const;
 	//резервиране на билети
-	void reserveTickets(unsigned _hallNumber, int* seats, unsigned numberOfSeats);
+	void reserveTicket(Show show, unsigned _rowNumber, unsigned _seat);
 	//извеждане на информация за залата
-	void print() const;
+	void print(std::ostream& out=std::cout) const;
 	//проверка дали има резервирани дати
 	bool isEmpty();
+	friend std::istream& operator>>(std::istream& in, Hall& hall);
 };
+
+std::ostream& operator<<(std::ostream& out, Hall const& hall);
 
 #endif

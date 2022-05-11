@@ -1,19 +1,26 @@
 #include "Show.h"
 
 
-Show::Show()
-	:hallNumber(0), name(nullptr), seats(nullptr)
+void Show::clear()
 {
-	Date newDate;
-	date = newDate;
-	reservations = MyVector<Reservation>(2);
+	//printSeats(std::cout, hall->getRows(), hall->getSeatsOnRows());
+	if (hall == nullptr)
+		return;
+	for (unsigned i = 0; i < hall->getRows(); i++)
+		delete seats[i];
+	delete[] seats;
+}
+Show::~Show()
+{
+	//std::cout << *this;
+	clear();
 }
 bool Show::cancelReservation(Reservation reservation)
 {
 	for (unsigned i = 0; i < reservations.getSize(); i++) {
 		if (reservations[i] == reservation)
 		{
-			for (unsigned j = i; j < reservations.getSize(); j++)
+			for (unsigned j = i; j < reservations.getSize()-1; j++)
 			{
 				reservations[j] = reservations[j + 1];
 			}
@@ -23,11 +30,12 @@ bool Show::cancelReservation(Reservation reservation)
 	}
 	return false;
 }
-Show::Show(unsigned _hallNumber, MyStr _name, Date _date, unsigned _capacity)
-	: hallNumber(_hallNumber), name(_name), seats(nullptr)
+Show::Show( MyStr _name, Date _date, unsigned _capacity,Hall* _hall)
+	:  name(_name), seats(nullptr),hall(_hall)
 {
 	reservations = MyVector<Reservation>(_capacity);
 	setDate(_date);
+	createSeats(hall->getRows(), hall->getSeatsOnRows());
 }
 
 
@@ -39,14 +47,21 @@ void Show::updateSeats(unsigned rowNumber, unsigned place, Seats seatType)
 void Show::addReservation(Reservation const& reservation)
 {
 	reservations.addElement(reservation);
+	updateSeats(reservation.getRowNumber(), reservation.getSeat(),reserved);
 }
 void Show::copy(Show const& other)
 {
 	name = other.name;
 	date = other.date;
-	hallNumber = other.hallNumber;
-	seats = nullptr;
+	hall = other.hall;
 	reservations = other.reservations;
+	seats = new Seats*[hall->getRows()];
+	for (unsigned i = 0; i < hall->getRows(); i++)
+	{
+		seats[i] = new Seats[hall->getSeatsOnRows()];
+		for (unsigned j = 0; j < hall->getSeatsOnRows(); j++)
+			seats[i][j] = other.seats[i][j];
+	}
 }
 char Show::place(Seats seat) const
 {
@@ -78,6 +93,16 @@ void Show::printSeats(std::ostream& out, unsigned rows, unsigned seatsOnRow)cons
 		out << '\n';
 	}
 }
+Reservation Show::getReservation(unsigned row, unsigned seat)const
+{
+	Reservation reservation;
+	for (unsigned i = 0; i < reservations.getSize(); i++)
+	{
+		if (row==reservations[i].getRowNumber() && seat==reservations[i].getSeat())
+			reservation= reservations[i];
+	}
+	return reservation;
+}
 Seats Show::getSeat(unsigned rowNumber, unsigned seat) const
 {
 	return seats[rowNumber - 1][seat - 1];
@@ -98,6 +123,11 @@ void Show::createSeats(unsigned rows, unsigned seatsOnRow)
 		}
 	}
 
+}
+Show::Show()
+{
+	hall = nullptr;
+	seats = nullptr;
 }
 Show::Show(Show const& other)
 {
@@ -124,17 +154,15 @@ void Show::printReservations(std::ostream& out)const
 	for (unsigned i = 0; i < reservations.getSize(); i++)
 		out << reservations[i];
 }
-void Show::setHallNumber(unsigned _hallNumber)
-{
-	hallNumber = _hallNumber;
-}
 bool Show::operator==(Show const& other)const
 {
-	return hallNumber == hallNumber && name == name && date == other.date;
+	return hall==other.hall && name == name && date == other.date;
 }
 std::istream& operator>>(std::istream& in, Show& other)
 {
-	in >> other.hallNumber;
+	Hall hall;
+	in >> hall;
+	 other.hall=&hall;
 	in >> other.name;
 	in >> other.date;
 	return in;
@@ -142,9 +170,9 @@ std::istream& operator>>(std::istream& in, Show& other)
 
 std::ostream& operator<<(std::ostream& out, Show const& other)
 {
-	out << "Show:\n"
-		<< "Hall: " << other.getHallNumber() << "\n"
-		<< "Name: " << other.getName() << '\n'
+	out << "Show:\n";
+	other.getHall()->print(std::cout);
+	out	<< "Name: " << other.getName() << '\n'
 		<< "Date: " << other.getDate() << '\n';
 	other.printReservations(out);
 	return out;

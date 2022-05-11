@@ -2,16 +2,12 @@
 
 void Hall::copy(Hall const& other)
 {
-	showCapacity = other.showCapacity;
-	showSize = other.showSize;
 	rows = other.rows;
 	seatsOnRow = other.seatsOnRow;
 	hallNumber = other.hallNumber;
 	shows = other.shows;
-	for (unsigned i = 0; i < showSize; i++)
-		shows[i] = other.shows[i];
 }
-char Hall::place(Seats seat) const
+/*char Hall::place(Seats seat) const
 {
 	char c{};
 	switch (seat)
@@ -29,14 +25,18 @@ char Hall::place(Seats seat) const
 		break;
 	}
 	return c;
-}
+}*/
 void Hall::showSeats(std::ostream& out, Show const& show) const
 {
-	show.printSeats(out, rows, seatsOnRow);
+	unsigned i{ 0 };
+	while (!(show == shows[i]) && i < shows.getSize())
+		i++;
+	if (i != shows.getSize())
+		shows[i].printSeats(std::cout, rows, seatsOnRow);
 }
 
-Hall::Hall(unsigned _hallNumber, unsigned _rows, unsigned _seatsOnRow, unsigned _showCapacity)
-	: hallNumber(_hallNumber), rows(_rows),seatsOnRow(_seatsOnRow), showCapacity(_showCapacity), showSize(0)
+Hall::Hall(unsigned _hallNumber, unsigned _rows, unsigned _seatsOnRow)
+	: hallNumber(_hallNumber), rows(_rows), seatsOnRow(_seatsOnRow)
 {
 	shows = MyVector<Show>();
 }
@@ -57,44 +57,46 @@ Hall& Hall::operator=(Hall const& other)
 
 bool Hall::isReserved(Date _date)
 {
-	for (unsigned i = 0; i < showSize; i++)
-		if (_date==shows[i].getDate() == 0)
+	for (unsigned i = 0; i < shows.getSize(); i++)
+		if (_date == shows[i].getDate() == 0)
 			return true;
 	return false;
 }
 
 
 //реализация на функция за добавяне на представлениe
-bool Hall::addNewShow(Show const& show) 
+bool Hall::addNewShow(Show const& show)
 {
 	for (unsigned i = 0; i < shows.getSize(); i++)
 	{
-		if (show.getDate()==shows[i].getDate())
+		if (show.getDate() == shows[i].getDate())
 		{
 			return false;
 		}
 	}
 	shows.addElement(show);
-	shows[shows.getSize()].createSeats(rows, seatsOnRow);
-	shows.setSize(shows.getSize() + 1);
 	return true;
 }
 
+void Hall::print(std::ostream& out)const
+{
+	out << *this;
+}
 int Hall::getNumberOfSeats() const
 {
 	return rows * seatsOnRow;
 }
 
-void Hall::seatsReference(Show const& show,std::ostream& out) const
+void Hall::seatsReference(Show const& show, std::ostream& out) const
 {
-	unsigned empty{0};
-	unsigned reserved{0};
-	unsigned bought{0};
+	unsigned empty{ 0 };
+	unsigned reserved{ 0 };
+	unsigned bought{ 0 };
 	for (unsigned i = 0; i < rows; i++)
 	{
 		for (unsigned j = 0; j < seatsOnRow; j++)
 		{
-			switch (place(show.getSeat(i,j)))
+			switch (show.place(show.getSeat(i, j)))
 			{
 			case 0:
 				empty++;
@@ -114,34 +116,35 @@ void Hall::seatsReference(Show const& show,std::ostream& out) const
 		<< bought << " купени места ";
 }
 //реализация на функция за закупуване на билети
-void Hall::buyTicket(unsigned _rowNumber, int _seat, Show show)
+void Hall::buyTicket(Show show, unsigned _rowNumber, unsigned _seat)
 {
 	Seats place;
 	MyStr password;
 	MyStr userPassword;
 	for (unsigned i = 0; i < shows.getSize(); i++)
 	{
-		if (show==shows[i])
+		if (show == shows[i])
 		{
-			place= shows[i].getSeat(_rowNumber, _seat);
+			place = shows[i].getSeat(_rowNumber, _seat);
 			switch (place)
 			{
 			case empty:
-				shows[i].updateSeats(_rowNumber, _seat, bought);
+				shows[i].buyTicket(_rowNumber, _seat);
+				//std::cout<<shows[i].getSeat(_rowNumber, _seat);
 				break;
 			case reserved:
-				password=shows[i].getReservation(_rowNumber, _seat).getPassword();
+				password = shows[i].getReservation(_rowNumber, _seat).getPassword();
 				std::cout << "The place is reserved. Enter password.";
-				std::cin >> password;
-				if (password==userPassword)
+				std::cin >> userPassword;
+				if (password == userPassword)
 				{
-					shows[i].updateSeats(_rowNumber, _seat, bought);
-					//shows[i].cancelReservation(shows[i].getReservation(_rowNumber,_seat));
+					shows[i].buyTicket(_rowNumber, _seat);
+					shows[i].cancelReservation(shows[i].getReservation(_rowNumber, _seat));
+					//shows[i].cancelReservation(Reservation(2, 3, "rado", "penka"));
 				}
 				break;
 			case bought:
 				std::cout << "The seat is already bought!";
-				return;
 				break;
 			default:
 				break;
@@ -149,7 +152,46 @@ void Hall::buyTicket(unsigned _rowNumber, int _seat, Show show)
 		}
 	}
 }
+
+void Hall::reserveTicket(Show show, unsigned _rowNumber, unsigned _seat)
+{
+	for (unsigned i = 0; i < shows.getSize(); i++)
+	{
+		if (show == shows[i])
+		{
+			Reservation reservation;
+			std::cin >> reservation;
+			MyStr answer;// MyStr();
+			do
+			{
+				std::cout << "Do you want to add note to the reservation?\nAnswer yes or no";
+				std::cin >> answer;
+				answer.toLower();
+			} while (answer != "yes" && answer != "no");
+			if (answer == "yes") {
+				std::cout << "Enter the note: ";
+				std::cin >> answer;
+				reservation.replaceNote(answer);
+			}
+			shows[i].addReservation(reservation);
+		}
+	}
+
+}
 bool Hall::isEmpty()
 {
-	return showSize == 0;
+	return shows.getSize() == 0;
+}
+
+std::istream& operator>>(std::istream& in, Hall& hall)
+{
+	return in >> hall.hallNumber >> hall.rows >> hall.seatsOnRow;
+}
+
+std::ostream& operator<<(std::ostream& out, Hall const& hall)
+{
+	return out << "Hall: \n"
+		<< "Hall number: " << hall.getHallNumber() << '\n'
+		<< "Rows: " << hall.getRows() << '\n'
+		<< "Seats on row: " << hall.getSeatsOnRows() << '\n';
 }

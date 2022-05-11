@@ -2,6 +2,7 @@
 
 void MyStr::clear()
 {
+	//arr = nullptr;
 	delete[] arr;
 }
 
@@ -43,6 +44,16 @@ MyStr& MyStr::operator=(MyStr const& other)
 	return *this;
 }
 
+bool MyStr::operator!=(MyStr const& other)const
+{
+	return !(*this == other);
+}
+void MyStr::toLower()
+{
+	for (unsigned i = 0; i < size; i++)
+		if (arr[i] >= 'A' && arr[i] <= 'Z')
+			arr[i] = arr[i] + 32;
+}
 MyStr& MyStr::operator+(MyStr const& other)
 {
    char* temp = new char[size + other.size + 1];
@@ -68,6 +79,7 @@ std::istream& operator>>(std::istream& in, MyStr& other)
 {
 	other.clear();
 	in >> other.size;
+	in.get();
 	other.arr = new char[other.size + 1];
 	in.getline(other.arr, other.size + 1);
 	return in;

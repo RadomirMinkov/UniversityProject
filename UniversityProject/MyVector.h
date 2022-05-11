@@ -37,13 +37,14 @@ public:
 template <typename T>
 void MyVector<T>::clear() 
 {
+//	std::cout << &data;
 	delete[] data;
 }
 
 template <typename T>
 void MyVector<T>::copy(MyVector const& other)
 {
-	clear();
+//	clear();
 	size = other.size;
 	capacity = other.capacity;
 	data = new T[capacity];
@@ -59,7 +60,7 @@ void MyVector<T>::resize(unsigned newCap)
 	capacity = newCap;
 	T* newArr = new T[newCap];
 	for (unsigned i = 0; i < size; i++)
-		data[i] = newArr[i];
+		newArr[i] = data[i];
 	delete[] data;
 	data = newArr;
 }
@@ -79,6 +80,7 @@ MyVector<T>::MyVector(unsigned _capacity)
 
 template <typename T>
 MyVector<T>::MyVector(MyVector const& other)
+	:data(nullptr)
 {
 	copy(other);
 }
@@ -117,7 +119,7 @@ template <typename T>
 void MyVector<T>::addElement(T const& newEl)
 {
 	if (size == capacity)
-		resize(2 * capacity);
+		resize(2 * capacity + 1);
 	data[size++] = newEl;
 
 }

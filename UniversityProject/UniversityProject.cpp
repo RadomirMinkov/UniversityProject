@@ -6,7 +6,7 @@
 #include "Hall.h"
 #include "Reservation.h"
 #include "MyStr.h"
-
+#include "Types.h"
 
 int main()
 {
@@ -16,7 +16,7 @@ int main()
     //testHall();
 	//testReservation();
 
-	Date date5(2, october, 2002);
+    Date date5(2, october, 2002);
 	Date date1(2, october, 2002);
 	Date date2(2, october, 2001);
 	Date date3(2, november, 2002);
@@ -36,29 +36,44 @@ int main()
 	std::cout << arr[1] << '\n';
 
 	MyStr str;
-	str.copy("rado");
-	std::cout << str << '\n';
+	str.copy("Rado");
+	str.toLower();
+	MyStr rad("penka");
+	std::cout << str << '\n'<<(rad!=str)<<'\n';
 
 
-	Reservation reservation;
+	Reservation reservation(1,1,"radomir","hello");
 	Reservation reser(3, 4, "rado", "Az obicham pasta");
 	reservation.replaceNote("Milko ");
 	reservation.addToNote("Kalaidjiev");
-	std::cout << reservation.getNote();
+	std::cout << reservation.getNote()<<'\n';
 
 	Date date(2, october, 2002);
-	Show show(3, "Rado", date,2);
-	show.createSeats(3, 4);
-	show.printSeats(std::cout,3,4);
-	show.buyTicket(2, 3);
-	show.buyTicket(3, 4);
-	show.printSeats(std::cout, 3, 4);
-    show.addReservation(reservation);
+
+
+
+	Hall hall(1, 5, 6);
+	Show show("Lord of the Rings", date, 2, &hall);
+	Show show1("Doctor Strange", date2, 2, &hall);
+	show.addReservation(reservation);
 	show.addReservation(reser);
+	hall.addNewShow(show);
+	hall.addNewShow(show1);
+	show.buyTicket(2,3);
+	std::cout << show << '\n';
+	Reservation res = show.getReservation(3, 4);
+	show.printSeats(std::cout,5,6);
+	hall.buyTicket(show, 2, 3 );
+	hall.buyTicket(show1,1, 1 );
+	hall.buyTicket(show,2, 3);
+	hall.buyTicket(show,3, 4);
+	std::cout << "------------------------------------------\n";
+	show.printSeats(std::cout, 5, 6);
+	std::cout<<'\n'<<'\n';
+	hall.showSeats(std::cout,show);
+	std::cout << show<<'\n';// << show1;
+	hall.reserveTicket(show, 2, 1);
 	std::cout << show;
-
-
-
 	return 0;
 }
 

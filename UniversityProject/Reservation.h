@@ -17,7 +17,7 @@ private:
 public:
 	Reservation()=default;
 	Reservation(unsigned rowNumber,unsigned seat, MyStr _password , MyStr _note);
-	Reservation(Reservation const& other) = delete;
+	Reservation(Reservation const& other);
 	Reservation& operator=(Reservation const& other);
 	MyStr getPassword() const { return password; }
 	MyStr getNote() const { return note; }

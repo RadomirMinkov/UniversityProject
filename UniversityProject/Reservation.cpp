@@ -13,6 +13,11 @@ Reservation::Reservation(unsigned _rowNumber,unsigned _seat, MyStr _password, My
 	:password(_password), note(_note),rowNumber(_rowNumber), seat(_seat)
 {
 }
+
+Reservation::Reservation(Reservation const& other)
+{
+	copy(other);
+}
 Reservation& Reservation::operator=(Reservation const& other)
 {
 	if (this!=&other)
@@ -51,6 +56,6 @@ std::istream& operator>>(std::istream& in, Reservation& reservation)
 	in.get();
 	in >> reservation.rowNumber;
 	in >> reservation.seat;
-	reservation.note = " ";
+	reservation.note =nullptr;
 	return in;
 }
