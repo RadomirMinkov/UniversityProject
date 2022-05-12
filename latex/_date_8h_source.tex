@@ -1,0 +1,64 @@
+\hypertarget{_date_8h_source}{}\doxysection{Date.\+h}
+\label{_date_8h_source}\index{UniversityProject/Date.h@{UniversityProject/Date.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_DATE\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define  \_DATE\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{6 \textcolor{keyword}{enum} Month}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8     january = 1,}
+\DoxyCodeLine{9     february = 2,}
+\DoxyCodeLine{10     mmarch = 3,}
+\DoxyCodeLine{11     april=4,}
+\DoxyCodeLine{12     may=5,}
+\DoxyCodeLine{13     june=6,}
+\DoxyCodeLine{14     july=7,}
+\DoxyCodeLine{15     augusts=8,}
+\DoxyCodeLine{16     september=9,}
+\DoxyCodeLine{17     october=10,}
+\DoxyCodeLine{18     november=11,}
+\DoxyCodeLine{19     december=12}
+\DoxyCodeLine{20 \};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{class_date}{Date}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24 \textcolor{keyword}{private}:}
+\DoxyCodeLine{25     \textcolor{keywordtype}{unsigned} day;}
+\DoxyCodeLine{26     Month month;}
+\DoxyCodeLine{27     \textcolor{keywordtype}{unsigned} year;}
+\DoxyCodeLine{28     \textcolor{keywordtype}{bool} isLeap(\textcolor{keywordtype}{unsigned} \_year);}
+\DoxyCodeLine{29 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \textcolor{comment}{//конструктор с параметри по подразбиране}}
+\DoxyCodeLine{32     \mbox{\hyperlink{class_date}{Date}}(\textcolor{keywordtype}{unsigned} \_day = 1, Month \_month = january, \textcolor{keywordtype}{unsigned} year = 2000);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{comment}{//връщане на информация за свойствата}}
+\DoxyCodeLine{35     \textcolor{keywordtype}{unsigned} getDay()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} day; \}}
+\DoxyCodeLine{36     Month getMonth()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} month; \}}
+\DoxyCodeLine{37     \textcolor{keywordtype}{unsigned} getYear()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} year; \}}
+\DoxyCodeLine{38     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* printMonth(Month month) \textcolor{keyword}{const};}
+\DoxyCodeLine{39     \textcolor{comment}{//промяна на деня}}
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} setDay(\textcolor{keywordtype}{unsigned} \_day);}
+\DoxyCodeLine{41     \textcolor{comment}{//промяна на месеца}}
+\DoxyCodeLine{42     \textcolor{keywordtype}{void} setMonth(\textcolor{keywordtype}{unsigned} \_month);}
+\DoxyCodeLine{43     \textcolor{comment}{//промяна на годината}}
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} setYear(\textcolor{keywordtype}{unsigned} \_year);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \textcolor{keywordtype}{bool} operator==(\mbox{\hyperlink{class_date}{Date}} \textcolor{keyword}{const}\& other) \textcolor{keyword}{const};}
+\DoxyCodeLine{47     \textcolor{keywordtype}{bool} operator!=(\mbox{\hyperlink{class_date}{Date}} \textcolor{keyword}{const}\& other) \textcolor{keyword}{const};}
+\DoxyCodeLine{48     \textcolor{keywordtype}{bool} operator<=(\mbox{\hyperlink{class_date}{Date}} \textcolor{keyword}{const}\& other) \textcolor{keyword}{const};}
+\DoxyCodeLine{49     \textcolor{keywordtype}{bool} operator<(\mbox{\hyperlink{class_date}{Date}} \textcolor{keyword}{const}\& other) \textcolor{keyword}{const};}
+\DoxyCodeLine{50     \textcolor{keywordtype}{bool} operator>=(\mbox{\hyperlink{class_date}{Date}} \textcolor{keyword}{const}\& other) \textcolor{keyword}{const};}
+\DoxyCodeLine{51     \textcolor{keywordtype}{bool} operator>(\mbox{\hyperlink{class_date}{Date}} \textcolor{keyword}{const}\& other) \textcolor{keyword}{const};}
+\DoxyCodeLine{52 \};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 std::istream\& operator>>(std::istream\& in, \mbox{\hyperlink{class_date}{Date}}\& \_date);}
+\DoxyCodeLine{55 std::ostream\& operator<<(std::ostream\& out, \mbox{\hyperlink{class_date}{Date}} \textcolor{keyword}{const}\& \_date);}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !\_DATE\_HPP}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 }
+
+\end{DoxyCode}

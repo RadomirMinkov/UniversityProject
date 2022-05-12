@@ -1,0 +1,80 @@
+\hypertarget{_hall_8h_source}{}\doxysection{Hall.\+h}
+\label{_hall_8h_source}\index{UniversityProject/Hall.h@{UniversityProject/Hall.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_HALL\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_HALL\_HPP}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}Types.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}MyVector.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}Show.h"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}Reservation.h"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}MyStr.h"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{const} \textcolor{keywordtype}{int} MAX\_ANSWER\_BUFFER = 3;}
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{class_hall}{Hall}}}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16 \textcolor{keyword}{private}:}
+\DoxyCodeLine{17     \textcolor{comment}{//свойства на класа}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{comment}{//номер на залата}}
+\DoxyCodeLine{20     \textcolor{keywordtype}{unsigned} hallNumber;}
+\DoxyCodeLine{21     \textcolor{comment}{//брой редове}}
+\DoxyCodeLine{22     \textcolor{keywordtype}{unsigned} rows;}
+\DoxyCodeLine{23     \textcolor{comment}{//места на ред}}
+\DoxyCodeLine{24     \textcolor{keywordtype}{unsigned} seatsOnRow;}
+\DoxyCodeLine{25     \textcolor{comment}{//списък с представления в залата}}
+\DoxyCodeLine{26     \mbox{\hyperlink{class_my_vector}{MyVector<Show>}} shows;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{comment}{//функция за копиране на информацията от един клас в друг}}
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} copy(\mbox{\hyperlink{class_hall}{Hall}} \textcolor{keyword}{const}\& other);}
+\DoxyCodeLine{30     \mbox{\hyperlink{class_reservation}{Reservation}} enterReservatoin() \textcolor{keyword}{const};}
+\DoxyCodeLine{31     \textcolor{comment}{//връща колко места има в залата}}
+\DoxyCodeLine{32     \textcolor{keywordtype}{int}  getNumberOfSeats() \textcolor{keyword}{const};}
+\DoxyCodeLine{33 \textcolor{keyword}{public}:}
+\DoxyCodeLine{34     \textcolor{comment}{//Конструктор с параметри по подразбиране}}
+\DoxyCodeLine{35     \mbox{\hyperlink{class_hall}{Hall}}(\textcolor{keywordtype}{unsigned} \_hallNumber=0,\textcolor{keywordtype}{unsigned} \_rows=0, \textcolor{keywordtype}{unsigned} \_seatsOnRow=0);}
+\DoxyCodeLine{36     \textcolor{comment}{//копи конструктор, който не кпира заетите места}}
+\DoxyCodeLine{37     \mbox{\hyperlink{class_hall}{Hall}}(\mbox{\hyperlink{class_hall}{Hall}} \textcolor{keyword}{const}\& other);}
+\DoxyCodeLine{38     \textcolor{comment}{//оператор за присвояване}}
+\DoxyCodeLine{39     \mbox{\hyperlink{class_hall}{Hall}}\& operator=(\mbox{\hyperlink{class_hall}{Hall}} \textcolor{keyword}{const}\& other);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{comment}{//връщане на информация относно  залата}}
+\DoxyCodeLine{42     \textcolor{keywordtype}{unsigned} getHallNumber()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} hallNumber; \}}
+\DoxyCodeLine{43     \textcolor{keywordtype}{unsigned} getRows()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} rows; \}}
+\DoxyCodeLine{44     \textcolor{keywordtype}{unsigned} getSeatsOnRows()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} seatsOnRow; \}}
+\DoxyCodeLine{45     \mbox{\hyperlink{class_my_vector}{MyVector<Show>}} getShows()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} shows; \}}
+\DoxyCodeLine{46     \textcolor{comment}{//проверка дали залата е резервирана на дадена дата}}
+\DoxyCodeLine{47     \textcolor{keywordtype}{bool} isReserved(\mbox{\hyperlink{class_date}{Date}} \_date);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     \textcolor{comment}{//добавяне на ново представление}}
+\DoxyCodeLine{50     \textcolor{keywordtype}{bool} addNewShow(\mbox{\hyperlink{class_show}{Show}} \textcolor{keyword}{const}\& show);}
+\DoxyCodeLine{51     \textcolor{comment}{//купуване на места}}
+\DoxyCodeLine{52     \textcolor{keywordtype}{bool} buyTicket(\mbox{\hyperlink{class_show}{Show}} show,\textcolor{keywordtype}{unsigned} \_rowNumber,\textcolor{keywordtype}{unsigned} \_seat);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{comment}{//void sortShowsByDate();}}
+\DoxyCodeLine{55     \textcolor{comment}{//показва списък с местата в залата}}
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} showSeats(std::ostream\& out,\mbox{\hyperlink{class_show}{Show}} \textcolor{keyword}{const}\& show) \textcolor{keyword}{const};}
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} seatsReference(\mbox{\hyperlink{class_show}{Show}} \textcolor{keyword}{const}\& show, std::ostream\& out=std::cout) \textcolor{keyword}{const};}
+\DoxyCodeLine{58     \textcolor{comment}{//резервиране на билети}}
+\DoxyCodeLine{59     \textcolor{keywordtype}{bool} reserveTicket(\mbox{\hyperlink{class_show}{Show}} show);}
+\DoxyCodeLine{60     \textcolor{comment}{//извеждане на информация за залата}}
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} printBoughtSeats(std::ofstream\& out,\mbox{\hyperlink{class_date}{Date}} beginingDate, \mbox{\hyperlink{class_date}{Date}} endingDate) \textcolor{keyword}{const};}
+\DoxyCodeLine{62     \textcolor{keywordtype}{void} printReservedSeats(std::ofstream\& out,\mbox{\hyperlink{class_date}{Date}} date,\mbox{\hyperlink{class_my_str}{MyStr}} name)\textcolor{keyword}{const};}
+\DoxyCodeLine{63     \textcolor{keywordtype}{void} printEmptySeats(std::ostream\& out, \mbox{\hyperlink{class_show}{Show}} show)\textcolor{keyword}{const};}
+\DoxyCodeLine{64     \textcolor{keywordtype}{void} print(std::ostream\& out)\textcolor{keyword}{const};}
+\DoxyCodeLine{65     \textcolor{keywordtype}{bool} cancelShowReservation(std::istream\& in,\mbox{\hyperlink{class_show}{Show}} \textcolor{keyword}{const}\& show);}
+\DoxyCodeLine{66     \textcolor{keywordtype}{bool} operator==(\mbox{\hyperlink{class_hall}{Hall}} \textcolor{keyword}{const}\& other)\textcolor{keyword}{const};}
+\DoxyCodeLine{67     \textcolor{comment}{//проверка дали има резервирани дати}}
+\DoxyCodeLine{68     \textcolor{keywordtype}{bool} isEmpty();}
+\DoxyCodeLine{69     \textcolor{keyword}{friend} std::istream\& operator>>(std::istream\& in, \mbox{\hyperlink{class_hall}{Hall}}\& hall);}
+\DoxyCodeLine{70 \};}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 std::ostream\& operator<<(std::ostream\& out, \mbox{\hyperlink{class_hall}{Hall}} \textcolor{keyword}{const}\& hall);}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

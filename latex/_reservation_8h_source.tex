@@ -1,0 +1,41 @@
+\hypertarget{_reservation_8h_source}{}\doxysection{Reservation.\+h}
+\label{_reservation_8h_source}\index{UniversityProject/Reservation.h@{UniversityProject/Reservation.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_RESERVATION\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_RESERVATION\_HPP}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <cstring>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}MyStr.h"{}}}
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{class_reservation}{Reservation}}}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9 \textcolor{keyword}{private}:}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     \mbox{\hyperlink{class_my_str}{MyStr}} password;}
+\DoxyCodeLine{12     \mbox{\hyperlink{class_my_str}{MyStr}} note;}
+\DoxyCodeLine{13     \textcolor{keywordtype}{unsigned} rowNumber;}
+\DoxyCodeLine{14     \textcolor{keywordtype}{unsigned} seat;}
+\DoxyCodeLine{15     \textcolor{keywordtype}{void} copy(\mbox{\hyperlink{class_reservation}{Reservation}} \textcolor{keyword}{const}\& other);}
+\DoxyCodeLine{16     \textcolor{comment}{//void resize(unsigned newCap);}}
+\DoxyCodeLine{17 \textcolor{keyword}{public}:}
+\DoxyCodeLine{18     \mbox{\hyperlink{class_reservation}{Reservation}}()=\textcolor{keywordflow}{default};}
+\DoxyCodeLine{19     \mbox{\hyperlink{class_reservation}{Reservation}}(\textcolor{keywordtype}{unsigned} rowNumber,\textcolor{keywordtype}{unsigned} seat, \mbox{\hyperlink{class_my_str}{MyStr}} \_password , \mbox{\hyperlink{class_my_str}{MyStr}} \_note);}
+\DoxyCodeLine{20     \mbox{\hyperlink{class_reservation}{Reservation}}(\mbox{\hyperlink{class_reservation}{Reservation}} \textcolor{keyword}{const}\& other);}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_reservation}{Reservation}}\& operator=(\mbox{\hyperlink{class_reservation}{Reservation}} \textcolor{keyword}{const}\& other);}
+\DoxyCodeLine{22     \mbox{\hyperlink{class_my_str}{MyStr}} getPassword()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} password; \}}
+\DoxyCodeLine{23     \mbox{\hyperlink{class_my_str}{MyStr}} getNote()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} note; \}}
+\DoxyCodeLine{24     \textcolor{keywordtype}{unsigned} getRowNumber()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} rowNumber; \}}
+\DoxyCodeLine{25     \textcolor{keywordtype}{unsigned} getSeat()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} seat; \}}
+\DoxyCodeLine{26     \textcolor{keywordtype}{void} addToNote(\mbox{\hyperlink{class_my_str}{MyStr}} text);}
+\DoxyCodeLine{27     \textcolor{keywordtype}{void} replaceNote(\mbox{\hyperlink{class_my_str}{MyStr}} newNote);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{keywordtype}{bool} operator==(\mbox{\hyperlink{class_reservation}{Reservation}} \textcolor{keyword}{const}\& other) \textcolor{keyword}{const};}
+\DoxyCodeLine{30     \textcolor{keyword}{friend} std::istream\& operator>>(std::istream\& in, \mbox{\hyperlink{class_reservation}{Reservation}}\& reservation);}
+\DoxyCodeLine{31 \};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 std::ostream\& operator<<(std::ostream\& out, \mbox{\hyperlink{class_reservation}{Reservation}} \textcolor{keyword}{const}\& reservation);}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !\_RESERVATION\_\_HPP}}
+\DoxyCodeLine{35 }
+
+\end{DoxyCode}
