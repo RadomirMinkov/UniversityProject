@@ -59,27 +59,27 @@ int main()
 	Hall hall(1, 5, 6);
 	Show show("Lord of the Rings", date, 2, &hall);
 	Show show1("Doctor Strange", date2, 2, &hall);
-	/*show.addReservation(reservation);
-	show.addReservation(reser);*/
 	hall.addNewShow(show);
 	hall.addNewShow(show1);
-	/*show.buyTicket(2, 3);
-	std::cout << show << '\n';
-	Reservation res = show.getReservation(3, 4);
-	show.printSeats(std::cout, 5, 6);
 	hall.buyTicket(show, 2, 3);
 	hall.buyTicket(show1, 1, 1);
 	hall.buyTicket(show, 2, 3);
 	hall.buyTicket(show, 3, 4);
 	std::cout << "------------------------------------------\n";
-	show.printSeats(std::cout, 5, 6);
 	std::cout << '\n' << '\n';
 	hall.showSeats(std::cout, show);
-	std::cout << show << '\n';// << show1;*/
+	std::cout << "------------------------------------------\n";
+	std::cout << '\n' << '\n';
 	std::cout<<hall.reserveTicket(show)<<'\n';
 	std::cout<<hall.reserveTicket(show)<<'\n';
 	std::cout<<hall.reserveTicket(show)<<'\n';
 	hall.showSeats(std::cout, show);
+	hall.buyTicket(show1, 2, 2);
+	hall.buyTicket(show1, 1, 3);
+	hall.buyTicket(show1, 2, 4);
+	hall.buyTicket(show1, 1, 5);
+	hall.printBoughtTickets(std::cout, date2, date4);
+	//hall.showSeats(std::cout, show1);
 	return 0;
 }
 

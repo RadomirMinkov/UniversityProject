@@ -111,6 +111,21 @@ void Show::buyTicket(unsigned rowNumber, unsigned seat)
 {
 	updateSeats(rowNumber, seat, bought);
 }
+
+void Show::printBoughtTickets(std::ostream& out)const
+{
+	out << "Show: " << name << '\n';
+	for (unsigned i = 0; i < hall->getRows(); i++)
+	{
+		for (unsigned j = 0; j < hall->getSeatsOnRows(); j++)
+		{
+			if (seats[i][j]==bought)
+			{
+				out << "Place: (" << i +1<< ',' << j+1 << ") is bought!\n";
+			}
+		}
+	}
+}
 void Show::createSeats(unsigned rows, unsigned seatsOnRow)
 {
 	seats = new Seats*[rows];

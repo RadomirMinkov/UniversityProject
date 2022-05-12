@@ -52,6 +52,7 @@ public:
 	bool cancelReservation(Reservation reservation);
 	void buyTicket(unsigned rowNumber, unsigned seat);
 	void printReservations(std::ostream& out) const ;
+	void printBoughtTickets(std::ostream& out)const;
 	Reservation getReservation(unsigned row, unsigned seat)const;
 	bool operator==(Show const& other) const;
 	//дава информация за мястото

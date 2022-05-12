@@ -178,7 +178,19 @@ bool Date::operator>(Date const& other) const
 }
 bool Date::operator>=(Date const& other) const
 {
-	return !(*this > other);
+	if (year < other.year)
+	{
+		return false;
+	}
+	else if (month < other.month)
+	{
+		return false;
+	}
+	else if (day < other.day)
+	{
+		return false;
+	}
+	return true;
 }
 bool Date::operator<(Date const& other) const
 {

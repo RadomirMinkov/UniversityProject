@@ -58,10 +58,19 @@ bool Hall::addNewShow(Show const& show)
 	shows.addElement(show);
 	return true;
 }
-
 void Hall::print(std::ostream& out)const
 {
 	out << *this;
+}
+void Hall::printBoughtTickets(std::ostream& out,Date beginingDate,Date endingDate)const
+{
+	for (unsigned i = 0; i < shows.getSize(); i++)
+	{
+		if (shows[i].getDate()>=beginingDate && shows[i].getDate()<=endingDate)
+		{
+			shows[i].printBoughtTickets(out);
+		}
+	}
 }
 int Hall::getNumberOfSeats() const
 {

@@ -2,8 +2,9 @@
 #define _HALL_HPP
 #include <iostream>
 #include <cassert>
+#include <fstream>
 
-//#include "Types.h"
+#include "Types.h"
 #include "MyVector.h"
 #include "Show.h"
 #include "Reservation.h"
@@ -58,7 +59,8 @@ public:
 	//резервиране на билети
 	bool reserveTicket(Show show);
 	//извеждане на информация за залата
-	void print(std::ostream& out=std::cout) const;
+	void printBoughtTickets(std::ostream& out,Date beginingDate, Date endingDate) const;
+	void print(std::ostream& out)const;
 	//проверка дали има резервирани дати
 	bool isEmpty();
 	friend std::istream& operator>>(std::istream& in, Hall& hall);
