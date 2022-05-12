@@ -4,6 +4,8 @@
 #include <iostream>
 #include <cstring>
 
+#include "Types.h"
+#include "Date.h"
 class MyStr
 {
 private:
@@ -11,6 +13,7 @@ private:
 	size_t size;
 
 	void clear();
+	unsigned charachterToDigit(char charachter) const;
 public:
 	MyStr(const char* str="unknown");
 	MyStr(MyStr const& other);
@@ -22,6 +25,7 @@ public:
 
 	void copy(MyStr const& other);
 	void toLower();
+	Date& toDate() ;
 	//bool cmp(MyStr const& other) const;
 	bool operator==(MyStr const& other)const;
 	bool operator!=(MyStr const& other) const;

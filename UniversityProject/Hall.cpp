@@ -7,25 +7,6 @@ void Hall::copy(Hall const& other)
 	hallNumber = other.hallNumber;
 	shows = other.shows;
 }
-/*char Hall::place(Seats seat) const
-{
-	char c{};
-	switch (seat)
-	{
-	case empty:
-		c = 'E';
-		break;
-	case reserved:
-		c = 'R';
-		break;
-	case bought:
-		c = 'B';
-		break;
-	default:
-		break;
-	}
-	return c;
-}*/
 void Hall::showSeats(std::ostream& out, Show const& show) const
 {
 	unsigned i{ 0 };
@@ -116,7 +97,7 @@ void Hall::seatsReference(Show const& show, std::ostream& out) const
 		<< bought << " купени места ";
 }
 //реализация на функция за закупуване на билети
-void Hall::buyTicket(Show show, unsigned _rowNumber, unsigned _seat)
+bool Hall::buyTicket(Show show, unsigned _rowNumber, unsigned _seat)
 {
 	Seats place;
 	MyStr password;
@@ -130,42 +111,47 @@ void Hall::buyTicket(Show show, unsigned _rowNumber, unsigned _seat)
 			{
 			case empty:
 				shows[i].buyTicket(_rowNumber, _seat);
-				//std::cout<<shows[i].getSeat(_rowNumber, _seat);
+				return true;
 				break;
 			case reserved:
 				password = shows[i].getReservation(_rowNumber, _seat).getPassword();
-				std::cout << "The place is reserved. Enter password.";
+				std::cout << "The place is reserved. Enter password.\n";
 				std::cin >> userPassword;
 				if (password == userPassword)
 				{
 					shows[i].buyTicket(_rowNumber, _seat);
 					shows[i].cancelReservation(shows[i].getReservation(_rowNumber, _seat));
-					//shows[i].cancelReservation(Reservation(2, 3, "rado", "penka"));
+					return true;
 				}
+				return false;
 				break;
 			case bought:
 				std::cout << "The seat is already bought!";
+				return true;
 				break;
 			default:
 				break;
 			}
 		}
 	}
+	return false;
 }
 
-void Hall::reserveTicket(Show show, unsigned _rowNumber, unsigned _seat)
+bool Hall::reserveTicket(Show show)
 {
 	for (unsigned i = 0; i < shows.getSize(); i++)
 	{
 		if (show == shows[i])
 		{
+			shows[i].printSeats(std::cout, rows, seatsOnRow);
 			Reservation reservation;
 			std::cin >> reservation;
 			MyStr answer;// MyStr();
 			do
 			{
-				std::cout << "Do you want to add note to the reservation?\nAnswer yes or no";
+				std::cout << "Do you want to add note to the reservation?\nAnswer yes or no\n";
 				std::cin >> answer;
+				//std::cin.ignore();
 				answer.toLower();
 			} while (answer != "yes" && answer != "no");
 			if (answer == "yes") {
@@ -173,10 +159,29 @@ void Hall::reserveTicket(Show show, unsigned _rowNumber, unsigned _seat)
 				std::cin >> answer;
 				reservation.replaceNote(answer);
 			}
-			shows[i].addReservation(reservation);
+			Seats seat{};
+			seat=shows[i].getSeat(reservation.getRowNumber(), reservation.getSeat());
+			switch (seat)
+			{
+			case empty:
+				shows[i].updateSeats(reservation.getRowNumber(), reservation.getSeat(),reserved);
+				shows[i].addReservation(reservation);
+				return true;
+				break;
+			case reserved:
+				"The place is already reserved!!!";
+				return false;
+				break;
+			case bought:
+				"The place is already bought!!!";
+				return false;
+				break;
+			default:
+				break;
+			}
 		}
 	}
-
+	return false;
 }
 bool Hall::isEmpty()
 {

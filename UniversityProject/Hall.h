@@ -49,14 +49,14 @@ public:
 	//добавяне на ново представление
 	bool addNewShow(Show const& show);
 	//купуване на места
-	void buyTicket(Show show,unsigned _rowNumber,unsigned _seat);
+	bool buyTicket(Show show,unsigned _rowNumber,unsigned _seat);
 
 	//void sortShowsByDate();
 	//показва списък с местата в залата
 	void showSeats(std::ostream& out,Show const& show) const;
 	void seatsReference(Show const& show, std::ostream& out=std::cout) const;
 	//резервиране на билети
-	void reserveTicket(Show show, unsigned _rowNumber, unsigned _seat);
+	bool reserveTicket(Show show);
 	//извеждане на информация за залата
 	void print(std::ostream& out=std::cout) const;
 	//проверка дали има резервирани дати
