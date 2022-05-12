@@ -30,6 +30,9 @@ private:
 	  MyVector<Reservation> reservations;
 	  //масив за местата за дадено шоу
 	  Seats** seats;
+
+	  unsigned soldTickets{ 0 };
+	  unsigned reservedTickets{ 0 };
 	void copy(Show const& other);
 	void clear();
 public:
@@ -41,8 +44,10 @@ public:
 
 	MyStr getName() const { return name; }
 	Date getDate() const { return  date; }
-	const Hall* getHall() const { return hall; }
+	 Hall* getHall() const { return hall; }
 	Seats getSeat(unsigned rowNumber, unsigned seat) const;
+	unsigned getSoldTickets() const { return soldTickets; }
+	unsigned getReservedTickets() const { return reservedTickets; }
 	void setName(MyStr _name);
 	void setDate(Date newDate);
 	void printSeats(std::ostream& out,unsigned rows,unsigned seatsOnRow)const;
@@ -52,7 +57,8 @@ public:
 	bool cancelReservation(Reservation reservation);
 	void buyTicket(unsigned rowNumber, unsigned seat);
 	void printReservations(std::ostream& out) const ;
-	void printBoughtTickets(std::ostream& out)const;
+	void printSeatsType(std::ostream& out,Seats seat)const;
+	//void printReservedSeats(std::ofstream& out)const;
 	Reservation getReservation(unsigned row, unsigned seat)const;
 	bool operator==(Show const& other) const;
 	//дава информация за мястото

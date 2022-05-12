@@ -1,0 +1,45 @@
+\hypertarget{_my_str_8h_source}{}\doxysection{My\+Str.\+h}
+\label{_my_str_8h_source}\index{UniversityProject/MyStr.h@{UniversityProject/MyStr.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_MYSTR\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_MYSTR\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <cstring>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}Types.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}Date.h"{}}}
+\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{class_my_str}{MyStr}}}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11 \textcolor{keyword}{private}:}
+\DoxyCodeLine{12     \textcolor{keywordtype}{char}* arr;}
+\DoxyCodeLine{13     \textcolor{keywordtype}{size\_t} size;}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     \textcolor{keywordtype}{void} clear();}
+\DoxyCodeLine{16     \textcolor{keywordtype}{unsigned} charachterToDigit(\textcolor{keywordtype}{char} charachter) \textcolor{keyword}{const};}
+\DoxyCodeLine{17 \textcolor{keyword}{public}:}
+\DoxyCodeLine{18     \mbox{\hyperlink{class_my_str}{MyStr}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* str=\textcolor{stringliteral}{"{}unknown"{}});}
+\DoxyCodeLine{19     \mbox{\hyperlink{class_my_str}{MyStr}}(\mbox{\hyperlink{class_my_str}{MyStr}} \textcolor{keyword}{const}\& other);}
+\DoxyCodeLine{20     \mbox{\hyperlink{class_my_str}{\string~MyStr}}();}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_my_str}{MyStr}}\& operator=(\mbox{\hyperlink{class_my_str}{MyStr}} \textcolor{keyword}{const}\& other);}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* getString()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} arr; \}}
+\DoxyCodeLine{24     \textcolor{keywordtype}{size\_t}  getSize()\textcolor{keyword}{const }\{ \textcolor{keywordflow}{return} size; \}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{keywordtype}{void} copy(\mbox{\hyperlink{class_my_str}{MyStr}} \textcolor{keyword}{const}\& other);}
+\DoxyCodeLine{27     \textcolor{keywordtype}{void} toLower();}
+\DoxyCodeLine{28     \mbox{\hyperlink{class_date}{Date}}\& toDate() ;}
+\DoxyCodeLine{29     \textcolor{comment}{//bool cmp(MyStr const\& other) const;}}
+\DoxyCodeLine{30     \textcolor{keywordtype}{bool} operator==(\mbox{\hyperlink{class_my_str}{MyStr}} \textcolor{keyword}{const}\& other)\textcolor{keyword}{const};}
+\DoxyCodeLine{31     \textcolor{keywordtype}{bool} operator!=(\mbox{\hyperlink{class_my_str}{MyStr}} \textcolor{keyword}{const}\& other) \textcolor{keyword}{const};}
+\DoxyCodeLine{32      \textcolor{keyword}{friend} std::istream\& operator>>(std::istream\& in,\mbox{\hyperlink{class_my_str}{MyStr}}\& other);}
+\DoxyCodeLine{33      \mbox{\hyperlink{class_my_str}{MyStr}}\& operator+(\mbox{\hyperlink{class_my_str}{MyStr}} \textcolor{keyword}{const}\& other);}
+\DoxyCodeLine{34 \};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 std::ostream\& operator<<(std::ostream\& out, \mbox{\hyperlink{class_my_str}{MyStr}} \textcolor{keyword}{const}\& other);}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !\_MYSTR\_HPP}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+
+\end{DoxyCode}

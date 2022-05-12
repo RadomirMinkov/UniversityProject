@@ -62,13 +62,62 @@ void Hall::print(std::ostream& out)const
 {
 	out << *this;
 }
-void Hall::printBoughtTickets(std::ostream& out,Date beginingDate,Date endingDate)const
+void Hall::printEmptySeats(std::ostream& out,Show show) const
 {
+	for (unsigned i = 0; i < shows.getSize(); i++)
+	{
+		if (show==shows[i])
+		{
+			unsigned emptySeats = getNumberOfSeats() - shows[i].getReservedTickets() - shows[i].getSoldTickets();
+			out << "There are " << emptySeats << " seats for the show!";
+			shows[i].printSeats(out, rows, seatsOnRow);
+			shows[i].printSeatsType(out, empty);
+		}
+	}
+}
+
+void Hall::printReservedSeats(std::ofstream& out, Date date, MyStr name)const
+{
+	if (name=="all")
+	{
+		for (unsigned i = 0; i < shows.getSize(); i++)
+		{
+			if (date == shows[i].getDate())
+			{
+				out << shows[i];
+				out << "For this show " << shows[i].getReservedTickets() << " are reserved!\n";
+				shows[i].printSeatsType(out, reserved);
+				shows[i].printSeats(out, rows, seatsOnRow);
+			}
+		}
+	}
+	else
+	{
+		for (unsigned i = 0; i < shows.getSize(); i++)
+		{
+			if (date == shows[i].getDate() && name == shows[i].getName())
+			{
+				out << shows[i];
+				out << "For this show " << shows[i].getReservedTickets() << " are reserved!\n";
+				shows[i].printSeatsType(out, reserved);
+				shows[i].printSeats(out, rows, seatsOnRow);
+			}
+		}
+	}
+
+}
+
+void Hall::printBoughtSeats(std::ofstream& out,Date beginingDate,Date endingDate)const
+{
+
 	for (unsigned i = 0; i < shows.getSize(); i++)
 	{
 		if (shows[i].getDate()>=beginingDate && shows[i].getDate()<=endingDate)
 		{
-			shows[i].printBoughtTickets(out);
+			out << shows[i];
+			out << "For this show " << shows[i].getSoldTickets() << " are bought!\n";
+			shows[i].printSeatsType(out,bought);
+			shows[i].printSeats(out, rows, seatsOnRow);
 		}
 	}
 }
@@ -146,28 +195,32 @@ bool Hall::buyTicket(Show show, unsigned _rowNumber, unsigned _seat)
 	return false;
 }
 
+Reservation Hall::enterReservatoin()const
+{
+	Reservation reservation;
+	std::cin >> reservation;
+	MyStr answer;
+	do
+	{
+		std::cout << "Do you want to add note to the reservation?\nAnswer yes or no\n";
+		std::cin >> answer;
+		//std::cin.ignore();
+		answer.toLower();
+	} while (answer != "yes" && answer != "no");
+	if (answer == "yes") {
+		std::cout << "Enter the note: ";
+		std::cin >> answer;
+		reservation.replaceNote(answer);
+	}
+	return reservation;
+}
 bool Hall::reserveTicket(Show show)
 {
 	for (unsigned i = 0; i < shows.getSize(); i++)
 	{
 		if (show == shows[i])
 		{
-			shows[i].printSeats(std::cout, rows, seatsOnRow);
-			Reservation reservation;
-			std::cin >> reservation;
-			MyStr answer;// MyStr();
-			do
-			{
-				std::cout << "Do you want to add note to the reservation?\nAnswer yes or no\n";
-				std::cin >> answer;
-				//std::cin.ignore();
-				answer.toLower();
-			} while (answer != "yes" && answer != "no");
-			if (answer == "yes") {
-				std::cout << "Enter the note: ";
-				std::cin >> answer;
-				reservation.replaceNote(answer);
-			}
+			Reservation reservation = enterReservatoin();
 			Seats seat{};
 			seat=shows[i].getSeat(reservation.getRowNumber(), reservation.getSeat());
 			switch (seat)
@@ -196,12 +249,28 @@ bool Hall::isEmpty()
 {
 	return shows.getSize() == 0;
 }
+bool Hall::operator==(Hall const& other)const
+{
+	return (hallNumber == other.hallNumber) && (rows == other.rows) && (seatsOnRow == other.seatsOnRow) && (shows == other.shows);
+}
 
 std::istream& operator>>(std::istream& in, Hall& hall)
 {
 	return in >> hall.hallNumber >> hall.rows >> hall.seatsOnRow;
 }
 
+bool Hall::cancelShowReservation(std::istream& in,Show const& show)
+{
+	for (unsigned i = 0; i < shows.getSize(); i++)
+	{
+		if (show==shows[i])
+		{
+			Reservation reservation = enterReservatoin();
+			 return shows[i].cancelReservation(reservation);
+		}
+	}
+	return false;
+}
 std::ostream& operator<<(std::ostream& out, Hall const& hall)
 {
 	return out << "Hall: \n"

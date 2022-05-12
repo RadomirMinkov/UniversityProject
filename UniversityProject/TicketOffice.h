@@ -1,5 +1,7 @@
 #ifndef _TICKETOFFICE_HPP
 #define _TICKETOFFICE_HPP
+
+#include "TicketOffice.h"
 #include "Hall.h"
 #include "MyVector.h"
 class TicketOffice
@@ -11,14 +13,16 @@ public:
 
 	TicketOffice(unsigned _capacity = 2);
 	TicketOffice(TicketOffice const& other) = delete;
-	TicketOffice();
 	TicketOffice& operator=(TicketOffice const& other) = delete;
 
 
-	void createShow();
-	void buyTicket();
-	void reserveTicket();
-	void cancelReservation();
+	void addShow(Show const& show);
+	void freeSeats(Show const& show)const;
+	void reserveTicket(Show const& show);
+	void cancelReservation(Show const& show);
+	void buyTicket(Show const& show);
+	void reservationList()const;
+	void boughtTicketRefference()const;
 };
 #endif // !_TICKETOFFICE_HPP
 

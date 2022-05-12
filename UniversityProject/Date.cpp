@@ -145,7 +145,15 @@ std::istream& operator>>(std::istream& in, Date& date)
 	unsigned day;
 	unsigned month;
 	unsigned year;
-	in >> day >> month >> year;
+	if (&in == &std::cin)
+		std::cout << "Enter day: ";
+	in >> day;
+	if (&in == &std::cin)
+		std::cout << "Enter month with digits: ";
+	in >> month;
+	if (&in == &std::cin)
+		std::cout << "Enter year: ";
+	in >> year;;
 	date.setYear(year);
 	date.setMonth(month);
 	date.setDay(day);

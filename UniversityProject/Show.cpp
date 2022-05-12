@@ -25,13 +25,14 @@ bool Show::cancelReservation(Reservation reservation)
 				reservations[j] = reservations[j + 1];
 			}
 			reservations.setSize(reservations.getSize() - 1);
+			updateSeats(reservation.getRowNumber(), reservation.getSeat(),empty);
 			return true;
 		}
 	}
 	return false;
 }
 Show::Show( MyStr _name, Date _date, unsigned _capacity,Hall* _hall)
-	:  name(_name), seats(nullptr),hall(_hall)
+	:  name(_name), seats(nullptr),hall(_hall),soldTickets(0)
 {
 	reservations = MyVector<Reservation>(_capacity);
 	setDate(_date);
@@ -48,6 +49,7 @@ void Show::addReservation(Reservation const& reservation)
 {
 	reservations.addElement(reservation);
 	updateSeats(reservation.getRowNumber(), reservation.getSeat(),reserved);
+	reservedTickets++;
 }
 void Show::copy(Show const& other)
 {
@@ -110,22 +112,23 @@ Seats Show::getSeat(unsigned rowNumber, unsigned seat) const
 void Show::buyTicket(unsigned rowNumber, unsigned seat)
 {
 	updateSeats(rowNumber, seat, bought);
+	soldTickets++;
 }
 
-void Show::printBoughtTickets(std::ostream& out)const
+void Show::printSeatsType(std::ostream& out,Seats seat)const
 {
-	out << "Show: " << name << '\n';
 	for (unsigned i = 0; i < hall->getRows(); i++)
 	{
 		for (unsigned j = 0; j < hall->getSeatsOnRows(); j++)
 		{
-			if (seats[i][j]==bought)
+			if (seats[i][j]==seat)
 			{
-				out << "Place: (" << i +1<< ',' << j+1 << ") is bought!\n";
+				out << "Place: (" << i +1<< ',' << j+1 << ") is "<<seat<<"!\n";
 			}
 		}
 	}
 }
+
 void Show::createSeats(unsigned rows, unsigned seatsOnRow)
 {
 	seats = new Seats*[rows];

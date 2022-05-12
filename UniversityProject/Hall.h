@@ -27,8 +27,7 @@ private:
 
 	//функция за копиране на информацията от един клас в друг
 	void copy(Hall const& other);
-	
-	Show& getShow(Show const& show)const;
+	Reservation enterReservatoin() const;
 	//връща колко места има в залата
 	int  getNumberOfSeats() const;
 public:
@@ -59,8 +58,12 @@ public:
 	//резервиране на билети
 	bool reserveTicket(Show show);
 	//извеждане на информация за залата
-	void printBoughtTickets(std::ostream& out,Date beginingDate, Date endingDate) const;
+	void printBoughtSeats(std::ofstream& out,Date beginingDate, Date endingDate) const;
+	void printReservedSeats(std::ofstream& out,Date date,MyStr name)const;
+	void printEmptySeats(std::ostream& out, Show show)const;
 	void print(std::ostream& out)const;
+	bool cancelShowReservation(std::istream& in,Show const& show);
+	bool operator==(Hall const& other)const;
 	//проверка дали има резервирани дати
 	bool isEmpty();
 	friend std::istream& operator>>(std::istream& in, Hall& hall);

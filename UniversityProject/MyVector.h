@@ -28,6 +28,7 @@ public:
 	void addElement(T const& newEl);
 	bool removeElement(T element);
 
+	bool operator==(MyVector const& other)const;
 	T& operator[](int index) const;
 };
 
@@ -142,4 +143,9 @@ bool MyVector<T>::removeElement(T element)
 	return false;
 }
 
+template <typename T>
+bool MyVector<T>::operator==(MyVector<T> const& other)const
+{
+	return size == other.size && capacity == other.capacity && data == other.data;
+}
 #endif // !_MYVECTOR_HPP

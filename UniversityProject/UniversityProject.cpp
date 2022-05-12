@@ -78,7 +78,8 @@ int main()
 	hall.buyTicket(show1, 1, 3);
 	hall.buyTicket(show1, 2, 4);
 	hall.buyTicket(show1, 1, 5);
-	hall.printBoughtTickets(std::cout, date2, date4);
+	std::ofstream file("text.txt");
+	hall.printBoughtSeats(file, date2, date4);
 	//hall.showSeats(std::cout, show1);
 	return 0;
 }
