@@ -78,7 +78,7 @@ int main()
 	hall.printBoughtSeats(file, date2, date4);*/
 	//hall.showSeats(std::cout, show1);
 
-	TicketOffice office;
+	/*TicketOffice office;
 	Hall hall(1, 5, 6);
 	Date date(2, october, 2002);
 	office.addHall(hall);
@@ -92,9 +92,10 @@ int main()
 	office.reserveTicket(show);
 	office.reserveTicket(show);
 	office.reserveTicket(show);
-	office.reserveTicket(show);*/
+	office.reserveTicket(show);
 	//office.boughtTicketRefference();
-	office.reservationList();
+	office.reservationList();*/
+	TicketInterface::work();
 	return 0;
 }
 

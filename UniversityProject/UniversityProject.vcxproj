@@ -163,6 +163,7 @@
     <ClCompile Include="UniversityProject.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Constants.h" />
     <ClInclude Include="Date.h" />
     <ClInclude Include="Hall.h" />
     <ClInclude Include="MyStr.h" />
