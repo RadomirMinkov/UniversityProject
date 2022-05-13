@@ -53,7 +53,7 @@ std::ostream& operator<<(std::ostream& out, Reservation const& reservation)
 std::istream& operator>>(std::istream& in, Reservation& reservation)
 {
 	if (&in == &std::cin)
-		std::cout << "You are entering reservation:\n";
+	std::cout << "Creating a password!\n";
 	in >> reservation.password;
 	//	in.get();
 	if (&in == &std::cin)

@@ -1,0 +1,445 @@
+\hypertarget{class_hall}{}\doxysection{Hall Class Reference}
+\label{class_hall}\index{Hall@{Hall}}
+
+
+That is class \mbox{\hyperlink{class_hall}{Hall}} which has number, rows, seats on rows and list of shows, controling functions that modify the list and the shows that are in it.  
+
+
+
+
+{\ttfamily \#include $<$Hall.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hall_a5b2d4a8eaff047b8fab32f803e696286}{Hall}} (unsigned \+\_\+hall\+Number=0, unsigned \+\_\+rows=0, unsigned \+\_\+seats\+On\+Row=0)
+\begin{DoxyCompactList}\small\item\em Constructor with default parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_hall_aed8a14a5b16fbae9edf4203cab88d392}{Hall}} (\mbox{\hyperlink{class_hall}{Hall}} const \&other)
+\begin{DoxyCompactList}\small\item\em copy constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_hall}{Hall}} \& \mbox{\hyperlink{class_hall_a1caf2940825d6051074dcdf412b35901}{operator=}} (\mbox{\hyperlink{class_hall}{Hall}} const \&other)
+\begin{DoxyCompactList}\small\item\em operator = which provide us the posibility to appropriate one hall to other \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{class_hall_ab52e600db85db94dcb17bb1e45359d2a}{get\+Hall\+Number}} () const
+\begin{DoxyCompactList}\small\item\em returns the number of the hall \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{class_hall_a12b4971fdac4258d45d27602f442287f}{get\+Rows}} () const
+\begin{DoxyCompactList}\small\item\em returns the number of the rows \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{class_hall_a8c3da0fc6f7acd13214475aa01b9529c}{get\+Seats\+On\+Rows}} () const
+\begin{DoxyCompactList}\small\item\em returns the seats on each row \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ \mbox{\hyperlink{class_show}{Show}} $>$ \mbox{\hyperlink{class_hall_aefea782caed874426f21b035a240abc4}{get\+Shows}} () const
+\begin{DoxyCompactList}\small\item\em returns the list of shows \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_hall_ae745e028ce420f192219bac2096f3c59}{is\+Reserved}} (\mbox{\hyperlink{class_date}{Date}} \+\_\+date)
+\begin{DoxyCompactList}\small\item\em checks if there is show on this date \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_hall_a088b610529122ec43d1e4c5e425cfda3}{add\+New\+Show}} (\mbox{\hyperlink{class_show}{Show}} const \&show)
+\begin{DoxyCompactList}\small\item\em adds new show to the list \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_hall_a9b5baf698688ca68bf2cae89b51aec53}{buy\+Ticket}} (\mbox{\hyperlink{class_show}{Show}} show, unsigned \+\_\+row\+Number, unsigned \+\_\+seat)
+\begin{DoxyCompactList}\small\item\em buying ticket for show \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hall_a464c4cc7510b475420c47fdf00f84d3f}{show\+Seats}} (std\+::ostream \&out, \mbox{\hyperlink{class_show}{Show}} const \&show) const
+\begin{DoxyCompactList}\small\item\em function that prints seats \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hall_a66f56d181687d5b38b556223abbc935c}{seats\+Reference}} (\mbox{\hyperlink{class_show}{Show}} const \&show, std\+::ostream \&out=std\+::cout) const
+\begin{DoxyCompactList}\small\item\em shows how many empty,reserved and bought seats there are \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_hall_a5b42cc13ee75ef6ed75ed5f12d5336fe}{reserve\+Ticket}} (\mbox{\hyperlink{class_show}{Show}} show)
+\begin{DoxyCompactList}\small\item\em fucniton that reserves ticket \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hall_aa9194dcc778fdc5f24563b1e76ce4609}{print\+Bought\+Seats}} (std\+::ofstream \&out, \mbox{\hyperlink{class_date}{Date}} begining\+Date, \mbox{\hyperlink{class_date}{Date}} ending\+Date) const
+\begin{DoxyCompactList}\small\item\em prints the seats that are bought \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hall_a3b6e047c5a2389d57c9c56a5df1e7192}{print\+Reserved\+Seats}} (std\+::ofstream \&out, \mbox{\hyperlink{class_date}{Date}} date, \mbox{\hyperlink{class_my_str}{My\+Str}} name) const
+\begin{DoxyCompactList}\small\item\em prints the seats that are reserved \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hall_a390bd21f706775b870fe34d641ca863e}{print\+Empty\+Seats}} (std\+::ostream \&out, \mbox{\hyperlink{class_show}{Show}} show) const
+\begin{DoxyCompactList}\small\item\em prints the seats that are empty \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hall_acf726a69b887e2fcf85d05fdc0a86fec}{print}} (std\+::ostream \&out) const
+\begin{DoxyCompactList}\small\item\em prints the hall \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_hall_af836c53b22e4595302681829efc9f9f4}{cancel\+Show\+Reservation}} (std\+::istream \&in, \mbox{\hyperlink{class_show}{Show}} const \&show)
+\begin{DoxyCompactList}\small\item\em cancel the reservation in a show \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_hall_a1ce9f973ba2488d1e4223b597497e8b8}{operator==}} (\mbox{\hyperlink{class_hall}{Hall}} const \&other) const
+\begin{DoxyCompactList}\small\item\em operator that checks if two halls are equal \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_hall_afe3ea5902db53768a0553e4b53dc5535}{is\+Empty}} ()
+\begin{DoxyCompactList}\small\item\em checks if the list is empty \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hall_ad79802e408de67a34e3f2de3c9f5993c}{read\+From\+Text}} (std\+::ifstream \&in)
+\begin{DoxyCompactList}\small\item\em read information form text file \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::istream \& \mbox{\hyperlink{class_hall_ab4bd18766cb82d35486ba6766a73a246}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{class_hall}{Hall}} \&hall)
+\begin{DoxyCompactList}\small\item\em operator for input from stream \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+That is class \mbox{\hyperlink{class_hall}{Hall}} which has number, rows, seats on rows and list of shows, controling functions that modify the list and the shows that are in it. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hall_a5b2d4a8eaff047b8fab32f803e696286}\label{class_hall_a5b2d4a8eaff047b8fab32f803e696286}} 
+\index{Hall@{Hall}!Hall@{Hall}}
+\index{Hall@{Hall}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{Hall()}{Hall()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Hall\+::\+Hall (\begin{DoxyParamCaption}\item[{unsigned}]{\+\_\+hall\+Number = {\ttfamily 0},  }\item[{unsigned}]{\+\_\+rows = {\ttfamily 0},  }\item[{unsigned}]{\+\_\+seats\+On\+Row = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Constructor with default parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+hall\+Number} & number of the room \\
+\hline
+{\em \+\_\+rows} & rows in the room \\
+\hline
+{\em \+\_\+seats\+On\+Row} & seats on each row \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_hall_aed8a14a5b16fbae9edf4203cab88d392}\label{class_hall_aed8a14a5b16fbae9edf4203cab88d392}} 
+\index{Hall@{Hall}!Hall@{Hall}}
+\index{Hall@{Hall}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{Hall()}{Hall()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Hall\+::\+Hall (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hall}{Hall}} const \&}]{other }\end{DoxyParamCaption})}
+
+
+
+copy constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & this is the hall that we will create the object from \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hall_a088b610529122ec43d1e4c5e425cfda3}\label{class_hall_a088b610529122ec43d1e4c5e425cfda3}} 
+\index{Hall@{Hall}!addNewShow@{addNewShow}}
+\index{addNewShow@{addNewShow}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{addNewShow()}{addNewShow()}}
+{\footnotesize\ttfamily bool Hall\+::add\+New\+Show (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_show}{Show}} const \&}]{show }\end{DoxyParamCaption})}
+
+
+
+adds new show to the list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em show} & the show that we add \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true we added show succesful 
+
+false we couldn\textquotesingle{}t add this show 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hall_a9b5baf698688ca68bf2cae89b51aec53}\label{class_hall_a9b5baf698688ca68bf2cae89b51aec53}} 
+\index{Hall@{Hall}!buyTicket@{buyTicket}}
+\index{buyTicket@{buyTicket}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{buyTicket()}{buyTicket()}}
+{\footnotesize\ttfamily bool Hall\+::buy\+Ticket (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_show}{Show}}}]{show,  }\item[{unsigned}]{\+\_\+row\+Number,  }\item[{unsigned}]{\+\_\+seat }\end{DoxyParamCaption})}
+
+
+
+buying ticket for show 
+
+
+\begin{DoxyParams}{Parameters}
+{\em show} & the show the ticket is bought \\
+\hline
+{\em \+\_\+row\+Number} & the row of the ticket \\
+\hline
+{\em \+\_\+seat} & the seat of the ticket \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true bought seat succesfully 
+
+false couldn\textquotesingle{}t buy seat 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hall_af836c53b22e4595302681829efc9f9f4}\label{class_hall_af836c53b22e4595302681829efc9f9f4}} 
+\index{Hall@{Hall}!cancelShowReservation@{cancelShowReservation}}
+\index{cancelShowReservation@{cancelShowReservation}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{cancelShowReservation()}{cancelShowReservation()}}
+{\footnotesize\ttfamily bool Hall\+::cancel\+Show\+Reservation (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{class_show}{Show}} const \&}]{show }\end{DoxyParamCaption})}
+
+
+
+cancel the reservation in a show 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & the stream that provides the information \\
+\hline
+{\em show} & the shows in which the operation will be made \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true the reservation was canceled 
+
+false couldn\textquotesingle{}t cancel the reservation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hall_ab52e600db85db94dcb17bb1e45359d2a}\label{class_hall_ab52e600db85db94dcb17bb1e45359d2a}} 
+\index{Hall@{Hall}!getHallNumber@{getHallNumber}}
+\index{getHallNumber@{getHallNumber}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{getHallNumber()}{getHallNumber()}}
+{\footnotesize\ttfamily unsigned Hall\+::get\+Hall\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+returns the number of the hall 
+
+\mbox{\Hypertarget{class_hall_a12b4971fdac4258d45d27602f442287f}\label{class_hall_a12b4971fdac4258d45d27602f442287f}} 
+\index{Hall@{Hall}!getRows@{getRows}}
+\index{getRows@{getRows}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{getRows()}{getRows()}}
+{\footnotesize\ttfamily unsigned Hall\+::get\+Rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+returns the number of the rows 
+
+\mbox{\Hypertarget{class_hall_a8c3da0fc6f7acd13214475aa01b9529c}\label{class_hall_a8c3da0fc6f7acd13214475aa01b9529c}} 
+\index{Hall@{Hall}!getSeatsOnRows@{getSeatsOnRows}}
+\index{getSeatsOnRows@{getSeatsOnRows}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{getSeatsOnRows()}{getSeatsOnRows()}}
+{\footnotesize\ttfamily unsigned Hall\+::get\+Seats\+On\+Rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+returns the seats on each row 
+
+\mbox{\Hypertarget{class_hall_aefea782caed874426f21b035a240abc4}\label{class_hall_aefea782caed874426f21b035a240abc4}} 
+\index{Hall@{Hall}!getShows@{getShows}}
+\index{getShows@{getShows}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{getShows()}{getShows()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ \mbox{\hyperlink{class_show}{Show}} $>$ Hall\+::get\+Shows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+returns the list of shows 
+
+\mbox{\Hypertarget{class_hall_afe3ea5902db53768a0553e4b53dc5535}\label{class_hall_afe3ea5902db53768a0553e4b53dc5535}} 
+\index{Hall@{Hall}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily bool Hall\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+checks if the list is empty 
+
+\begin{DoxyReturn}{Returns}
+true it is empty 
+
+false it is not empty 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hall_ae745e028ce420f192219bac2096f3c59}\label{class_hall_ae745e028ce420f192219bac2096f3c59}} 
+\index{Hall@{Hall}!isReserved@{isReserved}}
+\index{isReserved@{isReserved}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{isReserved()}{isReserved()}}
+{\footnotesize\ttfamily bool Hall\+::is\+Reserved (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_date}{Date}}}]{\+\_\+date }\end{DoxyParamCaption})}
+
+
+
+checks if there is show on this date 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+date} & the date we search for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true there is show on this date 
+
+false there isn\textquotesingle{}t show on this date 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hall_a1caf2940825d6051074dcdf412b35901}\label{class_hall_a1caf2940825d6051074dcdf412b35901}} 
+\index{Hall@{Hall}!operator=@{operator=}}
+\index{operator=@{operator=}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hall}{Hall}} \& Hall\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hall}{Hall}} const \&}]{other }\end{DoxyParamCaption})}
+
+
+
+operator = which provide us the posibility to appropriate one hall to other 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & this is the hall that we will appropriate from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_hall}{Hall}}\& return refference to the object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hall_a1ce9f973ba2488d1e4223b597497e8b8}\label{class_hall_a1ce9f973ba2488d1e4223b597497e8b8}} 
+\index{Hall@{Hall}!operator==@{operator==}}
+\index{operator==@{operator==}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Hall\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hall}{Hall}} const \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+operator that checks if two halls are equal 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the second hall \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true they are equal 
+
+false they are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hall_acf726a69b887e2fcf85d05fdc0a86fec}\label{class_hall_acf726a69b887e2fcf85d05fdc0a86fec}} 
+\index{Hall@{Hall}!print@{print}}
+\index{print@{print}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Hall\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption}) const}
+
+
+
+prints the hall 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & the stream where the result will be printed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_hall_aa9194dcc778fdc5f24563b1e76ce4609}\label{class_hall_aa9194dcc778fdc5f24563b1e76ce4609}} 
+\index{Hall@{Hall}!printBoughtSeats@{printBoughtSeats}}
+\index{printBoughtSeats@{printBoughtSeats}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{printBoughtSeats()}{printBoughtSeats()}}
+{\footnotesize\ttfamily void Hall\+::print\+Bought\+Seats (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{out,  }\item[{\mbox{\hyperlink{class_date}{Date}}}]{begining\+Date,  }\item[{\mbox{\hyperlink{class_date}{Date}}}]{ending\+Date }\end{DoxyParamCaption}) const}
+
+
+
+prints the seats that are bought 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & the stream where the result will be printed \\
+\hline
+{\em begining\+Date} & the date from which the refference is made \\
+\hline
+{\em ending\+Date} & the date to which the refference is made \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_hall_a390bd21f706775b870fe34d641ca863e}\label{class_hall_a390bd21f706775b870fe34d641ca863e}} 
+\index{Hall@{Hall}!printEmptySeats@{printEmptySeats}}
+\index{printEmptySeats@{printEmptySeats}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{printEmptySeats()}{printEmptySeats()}}
+{\footnotesize\ttfamily void Hall\+::print\+Empty\+Seats (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\mbox{\hyperlink{class_show}{Show}}}]{show }\end{DoxyParamCaption}) const}
+
+
+
+prints the seats that are empty 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & the stream where the result will be printed \\
+\hline
+{\em show} & the show which seats are printed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_hall_a3b6e047c5a2389d57c9c56a5df1e7192}\label{class_hall_a3b6e047c5a2389d57c9c56a5df1e7192}} 
+\index{Hall@{Hall}!printReservedSeats@{printReservedSeats}}
+\index{printReservedSeats@{printReservedSeats}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{printReservedSeats()}{printReservedSeats()}}
+{\footnotesize\ttfamily void Hall\+::print\+Reserved\+Seats (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{out,  }\item[{\mbox{\hyperlink{class_date}{Date}}}]{date,  }\item[{\mbox{\hyperlink{class_my_str}{My\+Str}}}]{name }\end{DoxyParamCaption}) const}
+
+
+
+prints the seats that are reserved 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & the stream where the result will be printed \\
+\hline
+{\em date} & the date which shows which shows we should print \\
+\hline
+{\em name} & the name of the shows that should be printed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_hall_ad79802e408de67a34e3f2de3c9f5993c}\label{class_hall_ad79802e408de67a34e3f2de3c9f5993c}} 
+\index{Hall@{Hall}!readFromText@{readFromText}}
+\index{readFromText@{readFromText}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{readFromText()}{readFromText()}}
+{\footnotesize\ttfamily void Hall\+::read\+From\+Text (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{in }\end{DoxyParamCaption})}
+
+
+
+read information form text file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & the stream that provides information \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_hall_a5b42cc13ee75ef6ed75ed5f12d5336fe}\label{class_hall_a5b42cc13ee75ef6ed75ed5f12d5336fe}} 
+\index{Hall@{Hall}!reserveTicket@{reserveTicket}}
+\index{reserveTicket@{reserveTicket}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{reserveTicket()}{reserveTicket()}}
+{\footnotesize\ttfamily bool Hall\+::reserve\+Ticket (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_show}{Show}}}]{show }\end{DoxyParamCaption})}
+
+
+
+fucniton that reserves ticket 
+
+
+\begin{DoxyParams}{Parameters}
+{\em show} & the show the ticket will be reserved from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true succesfull reservation 
+
+false unsuccessful reservation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hall_a66f56d181687d5b38b556223abbc935c}\label{class_hall_a66f56d181687d5b38b556223abbc935c}} 
+\index{Hall@{Hall}!seatsReference@{seatsReference}}
+\index{seatsReference@{seatsReference}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{seatsReference()}{seatsReference()}}
+{\footnotesize\ttfamily void Hall\+::seats\+Reference (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_show}{Show}} const \&}]{show,  }\item[{std\+::ostream \&}]{out = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption}) const}
+
+
+
+shows how many empty,reserved and bought seats there are 
+
+
+\begin{DoxyParams}{Parameters}
+{\em show} & the show the refference is made for \\
+\hline
+{\em out} & the stream where the result will be printed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_hall_a464c4cc7510b475420c47fdf00f84d3f}\label{class_hall_a464c4cc7510b475420c47fdf00f84d3f}} 
+\index{Hall@{Hall}!showSeats@{showSeats}}
+\index{showSeats@{showSeats}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{showSeats()}{showSeats()}}
+{\footnotesize\ttfamily void Hall\+::show\+Seats (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\mbox{\hyperlink{class_show}{Show}} const \&}]{show }\end{DoxyParamCaption}) const}
+
+
+
+function that prints seats 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & the stream where the result will be printed \\
+\hline
+{\em show} & the show which seats are printed \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_hall_ab4bd18766cb82d35486ba6766a73a246}\label{class_hall_ab4bd18766cb82d35486ba6766a73a246}} 
+\index{Hall@{Hall}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{class_hall}{Hall}} \&}]{hall }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+operator for input from stream 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & stream that provide the information \\
+\hline
+{\em hall} & the hall in which the information will be stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::istream\& refference to the stream 
+\end{DoxyReturn}

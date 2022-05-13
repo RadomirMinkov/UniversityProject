@@ -1,0 +1,14 @@
+Show:
+Name: Naruto
+Date: 2/10/2002
+
+Reservation: 
+RowNumber: 2
+Seat: 2
+Note: unknownFor this show 0 are reserved!
+Place: (2,2) is reserved!
+B E E E E E 
+E R E E E E 
+E E E B E E 
+E E E E E E 
+E E E E E E 

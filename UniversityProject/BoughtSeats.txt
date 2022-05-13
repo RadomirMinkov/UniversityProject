@@ -1,0 +1,24 @@
+Show:
+Name: Naruto
+Date: 2/10/2002
+
+Reservation: 
+RowNumber: 3
+Seat: 2
+Note: unknownReservation: 
+RowNumber: 4
+Seat: 2
+Note: unknownReservation: 
+RowNumber: 1
+Seat: 5
+Note: unknownReservation: 
+RowNumber: 5
+Seat: 4
+Note: unknownFor this show 2 are bought!
+Place: (3,4) is bought!
+Place: (5,1) is bought!
+E E E E R E 
+E E E E E E 
+E R E B E E 
+E R E E E E 
+B E E R E E 

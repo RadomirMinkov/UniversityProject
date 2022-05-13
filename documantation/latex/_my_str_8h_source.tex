@@ -1,0 +1,40 @@
+\hypertarget{_my_str_8h_source}{}\doxysection{My\+Str.\+h}
+\mbox{\hyperlink{_my_str_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_MYSTR\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_MYSTR\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <cstring>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_types_8h}{Types.h}}"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_date_8h}{Date.h}}"{}}}
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{class_my_str}{MyStr}}}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{16 \textcolor{keyword}{private}:}
+\DoxyCodeLine{18     \textcolor{keywordtype}{char}* arr;}
+\DoxyCodeLine{20     \textcolor{keywordtype}{size\_t} size;}
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} clear();}
+\DoxyCodeLine{29     \textcolor{keywordtype}{unsigned} charachterToDigit(\textcolor{keywordtype}{char} charachter) \textcolor{keyword}{const};}
+\DoxyCodeLine{30 \textcolor{keyword}{public}:}
+\DoxyCodeLine{36     \mbox{\hyperlink{class_my_str_a78aa150c1465d53b6171ed31eedb5ffe}{MyStr}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* str=\textcolor{stringliteral}{"{}unknown"{}});}
+\DoxyCodeLine{42     \mbox{\hyperlink{class_my_str_a78aa150c1465d53b6171ed31eedb5ffe}{MyStr}}(\mbox{\hyperlink{class_my_str}{MyStr}} \textcolor{keyword}{const}\& other);}
+\DoxyCodeLine{47     \mbox{\hyperlink{class_my_str_ab2cd70c83abbba548e4d0908a090f1e7}{\string~MyStr}}();}
+\DoxyCodeLine{54     \mbox{\hyperlink{class_my_str}{MyStr}}\& \mbox{\hyperlink{class_my_str_aadb631b6e170ca91fb4fa6871fd65a33}{operator=}}(\mbox{\hyperlink{class_my_str}{MyStr}} \textcolor{keyword}{const}\& other);}
+\DoxyCodeLine{56     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{class_my_str_a9fe6fd79cda5f81238bc3d055bf428b5}{getString}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} arr; \}}
+\DoxyCodeLine{58     \textcolor{keywordtype}{size\_t}  \mbox{\hyperlink{class_my_str_a30eed10548a99f6816a76083b2376fe2}{getSize}}()\textcolor{keyword}{const }\{ \textcolor{keywordflow}{return} size; \}}
+\DoxyCodeLine{64     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_my_str_a32e21cc0069fe187782fafabf4773122}{copy}}(\mbox{\hyperlink{class_my_str}{MyStr}} \textcolor{keyword}{const}\& other);}
+\DoxyCodeLine{66     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_my_str_a9704297a010a12a08c869b3f4c9914e3}{toLower}}();}
+\DoxyCodeLine{72     \mbox{\hyperlink{class_date}{Date}} \mbox{\hyperlink{class_my_str_a4e09b5685309cf44c60e823b6eac8aa3}{toDate}}() ;}
+\DoxyCodeLine{73     \textcolor{comment}{//bool cmp(MyStr const\& other) const;}}
+\DoxyCodeLine{81 \textcolor{comment}{}    \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_my_str_a0bfb5b5d4e54b924b0abe0094c4f132d}{operator==}}(\mbox{\hyperlink{class_my_str}{MyStr}} \textcolor{keyword}{const}\& other)\textcolor{keyword}{const};}
+\DoxyCodeLine{89     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_my_str_ab37f4852bac619a79c53a7aaaee1d593}{operator!=}}(\mbox{\hyperlink{class_my_str}{MyStr}} \textcolor{keyword}{const}\& other) \textcolor{keyword}{const};}
+\DoxyCodeLine{97      \textcolor{keyword}{friend} std::istream\& \mbox{\hyperlink{class_my_str_adf9c0221cdd090bceb447108c9651bc6}{operator>>}}(std::istream\& in,\mbox{\hyperlink{class_my_str}{MyStr}}\& other);}
+\DoxyCodeLine{104      \mbox{\hyperlink{class_my_str}{MyStr}}\& \mbox{\hyperlink{class_my_str_a11f134a0a9d7d86e291a2d08cfabb7ba}{operator+}}(\mbox{\hyperlink{class_my_str}{MyStr}} \textcolor{keyword}{const}\& other);}
+\DoxyCodeLine{105 \};}
+\DoxyCodeLine{113 std::ostream\& \mbox{\hyperlink{_my_str_8h_ae7ec7fdb2a160cd38385594fb3633c0e}{operator<<}}(std::ostream\& out, \mbox{\hyperlink{class_my_str}{MyStr}} \textcolor{keyword}{const}\& other);}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !\_MYSTR\_HPP}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 }
+
+\end{DoxyCode}

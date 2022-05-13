@@ -3,32 +3,111 @@
 
 #include <iostream>
 #include <cassert>
+/**
+ * @brief template class for the vector which is list of data
+ * 
+ * @tparam T type of data
+ */
 template <typename T>
 class MyVector
 {
+	///private properties to the class
 private:
+///pointer to data of type T
 	T* data{ nullptr };
+	///the size of the data
 	size_t size{};
+	///capacity of the array
 	unsigned capacity{};
+	///function that delete memory
 	void clear();
+	/**
+	 * @brief function that resizes xthe array
+	 * 
+	 * @param newCap the new capacity
+	 */
 	void resize(unsigned newCap);
+	/**
+	 * @brief function that copies one object to other
+	 * 
+	 * @param other the object that will be copied
+	 */
 	void copy(MyVector const& other);
 public:
+/**
+ * @brief deffault constructor
+ * 
+ */
 	MyVector() = default;
+	/**
+	 * @brief Constructor with parameters
+	 * 
+	 * @param _capacity the capacity of the array
+	 */
 	MyVector(unsigned _capacity);
+	/**
+	 * @brief copy constructor
+	 * 
+	 * @param other the object that will be copied
+	 */
 	MyVector(MyVector const& other);
+	/**
+	 * @brief operator = tha provides the possibility to  appropriate one vector to other
+	 * 
+	 * @param other the object that will be copied
+	 * @return MyVector& refference to the this
+	 */
 	MyVector& operator=(MyVector const& other);
+	/**
+	 * @brief Destroy the vector
+	 * 
+	 */
 	~MyVector();
-
+	///get the size of the vector
 	size_t getSize() const { return size; }
+	///get the capacity of the vector
 	unsigned getCapacity() const { return capacity; }
 
+	/**
+	 * @brief changing the size
+	 * 
+	 * @param newSize the new size
+	 */
 	void setSize(size_t newSize);
+	/**
+	 * @brief printing the vector
+	 * 
+	 * @param out the stream that shows where information will be printed
+	 */
 	void print(std::ostream& out=std::cout) const;
+	/**
+	 * @brief function that adds new element to the vector
+	 * 
+	 * @param newEl the new element that will be added
+	 */
 	void addElement(T const& newEl);
+	/**
+	 * @brief function that removes element form the vector
+	 * 
+	 * @param element the element that will be removed
+	 * @return true the element was removed successfully
+	 * @return false the couldn't be removed
+	 */
 	bool removeElement(T element);
-
+	/**
+	 * @brief checks if two vectors are equal
+	 * 
+	 * @param other the second vector
+	 * @return true they are equal
+	 * @return false they are not equal
+	 */
 	bool operator==(MyVector const& other)const;
+	/**
+	 * @brief operator for returning the element in the vector with provided index
+	 * 
+	 * @param index the index that shows the position of the element
+	 * @return T& refference to the e;ement
+	 */
 	T& operator[](int index) const;
 };
 

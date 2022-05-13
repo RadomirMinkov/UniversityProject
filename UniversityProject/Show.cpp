@@ -15,6 +15,24 @@ Show::~Show()
 	//std::cout << *this;
 	clear();
 }
+
+const char* Show::getSeatStringType(Seats seat)const
+{
+	switch (seat)
+	{
+	case empty:
+		return "empty";
+		break;
+	case reserved:
+		return "reserved";
+		break;
+	case bought:
+		return "bought";
+		break;
+	default:
+		break;
+	}
+}
 bool Show::cancelReservation(Reservation reservation)
 {
 	for (unsigned i = 0; i < reservations.getSize(); i++) {
@@ -123,7 +141,7 @@ void Show::printSeatsType(std::ostream& out,Seats seat)const
 		{
 			if (seats[i][j]==seat)
 			{
-				out << "Place: (" << i +1<< ',' << j+1 << ") is "<<seat<<"!\n";
+				out << "Place: (" << i +1<< ',' << j+1 << ") is "<<getSeatStringType(seat)<<"!\n";
 			}
 		}
 	}

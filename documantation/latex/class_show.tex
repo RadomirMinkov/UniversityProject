@@ -1,0 +1,455 @@
+\hypertarget{class_show}{}\doxysection{Show Class Reference}
+\label{class_show}\index{Show@{Show}}
+
+
+class show which contains information about the date it will be presented,the hall in which it will be, name, list of reservation scheme of the seats in the hall  
+
+
+
+
+{\ttfamily \#include $<$Show.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_show_a74357a790b067962a5acc4ad3c6c9581}{Show}} ()
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_show_afcf582540b6dd24bb062ac725a153cf4}{Show}} (\mbox{\hyperlink{class_my_str}{My\+Str}} \+\_\+name, \mbox{\hyperlink{class_date}{Date}} \+\_\+date, unsigned \+\_\+capacity, \mbox{\hyperlink{class_hall}{Hall}} $\ast$hall=nullptr)
+\begin{DoxyCompactList}\small\item\em constructor with parameters \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_show_aebd2f08ed3f061708c9193770a2d2633}{Show}} (\mbox{\hyperlink{class_show}{Show}} const \&other)
+\begin{DoxyCompactList}\small\item\em copy constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_show}{Show}} \& \mbox{\hyperlink{class_show_affb2aeedb072d987ae56df420797c10c}{operator=}} (\mbox{\hyperlink{class_show}{Show}} const \&other)
+\begin{DoxyCompactList}\small\item\em operator = that provide posibility to apropriate one show to another \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_show_a63bd5fb3f08fd05034c3e84e31e537fe}{$\sim$\+Show}} ()
+\begin{DoxyCompactList}\small\item\em function that destroys the object \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_my_str}{My\+Str}} \mbox{\hyperlink{class_show_a1b0df2fad177e3928a52699ddfab6f04}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em get the name of the show \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_date}{Date}} \mbox{\hyperlink{class_show_aa1463d1d30cadffaea9e74e6e9eb2fe0}{get\+Date}} () const
+\begin{DoxyCompactList}\small\item\em get the date of the show \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_hall}{Hall}} $\ast$ \mbox{\hyperlink{class_show_aa01d3f85452c5fc1700230c98466c12a}{get\+Hall}} () const
+\begin{DoxyCompactList}\small\item\em get pointer to the hall of the show \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_show_8h_a368d9bac660a99128940c2ca60672d55}{Seats}} \mbox{\hyperlink{class_show_a020375773d6f52a31b4e66385af68de1}{get\+Seat}} (unsigned row\+Number, unsigned seat) const
+\begin{DoxyCompactList}\small\item\em get seat \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{class_show_ad662d38ff2cf5fd76ed603c331164e46}{get\+Sold\+Tickets}} () const
+\begin{DoxyCompactList}\small\item\em get sold tickets \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{class_show_a9060eb78764ff5c12a9f75ae65cc2f65}{get\+Reserved\+Tickets}} () const
+\begin{DoxyCompactList}\small\item\em get reserved tickets \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_show_abe25548e1a8a9261d98e132bb261d68f}{set\+Name}} (\mbox{\hyperlink{class_my_str}{My\+Str}} \+\_\+name)
+\begin{DoxyCompactList}\small\item\em function that changes the name of the show \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_show_a75e6d6828cd037590fdc56a5cbdaa3c6}{set\+Date}} (\mbox{\hyperlink{class_date}{Date}} new\+Date)
+\begin{DoxyCompactList}\small\item\em function that changes the date of the show \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_show_a9c835921dadb74e2507b697eb7edd4c2}{print\+Seats}} (std\+::ostream \&out, unsigned rows, unsigned seats\+On\+Row) const
+\begin{DoxyCompactList}\small\item\em fucntion that prints the seats \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_show_a62f423602009ceab8319c9771faddebb}{create\+Seats}} (unsigned rows, unsigned seats\+On\+Row)
+\begin{DoxyCompactList}\small\item\em creating the seats matrix \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_show_a4d71d984ea932c651c02a8b53ce829dc}{update\+Seats}} (unsigned row\+Number, unsigned seat, \mbox{\hyperlink{_show_8h_a368d9bac660a99128940c2ca60672d55}{Seats}} seat\+Type)
+\begin{DoxyCompactList}\small\item\em fucntion that changes the type of a seat \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_show_aadf778e6e4630aa9730ba52d6efdd725}{add\+Reservation}} (\mbox{\hyperlink{class_reservation}{Reservation}} const \&reservation)
+\begin{DoxyCompactList}\small\item\em function that adds reservation to a show \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_show_a35b79b3d25e8d186d3bebd1ca66c014d}{cancel\+Reservation}} (\mbox{\hyperlink{class_reservation}{Reservation}} reservation)
+\begin{DoxyCompactList}\small\item\em function that cancels reservation in a show \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_show_aa5a94a61edfab6e10258812e11dffba7}{buy\+Ticket}} (unsigned row\+Number, unsigned seat)
+\begin{DoxyCompactList}\small\item\em function that buys a ticket \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_show_ab2b5eb8525ada42cd3e2f34063bc34bc}{print\+Reservations}} (std\+::ostream \&out) const
+\begin{DoxyCompactList}\small\item\em function that prints all the reservations \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_show_a3ea53913e9aa76fd21ebd29d9048e25b}{print\+Seats\+Type}} (std\+::ostream \&out, \mbox{\hyperlink{_show_8h_a368d9bac660a99128940c2ca60672d55}{Seats}} seat) const
+\begin{DoxyCompactList}\small\item\em functions that prints the only the seats which are the same as the seat type that is provided \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_reservation}{Reservation}} \mbox{\hyperlink{class_show_a3074ab27749b123f2798765cd0360d42}{get\+Reservation}} (unsigned row, unsigned seat) const
+\begin{DoxyCompactList}\small\item\em get reservatoin \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_show_a279c2e61668a635f856c3d2a169c115a}{operator==}} (\mbox{\hyperlink{class_show}{Show}} const \&other) const
+\begin{DoxyCompactList}\small\item\em operator that checks if two shows are equal \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{class_show_afe9d28b1318fa9d4152f697d2161dd89}{place}} (\mbox{\hyperlink{_show_8h_a368d9bac660a99128940c2ca60672d55}{Seats}} seat) const
+\begin{DoxyCompactList}\small\item\em function that returns charachter to provided seat \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::istream \& \mbox{\hyperlink{class_show_abcffa090ff082eeccf76eeb462474426}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{class_show}{Show}} \&other)
+\begin{DoxyCompactList}\small\item\em opetator for input \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class show which contains information about the date it will be presented,the hall in which it will be, name, list of reservation scheme of the seats in the hall 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_show_a74357a790b067962a5acc4ad3c6c9581}\label{class_show_a74357a790b067962a5acc4ad3c6c9581}} 
+\index{Show@{Show}!Show@{Show}}
+\index{Show@{Show}!Show@{Show}}
+\doxysubsubsection{\texorpdfstring{Show()}{Show()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Show\+::\+Show (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+default constructor 
+
+\mbox{\Hypertarget{class_show_afcf582540b6dd24bb062ac725a153cf4}\label{class_show_afcf582540b6dd24bb062ac725a153cf4}} 
+\index{Show@{Show}!Show@{Show}}
+\index{Show@{Show}!Show@{Show}}
+\doxysubsubsection{\texorpdfstring{Show()}{Show()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Show\+::\+Show (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_my_str}{My\+Str}}}]{\+\_\+name,  }\item[{\mbox{\hyperlink{class_date}{Date}}}]{\+\_\+date,  }\item[{unsigned}]{\+\_\+capacity,  }\item[{\mbox{\hyperlink{class_hall}{Hall}} $\ast$}]{hall = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+constructor with parameters 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+name} & name of the show \\
+\hline
+{\em \+\_\+date} & date of the show \\
+\hline
+{\em \+\_\+capacity} & capacity of the reservations \\
+\hline
+{\em hall} & the hall in which the show will be played \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_show_aebd2f08ed3f061708c9193770a2d2633}\label{class_show_aebd2f08ed3f061708c9193770a2d2633}} 
+\index{Show@{Show}!Show@{Show}}
+\index{Show@{Show}!Show@{Show}}
+\doxysubsubsection{\texorpdfstring{Show()}{Show()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Show\+::\+Show (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_show}{Show}} const \&}]{other }\end{DoxyParamCaption})}
+
+
+
+copy constructor 
+
+\mbox{\Hypertarget{class_show_a63bd5fb3f08fd05034c3e84e31e537fe}\label{class_show_a63bd5fb3f08fd05034c3e84e31e537fe}} 
+\index{Show@{Show}!````~Show@{$\sim$Show}}
+\index{````~Show@{$\sim$Show}!Show@{Show}}
+\doxysubsubsection{\texorpdfstring{$\sim$Show()}{~Show()}}
+{\footnotesize\ttfamily Show\+::$\sim$\+Show (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+function that destroys the object 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_show_aadf778e6e4630aa9730ba52d6efdd725}\label{class_show_aadf778e6e4630aa9730ba52d6efdd725}} 
+\index{Show@{Show}!addReservation@{addReservation}}
+\index{addReservation@{addReservation}!Show@{Show}}
+\doxysubsubsection{\texorpdfstring{addReservation()}{addReservation()}}
+{\footnotesize\ttfamily void Show\+::add\+Reservation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_reservation}{Reservation}} const \&}]{reservation }\end{DoxyParamCaption})}
+
+
+
+function that adds reservation to a show 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reservation} & the reservation that will be added \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_show_aa5a94a61edfab6e10258812e11dffba7}\label{class_show_aa5a94a61edfab6e10258812e11dffba7}} 
+\index{Show@{Show}!buyTicket@{buyTicket}}
+\index{buyTicket@{buyTicket}!Show@{Show}}
+\doxysubsubsection{\texorpdfstring{buyTicket()}{buyTicket()}}
+{\footnotesize\ttfamily void Show\+::buy\+Ticket (\begin{DoxyParamCaption}\item[{unsigned}]{row\+Number,  }\item[{unsigned}]{seat }\end{DoxyParamCaption})}
+
+
+
+function that buys a ticket 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row\+Number} & row number \\
+\hline
+{\em seat} & seat \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_show_a35b79b3d25e8d186d3bebd1ca66c014d}\label{class_show_a35b79b3d25e8d186d3bebd1ca66c014d}} 
+\index{Show@{Show}!cancelReservation@{cancelReservation}}
+\index{cancelReservation@{cancelReservation}!Show@{Show}}
+\doxysubsubsection{\texorpdfstring{cancelReservation()}{cancelReservation()}}
+{\footnotesize\ttfamily bool Show\+::cancel\+Reservation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_reservation}{Reservation}}}]{reservation }\end{DoxyParamCaption})}
+
+
+
+function that cancels reservation in a show 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reservation} & the reservation that will be canceled \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true successfull cancelation 
+
+false couldn\textquotesingle{}t cancel the reservation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_show_a62f423602009ceab8319c9771faddebb}\label{class_show_a62f423602009ceab8319c9771faddebb}} 
+\index{Show@{Show}!createSeats@{createSeats}}
+\index{createSeats@{createSeats}!Show@{Show}}
+\doxysubsubsection{\texorpdfstring{createSeats()}{createSeats()}}
+{\footnotesize\ttfamily void Show\+::create\+Seats (\begin{DoxyParamCaption}\item[{unsigned}]{rows,  }\item[{unsigned}]{seats\+On\+Row }\end{DoxyParamCaption})}
+
+
+
+creating the seats matrix 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rows} & number of rows \\
+\hline
+{\em seats\+On\+Row} & numbers of seats on each row \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_show_aa1463d1d30cadffaea9e74e6e9eb2fe0}\label{class_show_aa1463d1d30cadffaea9e74e6e9eb2fe0}} 
+\index{Show@{Show}!getDate@{getDate}}
+\index{getDate@{getDate}!Show@{Show}}
+\doxysubsubsection{\texorpdfstring{getDate()}{getDate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_date}{Date}} Show\+::get\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get the date of the show 
+
+\mbox{\Hypertarget{class_show_aa01d3f85452c5fc1700230c98466c12a}\label{class_show_aa01d3f85452c5fc1700230c98466c12a}} 
+\index{Show@{Show}!getHall@{getHall}}
+\index{getHall@{getHall}!Show@{Show}}
+\doxysubsubsection{\texorpdfstring{getHall()}{getHall()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hall}{Hall}} $\ast$ Show\+::get\+Hall (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get pointer to the hall of the show 
+
+\mbox{\Hypertarget{class_show_a1b0df2fad177e3928a52699ddfab6f04}\label{class_show_a1b0df2fad177e3928a52699ddfab6f04}} 
+\index{Show@{Show}!getName@{getName}}
+\index{getName@{getName}!Show@{Show}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_my_str}{My\+Str}} Show\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get the name of the show 
+
+\mbox{\Hypertarget{class_show_a3074ab27749b123f2798765cd0360d42}\label{class_show_a3074ab27749b123f2798765cd0360d42}} 
+\index{Show@{Show}!getReservation@{getReservation}}
+\index{getReservation@{getReservation}!Show@{Show}}
+\doxysubsubsection{\texorpdfstring{getReservation()}{getReservation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_reservation}{Reservation}} Show\+::get\+Reservation (\begin{DoxyParamCaption}\item[{unsigned}]{row,  }\item[{unsigned}]{seat }\end{DoxyParamCaption}) const}
+
+
+
+get reservatoin 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & row \\
+\hline
+{\em seat} & seat \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_reservation}{Reservation}} returns the reservation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_show_a9060eb78764ff5c12a9f75ae65cc2f65}\label{class_show_a9060eb78764ff5c12a9f75ae65cc2f65}} 
+\index{Show@{Show}!getReservedTickets@{getReservedTickets}}
+\index{getReservedTickets@{getReservedTickets}!Show@{Show}}
+\doxysubsubsection{\texorpdfstring{getReservedTickets()}{getReservedTickets()}}
+{\footnotesize\ttfamily unsigned Show\+::get\+Reserved\+Tickets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get reserved tickets 
+
+\mbox{\Hypertarget{class_show_a020375773d6f52a31b4e66385af68de1}\label{class_show_a020375773d6f52a31b4e66385af68de1}} 
+\index{Show@{Show}!getSeat@{getSeat}}
+\index{getSeat@{getSeat}!Show@{Show}}
+\doxysubsubsection{\texorpdfstring{getSeat()}{getSeat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_show_8h_a368d9bac660a99128940c2ca60672d55}{Seats}} Show\+::get\+Seat (\begin{DoxyParamCaption}\item[{unsigned}]{row\+Number,  }\item[{unsigned}]{seat }\end{DoxyParamCaption}) const}
+
+
+
+get seat 
+
+\mbox{\Hypertarget{class_show_ad662d38ff2cf5fd76ed603c331164e46}\label{class_show_ad662d38ff2cf5fd76ed603c331164e46}} 
+\index{Show@{Show}!getSoldTickets@{getSoldTickets}}
+\index{getSoldTickets@{getSoldTickets}!Show@{Show}}
+\doxysubsubsection{\texorpdfstring{getSoldTickets()}{getSoldTickets()}}
+{\footnotesize\ttfamily unsigned Show\+::get\+Sold\+Tickets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get sold tickets 
+
+\mbox{\Hypertarget{class_show_affb2aeedb072d987ae56df420797c10c}\label{class_show_affb2aeedb072d987ae56df420797c10c}} 
+\index{Show@{Show}!operator=@{operator=}}
+\index{operator=@{operator=}!Show@{Show}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_show}{Show}} \& Show\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_show}{Show}} const \&}]{other }\end{DoxyParamCaption})}
+
+
+
+operator = that provide posibility to apropriate one show to another 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the show that will be copied \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_show}{Show}}\& refference to this 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_show_a279c2e61668a635f856c3d2a169c115a}\label{class_show_a279c2e61668a635f856c3d2a169c115a}} 
+\index{Show@{Show}!operator==@{operator==}}
+\index{operator==@{operator==}!Show@{Show}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Show\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_show}{Show}} const \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+operator that checks if two shows are equal 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the second show \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true they are equal 
+
+false they are different 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_show_afe9d28b1318fa9d4152f697d2161dd89}\label{class_show_afe9d28b1318fa9d4152f697d2161dd89}} 
+\index{Show@{Show}!place@{place}}
+\index{place@{place}!Show@{Show}}
+\doxysubsubsection{\texorpdfstring{place()}{place()}}
+{\footnotesize\ttfamily char Show\+::place (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_show_8h_a368d9bac660a99128940c2ca60672d55}{Seats}}}]{seat }\end{DoxyParamCaption}) const}
+
+
+
+function that returns charachter to provided seat 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seat} & seat \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char the charachter that will be returned 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_show_ab2b5eb8525ada42cd3e2f34063bc34bc}\label{class_show_ab2b5eb8525ada42cd3e2f34063bc34bc}} 
+\index{Show@{Show}!printReservations@{printReservations}}
+\index{printReservations@{printReservations}!Show@{Show}}
+\doxysubsubsection{\texorpdfstring{printReservations()}{printReservations()}}
+{\footnotesize\ttfamily void Show\+::print\+Reservations (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption}) const}
+
+
+
+function that prints all the reservations 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & the sream that shows where the reservation will be printed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_show_a9c835921dadb74e2507b697eb7edd4c2}\label{class_show_a9c835921dadb74e2507b697eb7edd4c2}} 
+\index{Show@{Show}!printSeats@{printSeats}}
+\index{printSeats@{printSeats}!Show@{Show}}
+\doxysubsubsection{\texorpdfstring{printSeats()}{printSeats()}}
+{\footnotesize\ttfamily void Show\+::print\+Seats (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{unsigned}]{rows,  }\item[{unsigned}]{seats\+On\+Row }\end{DoxyParamCaption}) const}
+
+
+
+fucntion that prints the seats 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & the stream that shows where the information will be printed \\
+\hline
+{\em rows} & number of wars \\
+\hline
+{\em seats\+On\+Row} & numbers of seats on each row \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_show_a3ea53913e9aa76fd21ebd29d9048e25b}\label{class_show_a3ea53913e9aa76fd21ebd29d9048e25b}} 
+\index{Show@{Show}!printSeatsType@{printSeatsType}}
+\index{printSeatsType@{printSeatsType}!Show@{Show}}
+\doxysubsubsection{\texorpdfstring{printSeatsType()}{printSeatsType()}}
+{\footnotesize\ttfamily void Show\+::print\+Seats\+Type (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\mbox{\hyperlink{_show_8h_a368d9bac660a99128940c2ca60672d55}{Seats}}}]{seat }\end{DoxyParamCaption}) const}
+
+
+
+functions that prints the only the seats which are the same as the seat type that is provided 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & the stream that shows where the seats wiil be printed \\
+\hline
+{\em seat} & seat type \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_show_a75e6d6828cd037590fdc56a5cbdaa3c6}\label{class_show_a75e6d6828cd037590fdc56a5cbdaa3c6}} 
+\index{Show@{Show}!setDate@{setDate}}
+\index{setDate@{setDate}!Show@{Show}}
+\doxysubsubsection{\texorpdfstring{setDate()}{setDate()}}
+{\footnotesize\ttfamily void Show\+::set\+Date (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_date}{Date}}}]{new\+Date }\end{DoxyParamCaption})}
+
+
+
+function that changes the date of the show 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Date} & the new date \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_show_abe25548e1a8a9261d98e132bb261d68f}\label{class_show_abe25548e1a8a9261d98e132bb261d68f}} 
+\index{Show@{Show}!setName@{setName}}
+\index{setName@{setName}!Show@{Show}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Show\+::set\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_my_str}{My\+Str}}}]{\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+function that changes the name of the show 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+name} & the new name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_show_a4d71d984ea932c651c02a8b53ce829dc}\label{class_show_a4d71d984ea932c651c02a8b53ce829dc}} 
+\index{Show@{Show}!updateSeats@{updateSeats}}
+\index{updateSeats@{updateSeats}!Show@{Show}}
+\doxysubsubsection{\texorpdfstring{updateSeats()}{updateSeats()}}
+{\footnotesize\ttfamily void Show\+::update\+Seats (\begin{DoxyParamCaption}\item[{unsigned}]{row\+Number,  }\item[{unsigned}]{seat,  }\item[{\mbox{\hyperlink{_show_8h_a368d9bac660a99128940c2ca60672d55}{Seats}}}]{seat\+Type }\end{DoxyParamCaption})}
+
+
+
+fucntion that changes the type of a seat 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row\+Number} & row number \\
+\hline
+{\em seat} & seat \\
+\hline
+{\em seat\+Type} & seat type \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_show_abcffa090ff082eeccf76eeb462474426}\label{class_show_abcffa090ff082eeccf76eeb462474426}} 
+\index{Show@{Show}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Show@{Show}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{class_show}{Show}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+opetator for input 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & the stream that shows from where the information will be taken from \\
+\hline
+{\em other} & the object that will store the information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::istream\& refference to the stream 
+\end{DoxyReturn}

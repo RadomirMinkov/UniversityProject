@@ -1,0 +1,74 @@
+\hypertarget{_show_8h_source}{}\doxysection{Show.\+h}
+\mbox{\hyperlink{_show_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_SHOW\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_SHOW\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <cstring>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_types_8h}{Types.h}}"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_my_str_8h}{MyStr.h}}"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_date_8h}{Date.h}}"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_hall_8h}{Hall.h}}"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_my_vector_8h}{MyVector.h}}"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_reservation_8h}{Reservation.h}}"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{19 \textcolor{keyword}{enum} \mbox{\hyperlink{_show_8h_a368d9bac660a99128940c2ca60672d55}{Seats}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21     \mbox{\hyperlink{_show_8h_a368d9bac660a99128940c2ca60672d55ae8654263bd8adf1d0922f427d8f3fc1b}{empty}} = 0,}
+\DoxyCodeLine{22     \mbox{\hyperlink{_show_8h_a368d9bac660a99128940c2ca60672d55ac6638028c1aba75eca7eed225800ad5b}{reserved}} = 1,}
+\DoxyCodeLine{23     \mbox{\hyperlink{_show_8h_a368d9bac660a99128940c2ca60672d55a71228d08e010a6bb1e3a19643684204e}{bought}} = 2}
+\DoxyCodeLine{24 \};}
+\DoxyCodeLine{30 \textcolor{keyword}{class }\mbox{\hyperlink{class_show}{Show}}}
+\DoxyCodeLine{31 \{}
+\DoxyCodeLine{33 \textcolor{keyword}{private}:}
+\DoxyCodeLine{35      \mbox{\hyperlink{class_my_str}{MyStr}} name;}
+\DoxyCodeLine{37       \mbox{\hyperlink{class_date}{Date}} date;}
+\DoxyCodeLine{39       \mbox{\hyperlink{class_hall}{Hall}}* hall;}
+\DoxyCodeLine{40       \textcolor{comment}{//list of reservations}}
+\DoxyCodeLine{41       \mbox{\hyperlink{class_my_vector}{MyVector<Reservation>}} reservations;}
+\DoxyCodeLine{43       \mbox{\hyperlink{_show_8h_a368d9bac660a99128940c2ca60672d55}{Seats}}** seats;}
+\DoxyCodeLine{45       \textcolor{keywordtype}{unsigned} soldTickets\{ 0 \};}
+\DoxyCodeLine{47       \textcolor{keywordtype}{unsigned} reservedTickets\{ 0 \};}
+\DoxyCodeLine{53     \textcolor{keywordtype}{void} copy(\mbox{\hyperlink{class_show}{Show}} \textcolor{keyword}{const}\& other);}
+\DoxyCodeLine{60     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* getSeatStringType(\mbox{\hyperlink{_show_8h_a368d9bac660a99128940c2ca60672d55}{Seats}} seat)\textcolor{keyword}{const};}
+\DoxyCodeLine{65     \textcolor{keywordtype}{void} clear();}
+\DoxyCodeLine{66 \textcolor{keyword}{public}:}
+\DoxyCodeLine{68     \mbox{\hyperlink{class_show_a74357a790b067962a5acc4ad3c6c9581}{Show}}();}
+\DoxyCodeLine{77     \mbox{\hyperlink{class_show_a74357a790b067962a5acc4ad3c6c9581}{Show}}(\mbox{\hyperlink{class_my_str}{MyStr}} \_name, \mbox{\hyperlink{class_date}{Date}} \_date,\textcolor{keywordtype}{unsigned} \_capacity,\mbox{\hyperlink{class_hall}{Hall}}* hall=\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{79     \mbox{\hyperlink{class_show_a74357a790b067962a5acc4ad3c6c9581}{Show}}(\mbox{\hyperlink{class_show}{Show}} \textcolor{keyword}{const}\& other);}
+\DoxyCodeLine{86     \mbox{\hyperlink{class_show}{Show}}\& \mbox{\hyperlink{class_show_affb2aeedb072d987ae56df420797c10c}{operator=}}(\mbox{\hyperlink{class_show}{Show}} \textcolor{keyword}{const}\& other);}
+\DoxyCodeLine{91     \mbox{\hyperlink{class_show_a63bd5fb3f08fd05034c3e84e31e537fe}{\string~Show}}();}
+\DoxyCodeLine{93     \mbox{\hyperlink{class_my_str}{MyStr}} \mbox{\hyperlink{class_show_a1b0df2fad177e3928a52699ddfab6f04}{getName}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} name; \}}
+\DoxyCodeLine{95     \mbox{\hyperlink{class_date}{Date}} \mbox{\hyperlink{class_show_aa1463d1d30cadffaea9e74e6e9eb2fe0}{getDate}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return}  date; \}}
+\DoxyCodeLine{97      \mbox{\hyperlink{class_hall}{Hall}}* \mbox{\hyperlink{class_show_aa01d3f85452c5fc1700230c98466c12a}{getHall}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} hall; \}}
+\DoxyCodeLine{99     \mbox{\hyperlink{_show_8h_a368d9bac660a99128940c2ca60672d55}{Seats}} \mbox{\hyperlink{class_show_a020375773d6f52a31b4e66385af68de1}{getSeat}}(\textcolor{keywordtype}{unsigned} rowNumber, \textcolor{keywordtype}{unsigned} seat) \textcolor{keyword}{const};}
+\DoxyCodeLine{101     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_show_ad662d38ff2cf5fd76ed603c331164e46}{getSoldTickets}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} soldTickets; \}}
+\DoxyCodeLine{103     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_show_a9060eb78764ff5c12a9f75ae65cc2f65}{getReservedTickets}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} reservedTickets; \}}
+\DoxyCodeLine{109     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_show_abe25548e1a8a9261d98e132bb261d68f}{setName}}(\mbox{\hyperlink{class_my_str}{MyStr}} \_name);}
+\DoxyCodeLine{115     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_show_a75e6d6828cd037590fdc56a5cbdaa3c6}{setDate}}(\mbox{\hyperlink{class_date}{Date}} newDate);}
+\DoxyCodeLine{123     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_show_a9c835921dadb74e2507b697eb7edd4c2}{printSeats}}(std::ostream\& out,\textcolor{keywordtype}{unsigned} rows,\textcolor{keywordtype}{unsigned} seatsOnRow)\textcolor{keyword}{const};}
+\DoxyCodeLine{130     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_show_a62f423602009ceab8319c9771faddebb}{createSeats}}(\textcolor{keywordtype}{unsigned} rows,\textcolor{keywordtype}{unsigned} seatsOnRow);}
+\DoxyCodeLine{138     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_show_a4d71d984ea932c651c02a8b53ce829dc}{updateSeats}}(\textcolor{keywordtype}{unsigned} rowNumber, \textcolor{keywordtype}{unsigned} seat,\mbox{\hyperlink{_show_8h_a368d9bac660a99128940c2ca60672d55}{Seats}} seatType);}
+\DoxyCodeLine{144     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_show_aadf778e6e4630aa9730ba52d6efdd725}{addReservation}}(\mbox{\hyperlink{class_reservation}{Reservation}} \textcolor{keyword}{const}\& reservation);}
+\DoxyCodeLine{152     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_show_a35b79b3d25e8d186d3bebd1ca66c014d}{cancelReservation}}(\mbox{\hyperlink{class_reservation}{Reservation}} reservation);}
+\DoxyCodeLine{159     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_show_aa5a94a61edfab6e10258812e11dffba7}{buyTicket}}(\textcolor{keywordtype}{unsigned} rowNumber, \textcolor{keywordtype}{unsigned} seat);}
+\DoxyCodeLine{165     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_show_ab2b5eb8525ada42cd3e2f34063bc34bc}{printReservations}}(std::ostream\& out) \textcolor{keyword}{const} ;}
+\DoxyCodeLine{172     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_show_a3ea53913e9aa76fd21ebd29d9048e25b}{printSeatsType}}(std::ostream\& out,\mbox{\hyperlink{_show_8h_a368d9bac660a99128940c2ca60672d55}{Seats}} seat)\textcolor{keyword}{const};}
+\DoxyCodeLine{173     \textcolor{comment}{//void printReservedSeats(std::ofstream\& out)const;}}
+\DoxyCodeLine{181 \textcolor{comment}{}    \mbox{\hyperlink{class_reservation}{Reservation}} \mbox{\hyperlink{class_show_a3074ab27749b123f2798765cd0360d42}{getReservation}}(\textcolor{keywordtype}{unsigned} row, \textcolor{keywordtype}{unsigned} seat)\textcolor{keyword}{const};}
+\DoxyCodeLine{189     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_show_a279c2e61668a635f856c3d2a169c115a}{operator==}}(\mbox{\hyperlink{class_show}{Show}} \textcolor{keyword}{const}\& other) \textcolor{keyword}{const};}
+\DoxyCodeLine{196     \textcolor{keywordtype}{char} \mbox{\hyperlink{class_show_afe9d28b1318fa9d4152f697d2161dd89}{place}}(\mbox{\hyperlink{_show_8h_a368d9bac660a99128940c2ca60672d55}{Seats}} seat) \textcolor{keyword}{const};}
+\DoxyCodeLine{204     \textcolor{keyword}{friend} std::istream\& \mbox{\hyperlink{class_show_abcffa090ff082eeccf76eeb462474426}{operator>>}}(std::istream\& in, \mbox{\hyperlink{class_show}{Show}}\& other);}
+\DoxyCodeLine{205 \};}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207 }
+\DoxyCodeLine{215 std::ostream\& \mbox{\hyperlink{_show_8h_a6f3969769d46d2c51f13bc96c9a075d0}{operator<<}}(std::ostream\&  out, \mbox{\hyperlink{class_show}{Show}} \textcolor{keyword}{const}\& other);}
+\DoxyCodeLine{216 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !\_SHOW\_HPP}}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219 }
+
+\end{DoxyCode}

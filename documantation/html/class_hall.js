@@ -1,0 +1,25 @@
+var class_hall =
+[
+    [ "Hall", "class_hall.html#a5b2d4a8eaff047b8fab32f803e696286", null ],
+    [ "Hall", "class_hall.html#aed8a14a5b16fbae9edf4203cab88d392", null ],
+    [ "addNewShow", "class_hall.html#a088b610529122ec43d1e4c5e425cfda3", null ],
+    [ "buyTicket", "class_hall.html#a9b5baf698688ca68bf2cae89b51aec53", null ],
+    [ "cancelShowReservation", "class_hall.html#af836c53b22e4595302681829efc9f9f4", null ],
+    [ "getHallNumber", "class_hall.html#ab52e600db85db94dcb17bb1e45359d2a", null ],
+    [ "getRows", "class_hall.html#a12b4971fdac4258d45d27602f442287f", null ],
+    [ "getSeatsOnRows", "class_hall.html#a8c3da0fc6f7acd13214475aa01b9529c", null ],
+    [ "getShows", "class_hall.html#aefea782caed874426f21b035a240abc4", null ],
+    [ "isEmpty", "class_hall.html#afe3ea5902db53768a0553e4b53dc5535", null ],
+    [ "isReserved", "class_hall.html#ae745e028ce420f192219bac2096f3c59", null ],
+    [ "operator=", "class_hall.html#a1caf2940825d6051074dcdf412b35901", null ],
+    [ "operator==", "class_hall.html#a1ce9f973ba2488d1e4223b597497e8b8", null ],
+    [ "print", "class_hall.html#acf726a69b887e2fcf85d05fdc0a86fec", null ],
+    [ "printBoughtSeats", "class_hall.html#aa9194dcc778fdc5f24563b1e76ce4609", null ],
+    [ "printEmptySeats", "class_hall.html#a390bd21f706775b870fe34d641ca863e", null ],
+    [ "printReservedSeats", "class_hall.html#a3b6e047c5a2389d57c9c56a5df1e7192", null ],
+    [ "readFromText", "class_hall.html#ad79802e408de67a34e3f2de3c9f5993c", null ],
+    [ "reserveTicket", "class_hall.html#a5b42cc13ee75ef6ed75ed5f12d5336fe", null ],
+    [ "seatsReference", "class_hall.html#a66f56d181687d5b38b556223abbc935c", null ],
+    [ "showSeats", "class_hall.html#a464c4cc7510b475420c47fdf00f84d3f", null ],
+    [ "operator>>", "class_hall.html#ab4bd18766cb82d35486ba6766a73a246", null ]
+];

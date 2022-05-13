@@ -35,10 +35,10 @@ void Date::setDay(unsigned _day)
 		assert(_day >= 1 && _day <= 28);
 		break;
 	case january:
-	case mmarch:
+	case march:
 	case may:
 	case july:
-	case augusts:
+	case august:
 	case october:
 	case december:
 		assert(_day >= 1 && _day <= 31);
@@ -66,7 +66,7 @@ void Date::setMonth(unsigned _month)
 		month = february;
 		break;
 	case 3:
-		month = mmarch;
+		month = march;
 		break;
 	case 4:
 		month = april;
@@ -81,7 +81,7 @@ void Date::setMonth(unsigned _month)
 		month = july;
 		break;
 	case 8:
-		month = augusts;
+		month = august;
 		break;
 	case 9:
 		month = september;
@@ -112,7 +112,7 @@ const char* Date::printMonth(Month _month) const
 		return "january";	break;
 	case february:
 		return "february";	break;
-	case mmarch:
+	case march:
 		return "march"; 	break;
 	case april:
 		return "april"; 	break;
@@ -122,7 +122,7 @@ const char* Date::printMonth(Month _month) const
 		return "june";  	break;
 	case july:
 		return "july";	    break;
-	case augusts:
+	case august:
 		return "august";    break;
 	case september:
 		return "september";	break;
@@ -163,46 +163,82 @@ bool Date::operator!=(Date const& other) const
 {
 	return !(*this == other);
 }
-bool Date::operator<=(Date const& other) const
-{
-	if (year>other.year )
-	{
-		return false;
-	}
-	else if (month > other.month)
-	{
-		return false;
-	}
-	else if (day > other.day)
-	{
-		return false;
-	}
-	return true;
-}
-
 bool Date::operator>(Date const& other) const
 {
 	return !(*this <= other);
 }
-bool Date::operator>=(Date const& other) const
+
+bool Date::operator<=(Date const& other) const
 {
+	if (year == other.year && month == other.month && day == other.day)
+	{
+		return true;
+	}
 	if (year < other.year)
 	{
-		return false;
+		return true;
 	}
-	else if (month < other.month)
+	else if (year > other.year)
 	{
 		return false;
 	}
-	else if (day < other.day)
+	else
 	{
-		return false;
+		if (month < other.month)
+		{
+			return true;
+		}
+		else if (month > other.month)
+		{
+			return false;
+		}
+		else
+		{
+			if (day <= other.day)
+			{
+				return true;
+			}
+			return false;
+		}
 	}
-	return true;
 }
 bool Date::operator<(Date const& other) const
 {
 	return !(*this >= other);
+}
+bool Date::operator>=(Date const& other) const
+{
+	if (year==other.year && month== other.month && day==other.day)
+	{
+		return true;
+	}
+	if (year>other.year)
+	{
+		return true;
+	}
+	else if (year<other.year)
+	{
+		return false;
+	}
+	else
+	{
+		if (month>other.month)
+		{
+			return true;
+		}
+		else if (month<other.month)
+		{
+			return false;
+		}
+		else
+		{
+			if (day>=other.day)
+			{
+				return true;
+			}
+			return false;
+		}
+	}
 }
 std::ostream& operator<<(std::ostream& out, Date const& date)
 {

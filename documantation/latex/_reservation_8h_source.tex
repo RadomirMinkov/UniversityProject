@@ -1,0 +1,38 @@
+\hypertarget{_reservation_8h_source}{}\doxysection{Reservation.\+h}
+\mbox{\hyperlink{_reservation_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_RESERVATION\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_RESERVATION\_HPP}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <cstring>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_my_str_8h}{MyStr.h}}"{}}}
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_reservation}{Reservation}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{14 \textcolor{keyword}{private}:}
+\DoxyCodeLine{16     \mbox{\hyperlink{class_my_str}{MyStr}} password;}
+\DoxyCodeLine{18     \mbox{\hyperlink{class_my_str}{MyStr}} note;}
+\DoxyCodeLine{20     \textcolor{keywordtype}{unsigned} rowNumber;}
+\DoxyCodeLine{22     \textcolor{keywordtype}{unsigned} seat;}
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} copy(\mbox{\hyperlink{class_reservation}{Reservation}} \textcolor{keyword}{const}\& other);}
+\DoxyCodeLine{29     \textcolor{comment}{//void resize(unsigned newCap);}}
+\DoxyCodeLine{30 \textcolor{keyword}{public}:}
+\DoxyCodeLine{35     \mbox{\hyperlink{class_reservation_a6545bb890ea32ac35a7ad0d9ac892c20}{Reservation}}()=\textcolor{keywordflow}{default};}
+\DoxyCodeLine{44     \mbox{\hyperlink{class_reservation_a6545bb890ea32ac35a7ad0d9ac892c20}{Reservation}}(\textcolor{keywordtype}{unsigned} rowNumber,\textcolor{keywordtype}{unsigned} seat, \mbox{\hyperlink{class_my_str}{MyStr}} \_password , \mbox{\hyperlink{class_my_str}{MyStr}} \_note);}
+\DoxyCodeLine{50     \mbox{\hyperlink{class_reservation_a6545bb890ea32ac35a7ad0d9ac892c20}{Reservation}}(\mbox{\hyperlink{class_reservation}{Reservation}} \textcolor{keyword}{const}\& other);}
+\DoxyCodeLine{57     \mbox{\hyperlink{class_reservation}{Reservation}}\& \mbox{\hyperlink{class_reservation_a78b889d8efe7ce9a2a8de2defad2cf15}{operator=}}(\mbox{\hyperlink{class_reservation}{Reservation}} \textcolor{keyword}{const}\& other);}
+\DoxyCodeLine{59     \mbox{\hyperlink{class_my_str}{MyStr}} \mbox{\hyperlink{class_reservation_a14cda4cd7b044256f207c705603968e8}{getPassword}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} password; \}}
+\DoxyCodeLine{61     \mbox{\hyperlink{class_my_str}{MyStr}} \mbox{\hyperlink{class_reservation_af7d0f9b477f421c0535b82cd322263d3}{getNote}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} note; \}}
+\DoxyCodeLine{63     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_reservation_a8ddab945ac15ba7082f7ad324a5c8f63}{getRowNumber}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} rowNumber; \}}
+\DoxyCodeLine{65     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_reservation_a6f64bdadf71e764d72d9b164dd8de97d}{getSeat}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} seat; \}}
+\DoxyCodeLine{71     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_reservation_a1f81025158aaeee4183b0e0f3ad06605}{addToNote}}(\mbox{\hyperlink{class_my_str}{MyStr}} text);}
+\DoxyCodeLine{77     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_reservation_aa9e91056ad2cf8d9358b2549bbe5a001}{replaceNote}}(\mbox{\hyperlink{class_my_str}{MyStr}} newNote);}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{86     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_reservation_af7306ebce09622425b79ec7d384ab782}{operator==}}(\mbox{\hyperlink{class_reservation}{Reservation}} \textcolor{keyword}{const}\& other) \textcolor{keyword}{const};}
+\DoxyCodeLine{94     \textcolor{keyword}{friend} std::istream\& \mbox{\hyperlink{class_reservation_a57cf9c3700ac645a01b501fa5b63bfb5}{operator>>}}(std::istream\& in, \mbox{\hyperlink{class_reservation}{Reservation}}\& reservation);}
+\DoxyCodeLine{95 \};}
+\DoxyCodeLine{103 std::ostream\& \mbox{\hyperlink{_reservation_8h_ad90ef3c6744361da5769cd98e977cc6f}{operator<<}}(std::ostream\& out, \mbox{\hyperlink{class_reservation}{Reservation}} \textcolor{keyword}{const}\& reservation);}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !\_RESERVATION\_\_HPP}}
+\DoxyCodeLine{105 }
+
+\end{DoxyCode}

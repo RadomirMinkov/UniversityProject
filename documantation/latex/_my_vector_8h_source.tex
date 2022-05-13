@@ -1,0 +1,154 @@
+\hypertarget{_my_vector_8h_source}{}\doxysection{My\+Vector.\+h}
+\mbox{\hyperlink{_my_vector_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_MYVECTOR\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_MYVECTOR\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{11 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_my_vector}{MyVector}}}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{15 \textcolor{keyword}{private}:}
+\DoxyCodeLine{17     T* data\{ \textcolor{keyword}{nullptr} \};}
+\DoxyCodeLine{19     \textcolor{keywordtype}{size\_t} size\{\};}
+\DoxyCodeLine{21     \textcolor{keywordtype}{unsigned} capacity\{\};}
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} clear();}
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} resize(\textcolor{keywordtype}{unsigned} newCap);}
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} copy(\mbox{\hyperlink{class_my_vector}{MyVector}} \textcolor{keyword}{const}\& other);}
+\DoxyCodeLine{36 \textcolor{keyword}{public}:}
+\DoxyCodeLine{41     \mbox{\hyperlink{class_my_vector_ab756a367ca5e7057255bdf566bebca15}{MyVector}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{47     \mbox{\hyperlink{class_my_vector_a679ceaf6447b684a9c7a1c32cad5387b}{MyVector}}(\textcolor{keywordtype}{unsigned} \_capacity);}
+\DoxyCodeLine{53     \mbox{\hyperlink{class_my_vector_af74eff240806cc4134647e7538ec164f}{MyVector}}(\mbox{\hyperlink{class_my_vector}{MyVector}} \textcolor{keyword}{const}\& other);}
+\DoxyCodeLine{60     \mbox{\hyperlink{class_my_vector}{MyVector}}\& \mbox{\hyperlink{class_my_vector_a95ef58ee406c7fc2ecccdf9c6f8da85f}{operator=}}(\mbox{\hyperlink{class_my_vector}{MyVector}} \textcolor{keyword}{const}\& other);}
+\DoxyCodeLine{65     \mbox{\hyperlink{class_my_vector_abe59f181259ff63fa583f4bd87a9737e}{\string~MyVector}}();}
+\DoxyCodeLine{67     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_my_vector_a5db108c7488c908b25e0dff8c82a5b67}{getSize}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} size; \}}
+\DoxyCodeLine{69     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_my_vector_ad86019e1de6970f370b2716c50688c43}{getCapacity}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} capacity; \}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{76     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_my_vector_a682959dd3a933675effcfa18312233d4}{setSize}}(\textcolor{keywordtype}{size\_t} newSize);}
+\DoxyCodeLine{82     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_my_vector_a8b87a8ca8dd74b6e643c7adad7528d94}{print}}(std::ostream\& out=std::cout) \textcolor{keyword}{const};}
+\DoxyCodeLine{88     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_my_vector_a4264f13b96843780f1aac6d9584883d7}{addElement}}(T \textcolor{keyword}{const}\& newEl);}
+\DoxyCodeLine{96     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_my_vector_a64c6a0905b85ce78d3e1dc4fabfd7392}{removeElement}}(T element);}
+\DoxyCodeLine{104     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_my_vector_ab5f2a1d3042cdff9c5a1dfc67bc0ae86}{operator==}}(\mbox{\hyperlink{class_my_vector}{MyVector}} \textcolor{keyword}{const}\& other)\textcolor{keyword}{const};}
+\DoxyCodeLine{111     T\& \mbox{\hyperlink{class_my_vector_a62a111706d72f2f4c511b8cff0581cbe}{operator[]}}(\textcolor{keywordtype}{int} index) \textcolor{keyword}{const};}
+\DoxyCodeLine{112 \};}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{118 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_my_vector}{MyVector<T>::clear}}() }
+\DoxyCodeLine{119 \{}
+\DoxyCodeLine{120 \textcolor{comment}{//  std::cout << \&data;}}
+\DoxyCodeLine{121     \textcolor{keyword}{delete}[] data;}
+\DoxyCodeLine{122 \}}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{125 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_my_vector}{MyVector<T>::copy}}(\mbox{\hyperlink{class_my_vector}{MyVector}} \textcolor{keyword}{const}\& other)}
+\DoxyCodeLine{126 \{}
+\DoxyCodeLine{127 \textcolor{comment}{//  clear();}}
+\DoxyCodeLine{128     size = other.size;}
+\DoxyCodeLine{129     capacity = other.capacity;}
+\DoxyCodeLine{130     data = \textcolor{keyword}{new} T[capacity];}
+\DoxyCodeLine{131     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} i = 0; i < size; i++)}
+\DoxyCodeLine{132         data[i] = other.data[i];}
+\DoxyCodeLine{133 \}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{136 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_my_vector}{MyVector<T>::resize}}(\textcolor{keywordtype}{unsigned} newCap)}
+\DoxyCodeLine{137 \{}
+\DoxyCodeLine{138     \textcolor{keywordflow}{if} (capacity >= newCap)}
+\DoxyCodeLine{139         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{140     capacity = newCap;}
+\DoxyCodeLine{141     T* newArr = \textcolor{keyword}{new} T[newCap];}
+\DoxyCodeLine{142     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} i = 0; i < size; i++)}
+\DoxyCodeLine{143         newArr[i] = data[i];}
+\DoxyCodeLine{144     \textcolor{keyword}{delete}[] data;}
+\DoxyCodeLine{145     data = newArr;}
+\DoxyCodeLine{146 \}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{149 \mbox{\hyperlink{class_my_vector_abe59f181259ff63fa583f4bd87a9737e}{MyVector<T>::\string~MyVector}}()}
+\DoxyCodeLine{150 \{}
+\DoxyCodeLine{151     clear();}
+\DoxyCodeLine{152 \}}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{155 \mbox{\hyperlink{class_my_vector_ab756a367ca5e7057255bdf566bebca15}{MyVector<T>::MyVector}}(\textcolor{keywordtype}{unsigned} \_capacity)}
+\DoxyCodeLine{156     :size(0), capacity(\_capacity), data(nullptr)}
+\DoxyCodeLine{157 \{}
+\DoxyCodeLine{158     data = \textcolor{keyword}{new} T[capacity];}
+\DoxyCodeLine{159 \}}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{162 \mbox{\hyperlink{class_my_vector_ab756a367ca5e7057255bdf566bebca15}{MyVector<T>::MyVector}}(\mbox{\hyperlink{class_my_vector}{MyVector}} \textcolor{keyword}{const}\& other)}
+\DoxyCodeLine{163     :data(nullptr)}
+\DoxyCodeLine{164 \{}
+\DoxyCodeLine{165     copy(other);}
+\DoxyCodeLine{166 \}}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{169 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_my_vector_a682959dd3a933675effcfa18312233d4}{MyVector<T>::setSize}}(\textcolor{keywordtype}{size\_t} newSize)}
+\DoxyCodeLine{170 \{}
+\DoxyCodeLine{171     size = newSize;}
+\DoxyCodeLine{172 \}}
+\DoxyCodeLine{173 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{174 \mbox{\hyperlink{class_my_vector}{MyVector<T>}}\& \mbox{\hyperlink{class_my_vector_a95ef58ee406c7fc2ecccdf9c6f8da85f}{MyVector<T>::operator=}}(\mbox{\hyperlink{class_my_vector}{MyVector<T>}} \textcolor{keyword}{const}\& other)}
+\DoxyCodeLine{175 \{}
+\DoxyCodeLine{176     \textcolor{keywordflow}{if} (\textcolor{keyword}{this} != \&other)}
+\DoxyCodeLine{177     \{}
+\DoxyCodeLine{178         copy(other);}
+\DoxyCodeLine{179     \}}
+\DoxyCodeLine{180     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{181 \}}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{184 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_my_vector_a8b87a8ca8dd74b6e643c7adad7528d94}{MyVector<T>::print}}(std::ostream\& out)\textcolor{keyword}{ const}}
+\DoxyCodeLine{185 \textcolor{keyword}{}\{}
+\DoxyCodeLine{186     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} i = 0; i < size; i++)}
+\DoxyCodeLine{187         out << data[i];}
+\DoxyCodeLine{188 \}}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{193 T\& \mbox{\hyperlink{class_my_vector_a62a111706d72f2f4c511b8cff0581cbe}{MyVector<T>::operator[]}}(\textcolor{keywordtype}{int} index)\textcolor{keyword}{ const}}
+\DoxyCodeLine{194 \textcolor{keyword}{}\{}
+\DoxyCodeLine{195     assert(index >= 0);}
+\DoxyCodeLine{196     \textcolor{keywordflow}{return} data[index];}
+\DoxyCodeLine{197 \}}
+\DoxyCodeLine{198 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{199 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_my_vector_a4264f13b96843780f1aac6d9584883d7}{MyVector<T>::addElement}}(T \textcolor{keyword}{const}\& newEl)}
+\DoxyCodeLine{200 \{}
+\DoxyCodeLine{201     \textcolor{keywordflow}{if} (size == capacity)}
+\DoxyCodeLine{202         resize(2 * capacity + 1);}
+\DoxyCodeLine{203     data[size++] = newEl;}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205 \}}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{208 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_my_vector_a64c6a0905b85ce78d3e1dc4fabfd7392}{MyVector<T>::removeElement}}(T element)}
+\DoxyCodeLine{209 \{}
+\DoxyCodeLine{210     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} i = 0; i < size; i++)}
+\DoxyCodeLine{211     \{}
+\DoxyCodeLine{212         \textcolor{keywordflow}{if} (data[i] == element)}
+\DoxyCodeLine{213         \{}
+\DoxyCodeLine{214             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} j = i; j < size; j++)}
+\DoxyCodeLine{215             \{}
+\DoxyCodeLine{216                 data[j] = data[j + 1];}
+\DoxyCodeLine{217             \}}
+\DoxyCodeLine{218             size-\/-\/;}
+\DoxyCodeLine{219             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{220         \}}
+\DoxyCodeLine{221     \}}
+\DoxyCodeLine{222     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{223 \}}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{226 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_my_vector_ab5f2a1d3042cdff9c5a1dfc67bc0ae86}{MyVector<T>::operator==}}(\mbox{\hyperlink{class_my_vector}{MyVector<T>}} \textcolor{keyword}{const}\& other)\textcolor{keyword}{const}}
+\DoxyCodeLine{227 \textcolor{keyword}{}\{}
+\DoxyCodeLine{228     \textcolor{keywordflow}{return} size == other.size \&\& capacity == other.capacity \&\& data == other.data;}
+\DoxyCodeLine{229 \}}
+\DoxyCodeLine{230 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !\_MYVECTOR\_HPP}}
+
+\end{DoxyCode}

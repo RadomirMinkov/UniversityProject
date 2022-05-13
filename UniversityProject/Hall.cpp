@@ -220,6 +220,7 @@ bool Hall::reserveTicket(Show show)
 	{
 		if (show == shows[i])
 		{
+			std::cout << "You are making a new reservation:\n";
 			Reservation reservation = enterReservatoin();
 			Seats seat{};
 			seat=shows[i].getSeat(reservation.getRowNumber(), reservation.getSeat());
@@ -251,7 +252,7 @@ bool Hall::isEmpty()
 }
 bool Hall::operator==(Hall const& other)const
 {
-	return (hallNumber == other.hallNumber) && (rows == other.rows) && (seatsOnRow == other.seatsOnRow) && (shows == other.shows);
+	return (hallNumber == other.hallNumber) && (rows == other.rows) && (seatsOnRow == other.seatsOnRow) ;
 }
 
 std::istream& operator>>(std::istream& in, Hall& hall)
@@ -265,11 +266,16 @@ bool Hall::cancelShowReservation(std::istream& in,Show const& show)
 	{
 		if (show==shows[i])
 		{
+			std::cout << "Enter the reservation that you want to cancel:\n";
 			Reservation reservation = enterReservatoin();
 			 return shows[i].cancelReservation(reservation);
 		}
 	}
 	return false;
+}
+void Hall::readFromText(std::ifstream& out)
+{
+	out >> *this;
 }
 std::ostream& operator<<(std::ostream& out, Hall const& hall)
 {

@@ -7,16 +7,12 @@
 #include "Reservation.h"
 #include "MyStr.h"
 #include "Types.h"
-
+#include "TicketOffice.h"
+#include "TicketInterface.h"
 int main()
 {
-	//Show show("Rado", Reservation"02/10/2002");
-	//testShow();
-	//std::cout << (char)251;
-	//testHall();
-	//testReservation();
 
-	Date date5(2, october, 2002);
+/*	Date date5(2, october, 2002);
 	Date date1(2, october, 2002);
 	Date date2(2, october, 2001);
 	Date date3(2, november, 2002);
@@ -52,11 +48,11 @@ int main()
 	reservation.addToNote("Kalaidjiev");
 	std::cout << reservation.getNote() << '\n';
 
-	Date date(2, october, 2002);
+	Date date(2, october, 2002);*/
 
 
 
-	Hall hall(1, 5, 6);
+	/*Hall hall(1, 5, 6);
 	Show show("Lord of the Rings", date, 2, &hall);
 	Show show1("Doctor Strange", date2, 2, &hall);
 	hall.addNewShow(show);
@@ -79,8 +75,26 @@ int main()
 	hall.buyTicket(show1, 2, 4);
 	hall.buyTicket(show1, 1, 5);
 	std::ofstream file("text.txt");
-	hall.printBoughtSeats(file, date2, date4);
+	hall.printBoughtSeats(file, date2, date4);*/
 	//hall.showSeats(std::cout, show1);
+
+	TicketOffice office;
+	Hall hall(1, 5, 6);
+	Date date(2, october, 2002);
+	office.addHall(hall);
+	Show show("Naruto", date, 2, &hall);
+	office.addShow(show);
+	office.buyTicket(show);
+	office.reserveTicket(show);
+	office.buyTicket(show);
+	office.freeSeats(show);
+	/*office.cancelReservation(show);
+	office.reserveTicket(show);
+	office.reserveTicket(show);
+	office.reserveTicket(show);
+	office.reserveTicket(show);*/
+	//office.boughtTicketRefference();
+	office.reservationList();
 	return 0;
 }
 

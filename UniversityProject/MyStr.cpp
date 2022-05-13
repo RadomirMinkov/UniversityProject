@@ -70,7 +70,7 @@ unsigned MyStr::charachterToDigit(char charachter) const
 {
 	return charachter - '0';
 }
-Date& MyStr::toDate()
+Date MyStr::toDate()
 {
 	if (size != 3)
 	{

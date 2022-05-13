@@ -1,0 +1,251 @@
+\hypertarget{class_my_str}{}\doxysection{My\+Str Class Reference}
+\label{class_my_str}\index{MyStr@{MyStr}}
+
+
+creating strng class that provides the needed function and handles the dynamic memory  
+
+
+
+
+{\ttfamily \#include $<$My\+Str.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_my_str_a78aa150c1465d53b6171ed31eedb5ffe}{My\+Str}} (const char $\ast$str=\char`\"{}unknown\char`\"{})
+\begin{DoxyCompactList}\small\item\em constructor with deffault parameters ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_my_str_aea881cbf8876ae4c8fe33a7603bc875f}{My\+Str}} (\mbox{\hyperlink{class_my_str}{My\+Str}} const \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_my_str_ab2cd70c83abbba548e4d0908a090f1e7}{$\sim$\+My\+Str}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_my_str}{My\+Str}} \& \mbox{\hyperlink{class_my_str_aadb631b6e170ca91fb4fa6871fd65a33}{operator=}} (\mbox{\hyperlink{class_my_str}{My\+Str}} const \&other)
+\begin{DoxyCompactList}\small\item\em operator = which provides the possibility to appropriate one string to another \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{class_my_str_a9fe6fd79cda5f81238bc3d055bf428b5}{get\+String}} () const
+\begin{DoxyCompactList}\small\item\em get the string \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_my_str_a30eed10548a99f6816a76083b2376fe2}{get\+Size}} () const
+\begin{DoxyCompactList}\small\item\em get the size og the string \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_my_str_a32e21cc0069fe187782fafabf4773122}{copy}} (\mbox{\hyperlink{class_my_str}{My\+Str}} const \&other)
+\begin{DoxyCompactList}\small\item\em function that copies the information from one string to other \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_my_str_a9704297a010a12a08c869b3f4c9914e3}{to\+Lower}} ()
+\begin{DoxyCompactList}\small\item\em function that makes the big charachters to low \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_date}{Date}} \mbox{\hyperlink{class_my_str_a4e09b5685309cf44c60e823b6eac8aa3}{to\+Date}} ()
+\begin{DoxyCompactList}\small\item\em transforming the array to date \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_my_str_a0bfb5b5d4e54b924b0abe0094c4f132d}{operator==}} (\mbox{\hyperlink{class_my_str}{My\+Str}} const \&other) const
+\begin{DoxyCompactList}\small\item\em operator that checks if two strings are equal \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_my_str_ab37f4852bac619a79c53a7aaaee1d593}{operator!=}} (\mbox{\hyperlink{class_my_str}{My\+Str}} const \&other) const
+\begin{DoxyCompactList}\small\item\em operator that checks if two string are different \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_my_str}{My\+Str}} \& \mbox{\hyperlink{class_my_str_a11f134a0a9d7d86e291a2d08cfabb7ba}{operator+}} (\mbox{\hyperlink{class_my_str}{My\+Str}} const \&other)
+\begin{DoxyCompactList}\small\item\em operator for concatinating two strings \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::istream \& \mbox{\hyperlink{class_my_str_adf9c0221cdd090bceb447108c9651bc6}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{class_my_str}{My\+Str}} \&other)
+\begin{DoxyCompactList}\small\item\em operator for input \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+creating strng class that provides the needed function and handles the dynamic memory 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_my_str_a78aa150c1465d53b6171ed31eedb5ffe}\label{class_my_str_a78aa150c1465d53b6171ed31eedb5ffe}} 
+\index{MyStr@{MyStr}!MyStr@{MyStr}}
+\index{MyStr@{MyStr}!MyStr@{MyStr}}
+\doxysubsubsection{\texorpdfstring{MyStr()}{MyStr()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily My\+Str\+::\+My\+Str (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str = {\ttfamily \char`\"{}unknown\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+constructor with deffault parameters ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & the string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_my_str_aea881cbf8876ae4c8fe33a7603bc875f}\label{class_my_str_aea881cbf8876ae4c8fe33a7603bc875f}} 
+\index{MyStr@{MyStr}!MyStr@{MyStr}}
+\index{MyStr@{MyStr}!MyStr@{MyStr}}
+\doxysubsubsection{\texorpdfstring{MyStr()}{MyStr()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily My\+Str\+::\+My\+Str (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_my_str}{My\+Str}} const \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the object we are copying from \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_my_str_ab2cd70c83abbba548e4d0908a090f1e7}\label{class_my_str_ab2cd70c83abbba548e4d0908a090f1e7}} 
+\index{MyStr@{MyStr}!````~MyStr@{$\sim$MyStr}}
+\index{````~MyStr@{$\sim$MyStr}!MyStr@{MyStr}}
+\doxysubsubsection{\texorpdfstring{$\sim$MyStr()}{~MyStr()}}
+{\footnotesize\ttfamily My\+Str\+::$\sim$\+My\+Str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_my_str_a32e21cc0069fe187782fafabf4773122}\label{class_my_str_a32e21cc0069fe187782fafabf4773122}} 
+\index{MyStr@{MyStr}!copy@{copy}}
+\index{copy@{copy}!MyStr@{MyStr}}
+\doxysubsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void My\+Str\+::copy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_my_str}{My\+Str}} const \&}]{other }\end{DoxyParamCaption})}
+
+
+
+function that copies the information from one string to other 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the object we copy from \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_my_str_a30eed10548a99f6816a76083b2376fe2}\label{class_my_str_a30eed10548a99f6816a76083b2376fe2}} 
+\index{MyStr@{MyStr}!getSize@{getSize}}
+\index{getSize@{getSize}!MyStr@{MyStr}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily size\+\_\+t My\+Str\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get the size og the string 
+
+\mbox{\Hypertarget{class_my_str_a9fe6fd79cda5f81238bc3d055bf428b5}\label{class_my_str_a9fe6fd79cda5f81238bc3d055bf428b5}} 
+\index{MyStr@{MyStr}!getString@{getString}}
+\index{getString@{getString}!MyStr@{MyStr}}
+\doxysubsubsection{\texorpdfstring{getString()}{getString()}}
+{\footnotesize\ttfamily const char $\ast$ My\+Str\+::get\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get the string 
+
+\mbox{\Hypertarget{class_my_str_ab37f4852bac619a79c53a7aaaee1d593}\label{class_my_str_ab37f4852bac619a79c53a7aaaee1d593}} 
+\index{MyStr@{MyStr}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!MyStr@{MyStr}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool My\+Str\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_my_str}{My\+Str}} const \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+operator that checks if two string are different 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the second string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true they are different 
+
+false they are the same 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_my_str_a11f134a0a9d7d86e291a2d08cfabb7ba}\label{class_my_str_a11f134a0a9d7d86e291a2d08cfabb7ba}} 
+\index{MyStr@{MyStr}!operator+@{operator+}}
+\index{operator+@{operator+}!MyStr@{MyStr}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_my_str}{My\+Str}} \& My\+Str\+::operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_my_str}{My\+Str}} const \&}]{other }\end{DoxyParamCaption})}
+
+
+
+operator for concatinating two strings 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the second string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_my_str}{My\+Str}}\& refference to the new string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_my_str_aadb631b6e170ca91fb4fa6871fd65a33}\label{class_my_str_aadb631b6e170ca91fb4fa6871fd65a33}} 
+\index{MyStr@{MyStr}!operator=@{operator=}}
+\index{operator=@{operator=}!MyStr@{MyStr}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_my_str}{My\+Str}} \& My\+Str\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_my_str}{My\+Str}} const \&}]{other }\end{DoxyParamCaption})}
+
+
+
+operator = which provides the possibility to appropriate one string to another 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the object we will appropriate from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_my_str}{My\+Str}}\& refference to the object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_my_str_a0bfb5b5d4e54b924b0abe0094c4f132d}\label{class_my_str_a0bfb5b5d4e54b924b0abe0094c4f132d}} 
+\index{MyStr@{MyStr}!operator==@{operator==}}
+\index{operator==@{operator==}!MyStr@{MyStr}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool My\+Str\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_my_str}{My\+Str}} const \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+operator that checks if two strings are equal 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the second string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true they are equal 
+
+false they are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_my_str_a4e09b5685309cf44c60e823b6eac8aa3}\label{class_my_str_a4e09b5685309cf44c60e823b6eac8aa3}} 
+\index{MyStr@{MyStr}!toDate@{toDate}}
+\index{toDate@{toDate}!MyStr@{MyStr}}
+\doxysubsubsection{\texorpdfstring{toDate()}{toDate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_date}{Date}} My\+Str\+::to\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+transforming the array to date 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_date}{Date}}\& the date that was created 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_my_str_a9704297a010a12a08c869b3f4c9914e3}\label{class_my_str_a9704297a010a12a08c869b3f4c9914e3}} 
+\index{MyStr@{MyStr}!toLower@{toLower}}
+\index{toLower@{toLower}!MyStr@{MyStr}}
+\doxysubsubsection{\texorpdfstring{toLower()}{toLower()}}
+{\footnotesize\ttfamily void My\+Str\+::to\+Lower (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+function that makes the big charachters to low 
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_my_str_adf9c0221cdd090bceb447108c9651bc6}\label{class_my_str_adf9c0221cdd090bceb447108c9651bc6}} 
+\index{MyStr@{MyStr}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!MyStr@{MyStr}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{class_my_str}{My\+Str}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+operator for input 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & the stream that will be inputed from \\
+\hline
+{\em other} & the object in which the information will be stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::istream\& refferenceto the stream 
+\end{DoxyReturn}

@@ -1,0 +1,282 @@
+\hypertarget{class_date}{}\doxysection{Date Class Reference}
+\label{class_date}\index{Date@{Date}}
+
+
+class date which makes the work with dates easier  
+
+
+
+
+{\ttfamily \#include $<$Date.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_date_a8c5618a288d7191dce7ecbaa4c8032ad}{Date}} (unsigned \+\_\+day=1, \mbox{\hyperlink{_date_8h_ae34b763987dcf60c6c619d327b8c9dbb}{Month}} \+\_\+month=\mbox{\hyperlink{_date_8h_ae34b763987dcf60c6c619d327b8c9dbba527f1fa0ce1fd27e2114947bcbfe1093}{january}}, unsigned year=2000)
+\begin{DoxyCompactList}\small\item\em constructor with default parameters \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{class_date_a4dedf1cbd19ff221fc1f70895ba560e7}{get\+Day}} () const
+\begin{DoxyCompactList}\small\item\em get the day of the year \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_date_8h_ae34b763987dcf60c6c619d327b8c9dbb}{Month}} \mbox{\hyperlink{class_date_a1137d63aa6266861fb6cb47a4f2f48a9}{get\+Month}} () const
+\begin{DoxyCompactList}\small\item\em get the month of the year \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{class_date_aa1e4066bffc24af79f604dabce27e3cc}{get\+Year}} () const
+\item 
+const char $\ast$ \mbox{\hyperlink{class_date_aff5014c4e6e2029626f8133d005413f6}{print\+Month}} (\mbox{\hyperlink{_date_8h_ae34b763987dcf60c6c619d327b8c9dbb}{Month}} month) const
+\begin{DoxyCompactList}\small\item\em prints month with string \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_date_ad4a022a41e2d3fcb1cd045de7d5fc112}{set\+Day}} (unsigned \+\_\+day)
+\begin{DoxyCompactList}\small\item\em changing the day \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_date_a425117a2ed3da9bfa93cc3d499c869eb}{set\+Month}} (unsigned \+\_\+month)
+\begin{DoxyCompactList}\small\item\em changing the month \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_date_ae4e1d5a08d9592449eda7ed3627de203}{set\+Year}} (unsigned \+\_\+year)
+\begin{DoxyCompactList}\small\item\em changing the year \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_date_a0b4650e6e69f6ab4816ee480b0ae2737}{operator==}} (\mbox{\hyperlink{class_date}{Date}} const \&other) const
+\begin{DoxyCompactList}\small\item\em checks if two dates are equal \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_date_a8b7030515e10d7d79f187165463a3315}{operator!=}} (\mbox{\hyperlink{class_date}{Date}} const \&other) const
+\begin{DoxyCompactList}\small\item\em check if two date are different \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_date_a01c66a5f355ed676a1ee8effb78af222}{operator$<$=}} (\mbox{\hyperlink{class_date}{Date}} const \&other) const
+\begin{DoxyCompactList}\small\item\em comparing two dates \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_date_a074316aeb377c6c1ea828b2642b39153}{operator$<$}} (\mbox{\hyperlink{class_date}{Date}} const \&other) const
+\begin{DoxyCompactList}\small\item\em comparing two dates \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_date_ac1bca91434bf336beb5372ee4a2ca46f}{operator$>$=}} (\mbox{\hyperlink{class_date}{Date}} const \&other) const
+\begin{DoxyCompactList}\small\item\em comparing two dates \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_date_a52d36d1aa6868b5afa178bd495714e44}{operator$>$}} (\mbox{\hyperlink{class_date}{Date}} const \&other) const
+\begin{DoxyCompactList}\small\item\em comparing two dates \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class date which makes the work with dates easier 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_date_a8c5618a288d7191dce7ecbaa4c8032ad}\label{class_date_a8c5618a288d7191dce7ecbaa4c8032ad}} 
+\index{Date@{Date}!Date@{Date}}
+\index{Date@{Date}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{Date()}{Date()}}
+{\footnotesize\ttfamily Date\+::\+Date (\begin{DoxyParamCaption}\item[{unsigned}]{\+\_\+day = {\ttfamily 1},  }\item[{\mbox{\hyperlink{_date_8h_ae34b763987dcf60c6c619d327b8c9dbb}{Month}}}]{\+\_\+month = {\ttfamily \mbox{\hyperlink{_date_8h_ae34b763987dcf60c6c619d327b8c9dbba527f1fa0ce1fd27e2114947bcbfe1093}{january}}},  }\item[{unsigned}]{year = {\ttfamily 2000} }\end{DoxyParamCaption})}
+
+
+
+constructor with default parameters 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+day} & day \\
+\hline
+{\em \+\_\+month} & momth \\
+\hline
+{\em year} & year \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_date_a4dedf1cbd19ff221fc1f70895ba560e7}\label{class_date_a4dedf1cbd19ff221fc1f70895ba560e7}} 
+\index{Date@{Date}!getDay@{getDay}}
+\index{getDay@{getDay}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{getDay()}{getDay()}}
+{\footnotesize\ttfamily unsigned Date\+::get\+Day (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get the day of the year 
+
+\begin{DoxyReturn}{Returns}
+reutrn the day 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_date_a1137d63aa6266861fb6cb47a4f2f48a9}\label{class_date_a1137d63aa6266861fb6cb47a4f2f48a9}} 
+\index{Date@{Date}!getMonth@{getMonth}}
+\index{getMonth@{getMonth}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{getMonth()}{getMonth()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_date_8h_ae34b763987dcf60c6c619d327b8c9dbb}{Month}} Date\+::get\+Month (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get the month of the year 
+
+\mbox{\Hypertarget{class_date_aa1e4066bffc24af79f604dabce27e3cc}\label{class_date_aa1e4066bffc24af79f604dabce27e3cc}} 
+\index{Date@{Date}!getYear@{getYear}}
+\index{getYear@{getYear}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{getYear()}{getYear()}}
+{\footnotesize\ttfamily unsigned Date\+::get\+Year (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_date_a8b7030515e10d7d79f187165463a3315}\label{class_date_a8b7030515e10d7d79f187165463a3315}} 
+\index{Date@{Date}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Date\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_date}{Date}} const \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+check if two date are different 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the second date \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true they are different 
+
+false they are the same 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_date_a074316aeb377c6c1ea828b2642b39153}\label{class_date_a074316aeb377c6c1ea828b2642b39153}} 
+\index{Date@{Date}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Date\+::operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_date}{Date}} const \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+comparing two dates 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the second date \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true first is bigger 
+
+false second is bigger 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_date_a01c66a5f355ed676a1ee8effb78af222}\label{class_date_a01c66a5f355ed676a1ee8effb78af222}} 
+\index{Date@{Date}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily bool Date\+::operator$<$= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_date}{Date}} const \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+comparing two dates 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the second date \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true second is bigger 
+
+false first is bigger 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_date_a0b4650e6e69f6ab4816ee480b0ae2737}\label{class_date_a0b4650e6e69f6ab4816ee480b0ae2737}} 
+\index{Date@{Date}!operator==@{operator==}}
+\index{operator==@{operator==}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Date\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_date}{Date}} const \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+checks if two dates are equal 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the second date \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true they are equal 
+
+false they are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_date_a52d36d1aa6868b5afa178bd495714e44}\label{class_date_a52d36d1aa6868b5afa178bd495714e44}} 
+\index{Date@{Date}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily bool Date\+::operator$>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_date}{Date}} const \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+comparing two dates 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the second date \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true second is smaller 
+
+false first is bigger 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_date_ac1bca91434bf336beb5372ee4a2ca46f}\label{class_date_ac1bca91434bf336beb5372ee4a2ca46f}} 
+\index{Date@{Date}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily bool Date\+::operator$>$= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_date}{Date}} const \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+comparing two dates 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the second date \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true first is smaller 
+
+false second is smaller 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_date_aff5014c4e6e2029626f8133d005413f6}\label{class_date_aff5014c4e6e2029626f8133d005413f6}} 
+\index{Date@{Date}!printMonth@{printMonth}}
+\index{printMonth@{printMonth}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{printMonth()}{printMonth()}}
+{\footnotesize\ttfamily const char $\ast$ Date\+::print\+Month (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_date_8h_ae34b763987dcf60c6c619d327b8c9dbb}{Month}}}]{month }\end{DoxyParamCaption}) const}
+
+
+
+prints month with string 
+
+
+\begin{DoxyParams}{Parameters}
+{\em month} & the month that is printed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const char$\ast$ the type that is returned 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_date_ad4a022a41e2d3fcb1cd045de7d5fc112}\label{class_date_ad4a022a41e2d3fcb1cd045de7d5fc112}} 
+\index{Date@{Date}!setDay@{setDay}}
+\index{setDay@{setDay}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{setDay()}{setDay()}}
+{\footnotesize\ttfamily void Date\+::set\+Day (\begin{DoxyParamCaption}\item[{unsigned}]{\+\_\+day }\end{DoxyParamCaption})}
+
+
+
+changing the day 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+day} & new day \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_date_a425117a2ed3da9bfa93cc3d499c869eb}\label{class_date_a425117a2ed3da9bfa93cc3d499c869eb}} 
+\index{Date@{Date}!setMonth@{setMonth}}
+\index{setMonth@{setMonth}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{setMonth()}{setMonth()}}
+{\footnotesize\ttfamily void Date\+::set\+Month (\begin{DoxyParamCaption}\item[{unsigned}]{\+\_\+month }\end{DoxyParamCaption})}
+
+
+
+changing the month 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+month} & new month \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_date_ae4e1d5a08d9592449eda7ed3627de203}\label{class_date_ae4e1d5a08d9592449eda7ed3627de203}} 
+\index{Date@{Date}!setYear@{setYear}}
+\index{setYear@{setYear}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{setYear()}{setYear()}}
+{\footnotesize\ttfamily void Date\+::set\+Year (\begin{DoxyParamCaption}\item[{unsigned}]{\+\_\+year }\end{DoxyParamCaption})}
+
+
+
+changing the year 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+year} & new year \\
+\hline
+\end{DoxyParams}

@@ -5,13 +5,16 @@ TicketOffice::TicketOffice(unsigned _capacity)
 	halls = MyVector<Hall>(_capacity);
 }
 
-
+void TicketOffice::addHall(Hall const& hall)
+{
+	halls.addElement(hall);
+}
 void TicketOffice::addShow(Show const& show)
 {
 	Hall* hall = show.getHall();
 	for (unsigned i = 0; i < halls.getSize(); i++)
 	{
-		if (&halls[i]==hall)
+		if (halls[i]==*hall)
 		{
 			halls[i].addNewShow(show);
 			return;
@@ -24,25 +27,23 @@ void TicketOffice::freeSeats(Show const& show)const
 	Hall* hall = show.getHall();
 	for (unsigned i = 0; i < halls.getSize(); i++)
 	{
-		if (&halls[i] == hall)
+		if (halls[i] == *hall)
 		{
-			hall[i].printEmptySeats(std::cout, show);
+			halls[i].printEmptySeats(std::cout, show);
 			return;
 		}
 	}
 }
-
 void TicketOffice::reserveTicket(Show const& show)
 {
 	Hall* hall = show.getHall();
 	for (unsigned i = 0; i < halls.getSize(); i++)
 	{
-		if (&halls[i] == hall)
+		if (halls[i] == *hall)
 		{
-			bool isSuccessful = halls[i].reserveTicket(show);
-			if (isSuccessful)
+			
+			if (halls[i].reserveTicket(show))
 			{
-				hall[i].reserveTicket(show);
 				std::cout << "You reserved the ticket successfully! Don't forget your password!\n";
 			}
 			else
@@ -59,11 +60,9 @@ void TicketOffice::cancelReservation(Show const& show)
 	Hall* hall = show.getHall();
 	for (unsigned i = 0; i < halls.getSize(); i++)
 	{
-		if (&halls[i]==hall)
+		if (halls[i]==*hall)
 		{
-			bool isSuccessful= halls[i].cancelShowReservation(std::cin,show);
-			halls[i].cancelShowReservation(std::cin, show);
-			if (isSuccessful) 
+			if (halls[i].cancelShowReservation(std::cin, show))
 			{
 				std::cout << "You successfully canceled your reservation!\n";
 			}
@@ -81,17 +80,16 @@ void TicketOffice::buyTicket(Show const& show)
 	Hall* hall = show.getHall();
 	for (unsigned i = 0; i < halls.getSize(); i++)
 	{
-		if (&halls[i]==hall)
+		if (halls[i]==*hall)
 		{
+			std::cout << "You are buying a ticket!\n";
 			unsigned rowNumber;
 			unsigned seat;
 			std::cout << "Enter row: ";
 			std::cin >> rowNumber;
 			std::cout << "Enter seat: ";
-			std::cin >> seat;
-			bool isSuccessful = halls[i].buyTicket(show, rowNumber, seat);
-			halls[i].buyTicket(show, rowNumber, seat);
-			if (isSuccessful)
+			std::cin >> seat;		
+			if (halls[i].buyTicket(show, rowNumber, seat))
 			{
 				std::cout << "The purchase was successful,enjoy the show!\n";
 			}
@@ -108,18 +106,18 @@ void TicketOffice::reservationList() const
 	MyStr date;
 	do
 	{
-		std::cout << "Enter all or name for the command to proceed:";
+		std::cout << "Enter all or name for the command to proceed:\n";
 		std::cin >> name;
 		name.toLower();
 	} while (name!="name"&& name!="all");
 	do
 	{
-		std::cout << "Enter all or date for the command to proceed:";
+		std::cout << "Enter all or date for the command to proceed:\n";
 		std::cin >> date;
 		date.toLower();
 	} while (date != "date"&& date != "all");
-
-	MyStr textFile(name + "-" + date + ".txt");
+	MyStr currName(name);
+	MyStr textFile(currName + "-" + date + ".txt");
 	char* newName = new char[textFile.getSize() + 1];
 	strcpy(newName, textFile.getString());
 	std::ofstream file{ newName };
@@ -177,11 +175,14 @@ void TicketOffice::boughtTicketRefference()const
 	MyStr str;
 	Date beginingDate;
 	Date endingDate;
-	std::cin >> beginingDate >> endingDate;
+	std::cout << "Entering begining date:\n";
+	std::cin >> beginingDate;
+	std::cout << "Entering ending date:\n";
+	std::cin>> endingDate;
 	std::ofstream file{ "BoughtSeats.txt" };
 	do
 	{
-		std::cout << "Enter all or hall";
+		std::cout << "Enter all or hall for the command to proceed\n";
 		std::cin >> str;
 		str.toLower();
 	} while (str!="all"&& str!="hall");
@@ -204,5 +205,17 @@ void TicketOffice::boughtTicketRefference()const
 				halls[i].printBoughtSeats(file, beginingDate, endingDate);
 			}
 		}
+	}
+
+}
+void TicketOffice::readFromText(std::ifstream& in)
+{
+	int size;
+	in >> size;
+	for (unsigned i = 0; i < size; i++)
+	{
+		Hall hall;
+		hall.readFromText(in);
+		halls.addElement(hall);
 	}
 }

@@ -1,0 +1,58 @@
+\hypertarget{_date_8h_source}{}\doxysection{Date.\+h}
+\mbox{\hyperlink{_date_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_DATE\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define  \_DATE\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{10 \textcolor{keyword}{enum}  \mbox{\hyperlink{_date_8h_ae34b763987dcf60c6c619d327b8c9dbb}{Month}}}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12     \mbox{\hyperlink{_date_8h_ae34b763987dcf60c6c619d327b8c9dbba527f1fa0ce1fd27e2114947bcbfe1093}{january}} = 1,}
+\DoxyCodeLine{13     \mbox{\hyperlink{_date_8h_ae34b763987dcf60c6c619d327b8c9dbba091cbc21d3b788eb7f130dffeb921559}{february}} = 2,}
+\DoxyCodeLine{14     \mbox{\hyperlink{_date_8h_ae34b763987dcf60c6c619d327b8c9dbba6eed089c6dfcc53c0f4c19a1f7ea48f1}{march}} = 3,}
+\DoxyCodeLine{15     \mbox{\hyperlink{_date_8h_ae34b763987dcf60c6c619d327b8c9dbbad9a56d172e66957edf075045398610e1}{april}}=4,}
+\DoxyCodeLine{16     \mbox{\hyperlink{_date_8h_ae34b763987dcf60c6c619d327b8c9dbbab5f6916f174d4701c856d49cc1c66803}{may}}=5,}
+\DoxyCodeLine{17     \mbox{\hyperlink{_date_8h_ae34b763987dcf60c6c619d327b8c9dbbab03aef2b5e2635ccf2dd716eba112980}{june}}=6,}
+\DoxyCodeLine{18     \mbox{\hyperlink{_date_8h_ae34b763987dcf60c6c619d327b8c9dbba815b5fac500c63653e7916b7c020ea1f}{july}}=7,}
+\DoxyCodeLine{19     \mbox{\hyperlink{_date_8h_ae34b763987dcf60c6c619d327b8c9dbba7457c5176bcc44e1bbefe37458cbfd42}{august}}=8,}
+\DoxyCodeLine{20     \mbox{\hyperlink{_date_8h_ae34b763987dcf60c6c619d327b8c9dbba79f2d2fa80709367a6551775ca0b5c37}{september}}=9,}
+\DoxyCodeLine{21     \mbox{\hyperlink{_date_8h_ae34b763987dcf60c6c619d327b8c9dbba0152c5c7837101324b3245cef6c6ae04}{october}}=10,}
+\DoxyCodeLine{22     \mbox{\hyperlink{_date_8h_ae34b763987dcf60c6c619d327b8c9dbbaf18518f11bb156552fcda33447888ce1}{november}}=11,}
+\DoxyCodeLine{23     \mbox{\hyperlink{_date_8h_ae34b763987dcf60c6c619d327b8c9dbbaf26034167e84d78ef1426dcf3497e84a}{december}}=12}
+\DoxyCodeLine{24 \};}
+\DoxyCodeLine{29 \textcolor{keyword}{class }\mbox{\hyperlink{class_date}{Date}}}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{35 \textcolor{keyword}{private}:}
+\DoxyCodeLine{37     \textcolor{keywordtype}{unsigned} day;}
+\DoxyCodeLine{39     \mbox{\hyperlink{_date_8h_ae34b763987dcf60c6c619d327b8c9dbb}{Month}} month;}
+\DoxyCodeLine{41     \textcolor{keywordtype}{unsigned} year;}
+\DoxyCodeLine{49     \textcolor{keywordtype}{bool} isLeap(\textcolor{keywordtype}{unsigned} \_year);}
+\DoxyCodeLine{50 \textcolor{keyword}{public}:}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{59     \mbox{\hyperlink{class_date_a8c5618a288d7191dce7ecbaa4c8032ad}{Date}}(\textcolor{keywordtype}{unsigned} \_day = 1, \mbox{\hyperlink{_date_8h_ae34b763987dcf60c6c619d327b8c9dbb}{Month}} \_month = \mbox{\hyperlink{_date_8h_ae34b763987dcf60c6c619d327b8c9dbba527f1fa0ce1fd27e2114947bcbfe1093}{january}}, \textcolor{keywordtype}{unsigned} year = 2000);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{66     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_date_a4dedf1cbd19ff221fc1f70895ba560e7}{getDay}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} day; \}}
+\DoxyCodeLine{68     \mbox{\hyperlink{_date_8h_ae34b763987dcf60c6c619d327b8c9dbb}{Month}} \mbox{\hyperlink{class_date_a1137d63aa6266861fb6cb47a4f2f48a9}{getMonth}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} month; \}}
+\DoxyCodeLine{69     \textcolor{comment}{//get the year}}
+\DoxyCodeLine{70     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_date_aa1e4066bffc24af79f604dabce27e3cc}{getYear}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} year; \}}
+\DoxyCodeLine{77     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{class_date_aff5014c4e6e2029626f8133d005413f6}{printMonth}}(\mbox{\hyperlink{_date_8h_ae34b763987dcf60c6c619d327b8c9dbb}{Month}} month) \textcolor{keyword}{const};}
+\DoxyCodeLine{83     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_date_ad4a022a41e2d3fcb1cd045de7d5fc112}{setDay}}(\textcolor{keywordtype}{unsigned} \_day);}
+\DoxyCodeLine{89     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_date_a425117a2ed3da9bfa93cc3d499c869eb}{setMonth}}(\textcolor{keywordtype}{unsigned} \_month);}
+\DoxyCodeLine{95     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_date_ae4e1d5a08d9592449eda7ed3627de203}{setYear}}(\textcolor{keywordtype}{unsigned} \_year);}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{104     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_date_a0b4650e6e69f6ab4816ee480b0ae2737}{operator==}}(\mbox{\hyperlink{class_date}{Date}} \textcolor{keyword}{const}\& other) \textcolor{keyword}{const};}
+\DoxyCodeLine{112     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_date_a8b7030515e10d7d79f187165463a3315}{operator!=}}(\mbox{\hyperlink{class_date}{Date}} \textcolor{keyword}{const}\& other) \textcolor{keyword}{const};}
+\DoxyCodeLine{120     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_date_a01c66a5f355ed676a1ee8effb78af222}{operator<=}}(\mbox{\hyperlink{class_date}{Date}} \textcolor{keyword}{const}\& other) \textcolor{keyword}{const};}
+\DoxyCodeLine{128     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_date_a074316aeb377c6c1ea828b2642b39153}{operator<}}(\mbox{\hyperlink{class_date}{Date}} \textcolor{keyword}{const}\& other) \textcolor{keyword}{const};}
+\DoxyCodeLine{136     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_date_ac1bca91434bf336beb5372ee4a2ca46f}{operator>=}}(\mbox{\hyperlink{class_date}{Date}} \textcolor{keyword}{const}\& other) \textcolor{keyword}{const};}
+\DoxyCodeLine{144     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_date_a52d36d1aa6868b5afa178bd495714e44}{operator>}}(\mbox{\hyperlink{class_date}{Date}} \textcolor{keyword}{const}\& other) \textcolor{keyword}{const};}
+\DoxyCodeLine{145 \};}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{154 std::istream\& \mbox{\hyperlink{_date_8h_aa8eb23d33c35a08ff28cffb5398f4c7e}{operator>>}}(std::istream\& in, \mbox{\hyperlink{class_date}{Date}}\& \_date);}
+\DoxyCodeLine{162 std::ostream\& \mbox{\hyperlink{_date_8h_a7f0b763f59659c91ab79daff40894107}{operator<<}}(std::ostream\& out, \mbox{\hyperlink{class_date}{Date}} \textcolor{keyword}{const}\& \_date);}
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !\_DATE\_HPP}}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165 }
+
+\end{DoxyCode}
