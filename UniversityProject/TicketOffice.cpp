@@ -117,10 +117,10 @@ void TicketOffice::reservationList() const
 	std::ofstream file{ newName };
 	if (date=="date" && name=="name")
 	{
+		Date newDate;
+		std::cin >> newDate;
 		for (unsigned i = 0; i < halls.getSize(); i++)
 		{
-			Date newDate;
-			std::cin >> newDate;
 			halls[i].printReservedSeats(file, newDate, name);
 		}
 	}

@@ -5,7 +5,7 @@ var searchData=
   ['getday_2',['getDay',['../class_date.html#a4dedf1cbd19ff221fc1f70895ba560e7',1,'Date']]],
   ['gethall_3',['getHall',['../class_show.html#aa01d3f85452c5fc1700230c98466c12a',1,'Show']]],
   ['gethallnumber_4',['getHallNumber',['../class_hall.html#ab52e600db85db94dcb17bb1e45359d2a',1,'Hall']]],
-  ['gethalls_5',['getHalls',['../class_ticket_office.html#a5e4b76755d4f9681e2b73653d17d3b16',1,'TicketOffice']]],
+  ['gethalls_5',['getHalls',['../class_ticket_office.html#ae12be288e9eda472422a94beba88f2e4',1,'TicketOffice']]],
   ['getmonth_6',['getMonth',['../class_date.html#a1137d63aa6266861fb6cb47a4f2f48a9',1,'Date']]],
   ['getname_7',['getName',['../class_show.html#a1b0df2fad177e3928a52699ddfab6f04',1,'Show']]],
   ['getnote_8',['getNote',['../class_reservation.html#af7d0f9b477f421c0535b82cd322263d3',1,'Reservation']]],

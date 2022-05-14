@@ -39,25 +39,25 @@
 \DoxyCodeLine{77     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_hall_ae745e028ce420f192219bac2096f3c59}{isReserved}}(\mbox{\hyperlink{class_date}{Date}} \_date);}
 \DoxyCodeLine{78 }
 \DoxyCodeLine{86     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_hall_a088b610529122ec43d1e4c5e425cfda3}{addNewShow}}(\mbox{\hyperlink{class_show}{Show}} \textcolor{keyword}{const}\& show);}
-\DoxyCodeLine{96     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_hall_a9b5baf698688ca68bf2cae89b51aec53}{buyTicket}}(\mbox{\hyperlink{class_show}{Show}} show,\textcolor{keywordtype}{unsigned} \_rowNumber,\textcolor{keywordtype}{unsigned} \_seat);}
-\DoxyCodeLine{97 }
-\DoxyCodeLine{98     }
-\DoxyCodeLine{105     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hall_a464c4cc7510b475420c47fdf00f84d3f}{showSeats}}(std::ostream\& out,\mbox{\hyperlink{class_show}{Show}} \textcolor{keyword}{const}\& show) \textcolor{keyword}{const};}
-\DoxyCodeLine{106 }
-\DoxyCodeLine{113     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hall_a66f56d181687d5b38b556223abbc935c}{seatsReference}}(\mbox{\hyperlink{class_show}{Show}} \textcolor{keyword}{const}\& show, std::ostream\& out=std::cout) \textcolor{keyword}{const};}
-\DoxyCodeLine{121     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_hall_a5b42cc13ee75ef6ed75ed5f12d5336fe}{reserveTicket}}(\mbox{\hyperlink{class_show}{Show}} show);}
-\DoxyCodeLine{129     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hall_aa9194dcc778fdc5f24563b1e76ce4609}{printBoughtSeats}}(std::ofstream\& out,\mbox{\hyperlink{class_date}{Date}} beginingDate, \mbox{\hyperlink{class_date}{Date}} endingDate) \textcolor{keyword}{const};}
-\DoxyCodeLine{137     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hall_a3b6e047c5a2389d57c9c56a5df1e7192}{printReservedSeats}}(std::ofstream\& out,\mbox{\hyperlink{class_date}{Date}} date,\mbox{\hyperlink{class_my_str}{MyStr}} name)\textcolor{keyword}{const};}
-\DoxyCodeLine{144     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hall_a390bd21f706775b870fe34d641ca863e}{printEmptySeats}}(std::ostream\& out, \mbox{\hyperlink{class_show}{Show}} show)\textcolor{keyword}{const};}
-\DoxyCodeLine{150     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hall_acf726a69b887e2fcf85d05fdc0a86fec}{print}}(std::ostream\& out)\textcolor{keyword}{const};}
-\DoxyCodeLine{159     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_hall_af836c53b22e4595302681829efc9f9f4}{cancelShowReservation}}(std::istream\& in,\mbox{\hyperlink{class_show}{Show}} \textcolor{keyword}{const}\& show);}
-\DoxyCodeLine{167     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_hall_a1ce9f973ba2488d1e4223b597497e8b8}{operator==}}(\mbox{\hyperlink{class_hall}{Hall}} \textcolor{keyword}{const}\& other)\textcolor{keyword}{const};}
-\DoxyCodeLine{174     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_hall_afe3ea5902db53768a0553e4b53dc5535}{isEmpty}}();}
-\DoxyCodeLine{182     \textcolor{keyword}{friend} std::istream\& \mbox{\hyperlink{class_hall_ab4bd18766cb82d35486ba6766a73a246}{operator>>}}(std::istream\& in, \mbox{\hyperlink{class_hall}{Hall}}\& hall);}
-\DoxyCodeLine{188     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hall_ad79802e408de67a34e3f2de3c9f5993c}{readFromText}}(std::ifstream\& in);}
-\DoxyCodeLine{189 \};}
-\DoxyCodeLine{197 std::ostream\& \mbox{\hyperlink{_hall_8h_a764c62dcd29e2ee65625eb5ff5f3e1cc}{operator<<}}(std::ostream\& out, \mbox{\hyperlink{class_hall}{Hall}} \textcolor{keyword}{const}\& hall);}
-\DoxyCodeLine{198 }
-\DoxyCodeLine{199 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{94     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_hall_a8c81b1690c96f603d3330de8b4b4670a}{buyTicket}}(\mbox{\hyperlink{class_show}{Show}} \textcolor{keyword}{const}\& show);}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     }
+\DoxyCodeLine{103     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hall_a464c4cc7510b475420c47fdf00f84d3f}{showSeats}}(std::ostream\& out,\mbox{\hyperlink{class_show}{Show}} \textcolor{keyword}{const}\& show) \textcolor{keyword}{const};}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{111     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hall_a66f56d181687d5b38b556223abbc935c}{seatsReference}}(\mbox{\hyperlink{class_show}{Show}} \textcolor{keyword}{const}\& show, std::ostream\& out=std::cout) \textcolor{keyword}{const};}
+\DoxyCodeLine{119     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_hall_a40cf32ded2fd28509a8f97536c603679}{reserveTicket}}(\mbox{\hyperlink{class_show}{Show}} \textcolor{keyword}{const}\& show);}
+\DoxyCodeLine{127     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hall_ad591cc16078476200eed3d43d1666be1}{printBoughtSeats}}(std::ofstream\& out,\mbox{\hyperlink{class_date}{Date}} \textcolor{keyword}{const}\& beginingDate, \mbox{\hyperlink{class_date}{Date}} \textcolor{keyword}{const}\& endingDate) \textcolor{keyword}{const};}
+\DoxyCodeLine{135     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hall_a7c3a394343d7bce14c4f40d4b0326c6c}{printReservedSeats}}(std::ofstream\& out,\mbox{\hyperlink{class_date}{Date}} \textcolor{keyword}{const}\& date,\mbox{\hyperlink{class_my_str}{MyStr}} \textcolor{keyword}{const}\& name)\textcolor{keyword}{const};}
+\DoxyCodeLine{142     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hall_af2e1b7b7103b6138fe7e1613744749dc}{printEmptySeats}}(std::ostream\& out, \mbox{\hyperlink{class_show}{Show}} \textcolor{keyword}{const}\& show)\textcolor{keyword}{const};}
+\DoxyCodeLine{148     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hall_acf726a69b887e2fcf85d05fdc0a86fec}{print}}(std::ostream\& out)\textcolor{keyword}{const};}
+\DoxyCodeLine{157     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_hall_af836c53b22e4595302681829efc9f9f4}{cancelShowReservation}}(std::istream\& in,\mbox{\hyperlink{class_show}{Show}} \textcolor{keyword}{const}\& show);}
+\DoxyCodeLine{165     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_hall_a1ce9f973ba2488d1e4223b597497e8b8}{operator==}}(\mbox{\hyperlink{class_hall}{Hall}} \textcolor{keyword}{const}\& other)\textcolor{keyword}{const};}
+\DoxyCodeLine{172     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_hall_afe3ea5902db53768a0553e4b53dc5535}{isEmpty}}();}
+\DoxyCodeLine{180     \textcolor{keyword}{friend} std::istream\& \mbox{\hyperlink{class_hall_ab4bd18766cb82d35486ba6766a73a246}{operator>>}}(std::istream\& in, \mbox{\hyperlink{class_hall}{Hall}}\& hall);}
+\DoxyCodeLine{186     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hall_ad79802e408de67a34e3f2de3c9f5993c}{readFromText}}(std::ifstream\& in);}
+\DoxyCodeLine{187 \};}
+\DoxyCodeLine{195 std::ostream\& \mbox{\hyperlink{_hall_8h_a764c62dcd29e2ee65625eb5ff5f3e1cc}{operator<<}}(std::ostream\& out, \mbox{\hyperlink{class_hall}{Hall}} \textcolor{keyword}{const}\& hall);}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

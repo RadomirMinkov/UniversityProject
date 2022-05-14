@@ -8,5 +8,5 @@ var searchData=
   ['reservation_2eh_5',['Reservation.h',['../_reservation_8h.html',1,'']]],
   ['reservationlist_6',['reservationList',['../class_ticket_office.html#a7030214399a2b17e44ef3c7e5ebea169',1,'TicketOffice']]],
   ['reserved_7',['reserved',['../_show_8h.html#a368d9bac660a99128940c2ca60672d55ac6638028c1aba75eca7eed225800ad5b',1,'Show.h']]],
-  ['reserveticket_8',['reserveTicket',['../class_hall.html#a5b42cc13ee75ef6ed75ed5f12d5336fe',1,'Hall::reserveTicket()'],['../class_ticket_office.html#a6c1cf1db098febb54fca9721d609a857',1,'TicketOffice::reserveTicket()']]]
+  ['reserveticket_8',['reserveTicket',['../class_hall.html#a40cf32ded2fd28509a8f97536c603679',1,'Hall::reserveTicket()'],['../class_ticket_office.html#a6c1cf1db098febb54fca9721d609a857',1,'TicketOffice::reserveTicket()']]]
 ];

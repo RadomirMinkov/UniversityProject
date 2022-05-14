@@ -8,7 +8,7 @@ var class_ticket_office =
     [ "buyTicket", "class_ticket_office.html#a0d7337efd0c9147b232146f8c17efad0", null ],
     [ "cancelReservation", "class_ticket_office.html#a65f4792ffcbf3297dfc597695d8c3a1a", null ],
     [ "freeSeats", "class_ticket_office.html#a9c58e5ab315ccb25d56e3dc9e5cafb7b", null ],
-    [ "getHalls", "class_ticket_office.html#a5e4b76755d4f9681e2b73653d17d3b16", null ],
+    [ "getHalls", "class_ticket_office.html#ae12be288e9eda472422a94beba88f2e4", null ],
     [ "operator=", "class_ticket_office.html#a9f6e263655352eb5442bc8ecab62eca3", null ],
     [ "readFromText", "class_ticket_office.html#a42e94a39146d8fcd751c6ea667ef3562", null ],
     [ "reservationList", "class_ticket_office.html#a7030214399a2b17e44ef3c7e5ebea169", null ],

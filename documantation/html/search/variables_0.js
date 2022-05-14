@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['max_5fanswer_5fbuffer_0',['MAX_ANSWER_BUFFER',['../_hall_8h.html#a772c64869129b8a626144add5814f580',1,'Hall.h']]]
+  ['commands_0',['COMMANDS',['../_constants_8h.html#ac8de4e2f1cce7eb7c7cc5d94e3c2d538',1,'Constants.h']]],
+  ['commandsarray_1',['commandsArray',['../_constants_8h.html#a07346211e9ed0ee8c49f47e88f2b038a',1,'Constants.h']]]
 ];

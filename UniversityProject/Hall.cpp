@@ -278,9 +278,6 @@ std::istream& operator>>(std::istream& in, Hall& hall)
 	in >> hall.rows;
 	if (&in == &std::cin)
 		std::cout << "Enter seats on row: ";
-	/*hall.shows = MyVector<Show>(2);
-	for (unsigned i = 0; i < hall.shows.getCapacity(); i++)
-		hall.shows[i].createSeats(hall.getRows(), hall.getSeatsOnRows());*/
 	return in >> hall.seatsOnRow;
 }
 
@@ -290,6 +287,7 @@ bool Hall::cancelShowReservation(std::istream& in, Show const& show)
 	{
 		if (show == shows[i])
 		{
+			shows[i].printSeats(std::cout, rows, seatsOnRow);
 			std::cout << "Enter the reservation that you want to cancel:\n";
 			Reservation reservation = enterReservatoin();
 			return shows[i].cancelReservation(reservation);

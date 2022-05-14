@@ -30,10 +30,12 @@ void TicketInterface::work()
 		if (commandNumber == 6)
 		{
 			office.reservationList();
+			system("CLS");
 		}
 		else if (commandNumber == 7)
 		{
 			office.boughtTicketRefference();
+			system("CLS");
 		}
 		else if (commandNumber == 8)
 		{
@@ -48,9 +50,11 @@ void TicketInterface::work()
 			{
 			case 1:
 				office.addShow(show);
+				std::cin.get();
 				break;
 			case 2:
 				office.freeSeats(show);
+				std::cin.get();
 				break;
 			case 3:
 				office.reserveTicket(show);
@@ -60,11 +64,11 @@ void TicketInterface::work()
 				break;
 			case 5:
 				office.buyTicket(show);
+				std::cin.get();
 				break;
 			default:
 				break;
 			}
-			std::cin.get();
 			std::cin.get();
 			system("CLS");
 		}

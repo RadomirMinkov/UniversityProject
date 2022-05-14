@@ -74,7 +74,8 @@ void Show::copy(Show const& other)
 {
 	name = other.name;
 	date = other.date;
-	hall = other.hall;
+	hall = new Hall(*other.hall);
+	//hall = other.hall;
 	reservations = other.reservations;
 	seats = new Seats*[hall->getRows()];
 	for (unsigned i = 0; i < hall->getRows(); i++)
@@ -193,7 +194,7 @@ void Show::printReservations(std::ostream& out)const
 }
 bool Show::operator==(Show const& other)const
 {
-	return hall == other.hall && name == other.name && date == other.date;
+	return *hall == *other.hall && name == other.name && date == other.date;
 }
 std::istream& operator>>(std::istream& in, Show& other)
 {
