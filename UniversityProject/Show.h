@@ -37,7 +37,7 @@ private:
 	  Date date;
 	  ///pointer to hall
 	  Hall* hall;
-	  //list of reservations
+	  ///list of reservations
 	  MyVector<Reservation> reservations;
 	  ///matrix with the seats
 	  Seats** seats;
@@ -113,6 +113,7 @@ public:
 	 * @param newDate the new date
 	 */
 	void setDate(Date newDate);
+
 	/**
 	 * @brief fucntion that prints the seats
 	 * 

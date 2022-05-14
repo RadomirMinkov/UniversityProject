@@ -7,33 +7,37 @@ void TicketInterface::work()
 	std::ifstream file{ "halls.txt" };
 	size_t size;
 	file >> size;
-
 	for (unsigned i = 0; i < size; i++)
 	{
 		Hall hall;
 		file >> hall;
 		office.addHall(hall);
-		std::cout << office.getHalls()[i];
-	}
-	for (unsigned i = 1; i <= COMMANDS; i++)
-	{
-		std::cout << i <<": "<< commandsArray[i - 1]<<'\n';
+		//std::cout << office.getHalls()[i];
 	}
 	unsigned commandNumber;
 	do
 	{
+		for (unsigned i = 0; i < size; i++)
+		{
+			std::cout << office.getHalls()[i];
+		}
+		for (unsigned i = 1; i <= COMMANDS; i++)
+		{
+			std::cout << i << ": " << commandsArray[i - 1] << '\n';
+		}
 		std::cout << "Enter the number of the command that you want to proceed: ";
 		std::cin >> commandNumber;
-		if (commandNumber==6)
+		if (commandNumber == 6)
 		{
 			office.reservationList();
 		}
-		else if (commandNumber==7)
+		else if (commandNumber == 7)
 		{
 			office.boughtTicketRefference();
 		}
-		else if (commandNumber==8)
+		else if (commandNumber == 8)
 		{
+			std::cout << "Thank you!Have a good day!";
 			return;
 		}
 		else
@@ -60,6 +64,9 @@ void TicketInterface::work()
 			default:
 				break;
 			}
+			std::cin.get();
+			std::cin.get();
+			system("CLS");
 		}
-	} while (commandNumber>=1 && commandNumber<=COMMANDS);
+	} while (commandNumber >= 1 && commandNumber <= COMMANDS);
 }

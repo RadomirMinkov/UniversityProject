@@ -9,6 +9,7 @@ void Show::clear()
 	for (unsigned i = 0; i < hall->getRows(); i++)
 		delete seats[i];
 	delete[] seats;
+	delete hall;
 }
 Show::~Show()
 {
@@ -192,22 +193,23 @@ void Show::printReservations(std::ostream& out)const
 }
 bool Show::operator==(Show const& other)const
 {
-	return hall == other.hall && name == name && date == other.date;
+	return hall == other.hall && name == other.name && date == other.date;
 }
 std::istream& operator>>(std::istream& in, Show& other)
 {
-	std::cout << "Show:\n";
-	other.seats = nullptr;
-	Hall hall;
-	in >> hall;
-	other.hall = &hall;
+	if (&std::cin == &in) 
+		std::cout << "Show:\n";
+			other.hall = new Hall;
+			in >> *other.hall;
+		//	other.hall = &hall;
 	if (&std::cin == &in)
-		std::cout << "Enter the name of the show\n";
+		std::cout << "Enter the name of the show:\n";
 	in >> other.name;
 	if (&std::cin == &in)
-		std::cout << "Enter the date of the show\n";
-	return	in >> other.date;
-
+		std::cout << "Enter the date of the show:\n";
+		 in >> other.date;
+		other.createSeats(other.hall->getRows(), other.hall->getSeatsOnRows());
+		return in;
 }
 
 std::ostream& operator<<(std::ostream& out, Show const& other)

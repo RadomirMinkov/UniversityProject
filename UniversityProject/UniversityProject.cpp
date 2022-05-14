@@ -83,12 +83,12 @@ int main()
 	Date date(2, october, 2002);
 	office.addHall(hall);
 	Show show("Naruto", date, 2, &hall);
-	office.addShow(show);
-	office.buyTicket(show);
+	office.addShow(show);*/
+	/*office.buyTicket(show);
 	office.reserveTicket(show);
 	office.buyTicket(show);
 	office.freeSeats(show);
-	/*office.cancelReservation(show);
+	office.cancelReservation(show);
 	office.reserveTicket(show);
 	office.reserveTicket(show);
 	office.reserveTicket(show);

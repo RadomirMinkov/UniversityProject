@@ -41,7 +41,6 @@ void TicketOffice::reserveTicket(Show const& show)
 	{
 		if (halls[i] == *hall)
 		{
-			
 			if (halls[i].reserveTicket(show))
 			{
 				std::cout << "You reserved the ticket successfully! Don't forget your password!\n";
@@ -82,14 +81,8 @@ void TicketOffice::buyTicket(Show const& show)
 	{
 		if (halls[i]==*hall)
 		{
-			std::cout << "You are buying a ticket!\n";
-			unsigned rowNumber;
-			unsigned seat;
-			std::cout << "Enter row: ";
-			std::cin >> rowNumber;
-			std::cout << "Enter seat: ";
-			std::cin >> seat;		
-			if (halls[i].buyTicket(show, rowNumber, seat))
+				
+			if (halls[i].buyTicket(show))
 			{
 				std::cout << "The purchase was successful,enjoy the show!\n";
 			}
@@ -97,6 +90,7 @@ void TicketOffice::buyTicket(Show const& show)
 			{
 				std::cout << "The transaction couldn't be completed! Try again with different seat!\n";
 			}
+			return;
 		}
 	}
 }

@@ -88,12 +88,10 @@ public:
 	 * @brief buying ticket for show
 	 * 
 	 * @param show the show the ticket is bought
-	 * @param _rowNumber the row of the ticket
-	 * @param _seat the seat of the ticket
 	 * @return true bought seat succesfully
 	 * @return false couldn't buy seat
 	 */
-	bool buyTicket(Show show,unsigned _rowNumber,unsigned _seat);
+	bool buyTicket(Show const& show);
 
 	
 	/**
@@ -118,7 +116,7 @@ public:
 	 * @return true succesfull reservation
 	 * @return false unsuccessful reservation
 	 */
-	bool reserveTicket(Show show);
+	bool reserveTicket(Show const& show);
 	/**
 	 * @brief prints the seats that are bought
 	 * 
@@ -126,7 +124,7 @@ public:
 	 * @param beginingDate the date from which the refference is made
 	 * @param endingDate the date to which the refference is made
 	 */
-	void printBoughtSeats(std::ofstream& out,Date beginingDate, Date endingDate) const;
+	void printBoughtSeats(std::ofstream& out,Date const& beginingDate, Date const& endingDate) const;
 	/**
 	 * @brief  prints the seats that are reserved
 	 * 
@@ -134,14 +132,14 @@ public:
 	 * @param date the date which shows which shows we should print
 	 * @param name the name of the shows that should be printed
 	 */
-	void printReservedSeats(std::ofstream& out,Date date,MyStr name)const;
+	void printReservedSeats(std::ofstream& out,Date const& date,MyStr const& name)const;
 	/**
 	 * @brief prints the seats that are empty
 	 * 
 	 * @param out the stream where the result will be printed
 	 * @param show the show which seats are printed
 	 */
-	void printEmptySeats(std::ostream& out, Show show)const;
+	void printEmptySeats(std::ostream& out, Show const& show)const;
 	/**
 	 * @brief prints the hall
 	 * 

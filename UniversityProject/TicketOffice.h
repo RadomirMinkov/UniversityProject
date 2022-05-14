@@ -36,7 +36,7 @@ public:
 	TicketOffice& operator=(TicketOffice const& other) = delete;
 
 ///get the list of halls
-	MyVector<Hall> getHalls() const { return halls; }
+	const MyVector<Hall>& getHalls() const { return halls; }
 	/**
 	 * @brief function that add halls to the list 
 	 * 
