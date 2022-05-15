@@ -11,6 +11,6 @@ var class_my_vector =
     [ "operator==", "class_my_vector.html#ab5f2a1d3042cdff9c5a1dfc67bc0ae86", null ],
     [ "operator[]", "class_my_vector.html#a62a111706d72f2f4c511b8cff0581cbe", null ],
     [ "print", "class_my_vector.html#a8b87a8ca8dd74b6e643c7adad7528d94", null ],
-    [ "removeElement", "class_my_vector.html#a64c6a0905b85ce78d3e1dc4fabfd7392", null ],
+    [ "removeElement", "class_my_vector.html#a710b0eeee400ebbff858d062acdff15b", null ],
     [ "setSize", "class_my_vector.html#a682959dd3a933675effcfa18312233d4", null ]
 ];

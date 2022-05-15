@@ -36,6 +36,12 @@ void \mbox{\hyperlink{class_ticket_office_a7030214399a2b17e44ef3c7e5ebea169}{res
 \begin{DoxyCompactList}\small\item\em fucntion that print the reservations \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_ticket_office_ac7b68878cd8b9ce764ee30ae4bad909a}{bought\+Ticket\+Refference}} () const
 \begin{DoxyCompactList}\small\item\em function that print the bought tickets \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ticket_office_a3eb79ef8eaec382cfb4f29e7a6bcd0e2}{show\+List}} () const
+\begin{DoxyCompactList}\small\item\em function that prints list with all the shows \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ticket_office_a1845a05eead5c74f620e7812a904bf26}{most\+Watched\+Shows}} () const
+\begin{DoxyCompactList}\small\item\em function that prints the most watched shows \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ticket_office_ab83b450a9346301d6298bdb22017470f}{shows\+With\+Least\+Amount\+Of\+Viewership}} () const
+\begin{DoxyCompactList}\small\item\em function that prints the least watched shows and give the user option to delete a shows \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_ticket_office_a6ab1ed081ba642e6dce28386079e8384}{write\+To\+Text}} (std\+::ofstream \&out) const
 \begin{DoxyCompactList}\small\item\em function that writes to text file \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_ticket_office_a42e94a39146d8fcd751c6ea667ef3562}{read\+From\+Text}} (std\+::ifstream \&in)
@@ -174,6 +180,16 @@ function that prints the seats of a show
 
 get the list of halls 
 
+\mbox{\Hypertarget{class_ticket_office_a1845a05eead5c74f620e7812a904bf26}\label{class_ticket_office_a1845a05eead5c74f620e7812a904bf26}} 
+\index{TicketOffice@{TicketOffice}!mostWatchedShows@{mostWatchedShows}}
+\index{mostWatchedShows@{mostWatchedShows}!TicketOffice@{TicketOffice}}
+\doxysubsubsection{\texorpdfstring{mostWatchedShows()}{mostWatchedShows()}}
+{\footnotesize\ttfamily void Ticket\+Office\+::most\+Watched\+Shows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+function that prints the most watched shows 
+
 \mbox{\Hypertarget{class_ticket_office_a9f6e263655352eb5442bc8ecab62eca3}\label{class_ticket_office_a9f6e263655352eb5442bc8ecab62eca3}} 
 \index{TicketOffice@{TicketOffice}!operator=@{operator=}}
 \index{operator=@{operator=}!TicketOffice@{TicketOffice}}
@@ -232,6 +248,26 @@ function that reserves a ticket in a show
 {\em show} & the show in which the reservation will be made \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_ticket_office_a3eb79ef8eaec382cfb4f29e7a6bcd0e2}\label{class_ticket_office_a3eb79ef8eaec382cfb4f29e7a6bcd0e2}} 
+\index{TicketOffice@{TicketOffice}!showList@{showList}}
+\index{showList@{showList}!TicketOffice@{TicketOffice}}
+\doxysubsubsection{\texorpdfstring{showList()}{showList()}}
+{\footnotesize\ttfamily void Ticket\+Office\+::show\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+function that prints list with all the shows 
+
+\mbox{\Hypertarget{class_ticket_office_ab83b450a9346301d6298bdb22017470f}\label{class_ticket_office_ab83b450a9346301d6298bdb22017470f}} 
+\index{TicketOffice@{TicketOffice}!showsWithLeastAmountOfViewership@{showsWithLeastAmountOfViewership}}
+\index{showsWithLeastAmountOfViewership@{showsWithLeastAmountOfViewership}!TicketOffice@{TicketOffice}}
+\doxysubsubsection{\texorpdfstring{showsWithLeastAmountOfViewership()}{showsWithLeastAmountOfViewership()}}
+{\footnotesize\ttfamily void Ticket\+Office\+::shows\+With\+Least\+Amount\+Of\+Viewership (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+function that prints the least watched shows and give the user option to delete a shows 
+
 \mbox{\Hypertarget{class_ticket_office_a6ab1ed081ba642e6dce28386079e8384}\label{class_ticket_office_a6ab1ed081ba642e6dce28386079e8384}} 
 \index{TicketOffice@{TicketOffice}!writeToText@{writeToText}}
 \index{writeToText@{writeToText}!TicketOffice@{TicketOffice}}

@@ -28,7 +28,7 @@
 \DoxyCodeLine{76     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_my_vector_a682959dd3a933675effcfa18312233d4}{setSize}}(\textcolor{keywordtype}{size\_t} newSize);}
 \DoxyCodeLine{82     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_my_vector_a8b87a8ca8dd74b6e643c7adad7528d94}{print}}(std::ostream\& out=std::cout) \textcolor{keyword}{const};}
 \DoxyCodeLine{88     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_my_vector_a4264f13b96843780f1aac6d9584883d7}{addElement}}(T \textcolor{keyword}{const}\& newEl);}
-\DoxyCodeLine{96     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_my_vector_a64c6a0905b85ce78d3e1dc4fabfd7392}{removeElement}}(T element);}
+\DoxyCodeLine{96     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_my_vector_a710b0eeee400ebbff858d062acdff15b}{removeElement}}(T \textcolor{keyword}{const}\& element);}
 \DoxyCodeLine{104     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_my_vector_ab5f2a1d3042cdff9c5a1dfc67bc0ae86}{operator==}}(\mbox{\hyperlink{class_my_vector}{MyVector}} \textcolor{keyword}{const}\& other)\textcolor{keyword}{const};}
 \DoxyCodeLine{111     T\& \mbox{\hyperlink{class_my_vector_a62a111706d72f2f4c511b8cff0581cbe}{operator[]}}(\textcolor{keywordtype}{int} index) \textcolor{keyword}{const};}
 \DoxyCodeLine{112 \};}
@@ -127,13 +127,13 @@
 \DoxyCodeLine{205 \}}
 \DoxyCodeLine{206 }
 \DoxyCodeLine{207 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
-\DoxyCodeLine{208 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_my_vector_a64c6a0905b85ce78d3e1dc4fabfd7392}{MyVector<T>::removeElement}}(T element)}
+\DoxyCodeLine{208 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_my_vector_a710b0eeee400ebbff858d062acdff15b}{MyVector<T>::removeElement}}(T \textcolor{keyword}{const}\& element)}
 \DoxyCodeLine{209 \{}
 \DoxyCodeLine{210     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} i = 0; i < size; i++)}
 \DoxyCodeLine{211     \{}
 \DoxyCodeLine{212         \textcolor{keywordflow}{if} (data[i] == element)}
 \DoxyCodeLine{213         \{}
-\DoxyCodeLine{214             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} j = i; j < size; j++)}
+\DoxyCodeLine{214             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} j = i; j < size-\/1; j++)}
 \DoxyCodeLine{215             \{}
 \DoxyCodeLine{216                 data[j] = data[j + 1];}
 \DoxyCodeLine{217             \}}

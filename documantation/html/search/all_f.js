@@ -12,5 +12,7 @@ var searchData=
   ['show_9',['Show',['../class_show.html',1,'Show'],['../class_show.html#a74357a790b067962a5acc4ad3c6c9581',1,'Show::Show()'],['../class_show.html#afcf582540b6dd24bb062ac725a153cf4',1,'Show::Show(MyStr _name, Date _date, unsigned _capacity, Hall *hall=nullptr)'],['../class_show.html#aebd2f08ed3f061708c9193770a2d2633',1,'Show::Show(Show const &amp;other)']]],
   ['show_2ecpp_10',['Show.cpp',['../_show_8cpp.html',1,'']]],
   ['show_2eh_11',['Show.h',['../_show_8h.html',1,'']]],
-  ['showseats_12',['showSeats',['../class_hall.html#a464c4cc7510b475420c47fdf00f84d3f',1,'Hall']]]
+  ['showlist_12',['showList',['../class_ticket_office.html#a3eb79ef8eaec382cfb4f29e7a6bcd0e2',1,'TicketOffice']]],
+  ['showseats_13',['showSeats',['../class_hall.html#a464c4cc7510b475420c47fdf00f84d3f',1,'Hall']]],
+  ['showswithleastamountofviewership_14',['showsWithLeastAmountOfViewership',['../class_ticket_office.html#ab83b450a9346301d6298bdb22017470f',1,'TicketOffice']]]
 ];

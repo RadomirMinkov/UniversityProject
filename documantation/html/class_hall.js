@@ -18,6 +18,7 @@ var class_hall =
     [ "printEmptySeats", "class_hall.html#af2e1b7b7103b6138fe7e1613744749dc", null ],
     [ "printReservedSeats", "class_hall.html#a7c3a394343d7bce14c4f40d4b0326c6c", null ],
     [ "readFromText", "class_hall.html#ad79802e408de67a34e3f2de3c9f5993c", null ],
+    [ "removeShow", "class_hall.html#ad998caec0932898e161ce1793efe98f4", null ],
     [ "reserveTicket", "class_hall.html#a40cf32ded2fd28509a8f97536c603679", null ],
     [ "seatsReference", "class_hall.html#a66f56d181687d5b38b556223abbc935c", null ],
     [ "showSeats", "class_hall.html#a464c4cc7510b475420c47fdf00f84d3f", null ],

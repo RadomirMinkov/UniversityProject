@@ -93,7 +93,7 @@ public:
 	 * @return true the element was removed successfully
 	 * @return false the couldn't be removed
 	 */
-	bool removeElement(T element);
+	bool removeElement(T const& element);
 	/**
 	 * @brief checks if two vectors are equal
 	 * 
@@ -205,13 +205,13 @@ void MyVector<T>::addElement(T const& newEl)
 }
 
 template <typename T>
-bool MyVector<T>::removeElement(T element)
+bool MyVector<T>::removeElement(T const& element)
 {
 	for (unsigned i = 0; i < size; i++)
 	{
 		if (data[i] == element)
 		{
-			for (unsigned j = i; j < size; j++)
+			for (unsigned j = i; j < size-1; j++)
 			{
 				data[j] = data[j + 1];
 			}

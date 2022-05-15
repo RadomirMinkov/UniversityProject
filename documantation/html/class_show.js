@@ -8,6 +8,7 @@ var class_show =
     [ "buyTicket", "class_show.html#aa5a94a61edfab6e10258812e11dffba7", null ],
     [ "cancelReservation", "class_show.html#a35b79b3d25e8d186d3bebd1ca66c014d", null ],
     [ "createSeats", "class_show.html#a62f423602009ceab8319c9771faddebb", null ],
+    [ "getAttendance", "class_show.html#ac04ca18821cd2c1fc2608d9d1b2933d6", null ],
     [ "getDate", "class_show.html#aa1463d1d30cadffaea9e74e6e9eb2fe0", null ],
     [ "getHall", "class_show.html#aa01d3f85452c5fc1700230c98466c12a", null ],
     [ "getName", "class_show.html#a1b0df2fad177e3928a52699ddfab6f04", null ],

@@ -30,6 +30,8 @@ bool \mbox{\hyperlink{class_hall_ae745e028ce420f192219bac2096f3c59}{is\+Reserved
 \begin{DoxyCompactList}\small\item\em checks if there is show on this date \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_hall_a088b610529122ec43d1e4c5e425cfda3}{add\+New\+Show}} (\mbox{\hyperlink{class_show}{Show}} const \&show)
 \begin{DoxyCompactList}\small\item\em adds new show to the list \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_hall_ad998caec0932898e161ce1793efe98f4}{remove\+Show}} (\mbox{\hyperlink{class_show}{Show}} const \&show)
+\begin{DoxyCompactList}\small\item\em function that removes show from the hall \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_hall_a8c81b1690c96f603d3330de8b4b4670a}{buy\+Ticket}} (\mbox{\hyperlink{class_show}{Show}} const \&show)
 \begin{DoxyCompactList}\small\item\em buying ticket for show \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_hall_a464c4cc7510b475420c47fdf00f84d3f}{show\+Seats}} (std\+::ostream \&out, \mbox{\hyperlink{class_show}{Show}} const \&show) const
@@ -362,6 +364,26 @@ read information form text file
 {\em in} & the stream that provides information \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_hall_ad998caec0932898e161ce1793efe98f4}\label{class_hall_ad998caec0932898e161ce1793efe98f4}} 
+\index{Hall@{Hall}!removeShow@{removeShow}}
+\index{removeShow@{removeShow}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{removeShow()}{removeShow()}}
+{\footnotesize\ttfamily bool Hall\+::remove\+Show (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_show}{Show}} const \&}]{show }\end{DoxyParamCaption})}
+
+
+
+function that removes show from the hall 
+
+
+\begin{DoxyParams}{Parameters}
+{\em show} & the show that will be removed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true successful 
+
+false not succesful 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_hall_a40cf32ded2fd28509a8f97536c603679}\label{class_hall_a40cf32ded2fd28509a8f97536c603679}} 
 \index{Hall@{Hall}!reserveTicket@{reserveTicket}}
 \index{reserveTicket@{reserveTicket}!Hall@{Hall}}

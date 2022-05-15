@@ -204,6 +204,17 @@ bool Hall::buyTicket(Show const& show)
 	return false;
 }
 
+bool Hall::removeShow(Show const& show)
+{
+	for (unsigned i = 0; i < shows.getSize(); i++) {
+		if (shows[i]==show)
+		{
+			shows.removeElement(show);
+			return true;
+		}
+	}
+	return false;
+}
 Reservation Hall::enterReservatoin()const
 {
 	Reservation reservation;

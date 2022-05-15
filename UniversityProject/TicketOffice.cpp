@@ -14,7 +14,7 @@ void TicketOffice::addShow(Show const& show)
 	Hall* hall = show.getHall();
 	for (unsigned i = 0; i < halls.getSize(); i++)
 	{
-		if (halls[i]==*hall)
+		if (halls[i] == *hall)
 		{
 			halls[i].addNewShow(show);
 			std::cin.get();
@@ -60,7 +60,7 @@ void TicketOffice::cancelReservation(Show const& show)
 	Hall* hall = show.getHall();
 	for (unsigned i = 0; i < halls.getSize(); i++)
 	{
-		if (halls[i]==*hall)
+		if (halls[i] == *hall)
 		{
 			if (halls[i].cancelShowReservation(std::cin, show))
 			{
@@ -80,9 +80,9 @@ void TicketOffice::buyTicket(Show const& show)
 	Hall* hall = show.getHall();
 	for (unsigned i = 0; i < halls.getSize(); i++)
 	{
-		if (halls[i]==*hall)
+		if (halls[i] == *hall)
 		{
-				
+
 			if (halls[i].buyTicket(show))
 			{
 				std::cout << "The purchase was successful,enjoy the show!\n";
@@ -104,7 +104,7 @@ void TicketOffice::reservationList() const
 		std::cout << "Enter all or name for the command to proceed:\n";
 		std::cin >> name;
 		name.toLower();
-	} while (name!="name"&& name!="all");
+	} while (name != "name"&& name != "all");
 	do
 	{
 		std::cout << "Enter all or date for the command to proceed:\n";
@@ -116,7 +116,7 @@ void TicketOffice::reservationList() const
 	char* newName = new char[textFile.getSize() + 1];
 	strcpy(newName, textFile.getString());
 	std::ofstream file{ newName };
-	if (date=="date" && name=="name")
+	if (date == "date" && name == "name")
 	{
 		Date newDate;
 		std::cin >> newDate;
@@ -125,7 +125,7 @@ void TicketOffice::reservationList() const
 			halls[i].printReservedSeats(file, newDate, name);
 		}
 	}
-	else if(date=="date" && name=="all")
+	else if (date == "date" && name == "all")
 	{
 		for (unsigned i = 0; i < halls.getSize(); i++)
 		{
@@ -134,7 +134,7 @@ void TicketOffice::reservationList() const
 			halls[i].printReservedSeats(file, newDate, name);
 		}
 	}
-	else if (date=="all" && name=="name")
+	else if (date == "all" && name == "name")
 	{
 		for (unsigned i = 0; i < halls.getSize(); i++)
 		{
@@ -143,7 +143,7 @@ void TicketOffice::reservationList() const
 				if (name == halls[i].getShows()[j].getName())
 				{
 					file << halls[i].getShows()[j];
-					file << "For this show " <<halls[i].getShows()[j].getReservedTickets() << " are reserved!\n";
+					file << "For this show " << halls[i].getShows()[j].getReservedTickets() << " are reserved!\n";
 					halls[i].getShows()[j].printSeatsType(file, reserved);
 					halls[i].getShows()[j].printSeats(file, halls[i].getRows(), halls[i].getSeatsOnRows());
 				}
@@ -156,10 +156,10 @@ void TicketOffice::reservationList() const
 		{
 			for (unsigned j = 0; j < halls[i].getShows().getSize(); j++)
 			{
-					file << halls[i].getShows()[j];
-					file << "For this show " << halls[i].getShows()[j].getReservedTickets() << " are reserved!\n";
-					halls[i].getShows()[j].printSeatsType(file, reserved);
-					halls[i].getShows()[j].printSeats(file, halls[i].getRows(), halls[i].getSeatsOnRows());
+				file << halls[i].getShows()[j];
+				file << "For this show " << halls[i].getShows()[j].getReservedTickets() << " are reserved!\n";
+				halls[i].getShows()[j].printSeatsType(file, reserved);
+				halls[i].getShows()[j].printSeats(file, halls[i].getRows(), halls[i].getSeatsOnRows());
 			}
 		}
 	}
@@ -173,29 +173,29 @@ void TicketOffice::boughtTicketRefference()const
 	std::cout << "Entering begining date:\n";
 	std::cin >> beginingDate;
 	std::cout << "Entering ending date:\n";
-	std::cin>> endingDate;
+	std::cin >> endingDate;
 	std::ofstream file{ "BoughtSeats.txt" };
 	do
 	{
 		std::cout << "Enter all or hall for the command to proceed\n";
 		std::cin >> str;
 		str.toLower();
-	} while (str!="all"&& str!="hall");
-	if (str=="all")
+	} while (str != "all"&& str != "hall");
+	if (str == "all")
 	{
 		for (unsigned i = 0; i < halls.getSize(); i++)
 		{
 			halls[i].printBoughtSeats(file, beginingDate, endingDate);
 		}
 	}
-	else if (str=="hall")
+	else if (str == "hall")
 	{
 		unsigned hallNumber;
 		std::cout << "Enter number of the hall for the command to proceed: ";
 		std::cin >> hallNumber;
 		for (unsigned i = 0; i < halls.getSize(); i++)
 		{
-			if (hallNumber==halls[i].getHallNumber())
+			if (hallNumber == halls[i].getHallNumber())
 			{
 				halls[i].printBoughtSeats(file, beginingDate, endingDate);
 			}
@@ -211,11 +211,86 @@ void TicketOffice::showList() const
 	{
 		for (unsigned j = 0; j < halls[i].getShows().getSize(); i++)
 		{
-			std::cout << halls[i].getShows()[j];
+			std::cout << halls[i].getShows()[j] << '\n';
+		}
+		std::cout << '\n';
+	}
+}
+
+void TicketOffice::showsWithLeastAmountOfViewership() const
+{
+	MyVector<Show> shows = MyVector<Show>(2);
+	MyVector<double> attendance;
+	Date beginingdate;
+	std::cout << "Entering begining date:\n";
+	std::cin >> beginingdate;
+	Date endingDate;
+	std::cout << "Entering ending date:\n";
+	std::cin >> endingDate;
+	for (unsigned i = 0; i < halls.getSize(); i++)
+	{
+		for (unsigned j = 0; j < halls[i].getShows().getSize(); j++)
+		{
+			unsigned count{ 0 };
+			if (halls[i].getShows()[j].getDate() >= beginingdate && halls[i].getShows()[j].getDate() <= endingDate)
+			{
+				while (count < shows.getSize() && halls[i].getShows()[j].getName() != shows[count].getName())
+					count++;
+
+				if (count == shows.getSize())
+				{
+					shows.addElement(halls[i].getShows()[j]);
+					attendance.addElement(halls[i].getShows()[j].getAttendance());
+				}
+				else
+				{
+					double newAttendance = (attendance[count] + halls[i].getShows()[j].getAttendance()) / 2;
+					attendance[count] = newAttendance;
+				}
+			}
+		}
+	}
+	if (shows.getSize()==0)
+	{
+		std::cout << "There are no shows with lest than 10 percent viewrship!!!";
+		return;
+	}
+	sortShowsByMostWatched(shows, attendance, 0, shows.getSize() - 1);
+	int index = shows.getSize() - 1;
+	while (index>=0 && attendance[index] < 0.1)
+	{
+		std::cout << shows[index--].getName() << '\n';
+	}
+	std::cout << "Do you want to remove any of the shows?";
+	MyStr answer;
+	do
+	{
+		std::cout << " Enter yes or no for your answer:\n";
+		std::cin >> answer;
+		answer.toLower();
+	} while (answer != "yes" && answer != "no");
+	if (answer == "no")
+		return;
+	std::cout << "Enter the name of the show you want to remove:\n";
+	std::cin >> answer;
+	unsigned count{ 0 };
+	while (count < shows.getSize() && answer != shows[count].getName())
+		count++;
+	if (count == shows.getSize())
+		return;
+	for (unsigned i = 0; i < halls.getSize(); i++)
+	{
+		for (unsigned j = 0; i < halls[j].getShows().getSize(); j++)
+		{
+			if (answer == halls[i].getShows()[j].getName())
+			{
+				Show show = halls[i].getShows()[j];
+				halls[i].removeShow(show);
+			}
 		}
 	}
 }
-void TicketOffice::sortShowsByMostWatched(MyVector<Show>& shows,MyVector<double>& attendance,unsigned start, unsigned finish)const
+void TicketOffice::sortShowsByMostWatched(MyVector<Show>& shows, MyVector<double>& attendance, unsigned start, unsigned finish)const
 {
 	if (start > finish)
 		return;
@@ -225,21 +300,21 @@ void TicketOffice::sortShowsByMostWatched(MyVector<Show>& shows,MyVector<double>
 		if (attendance[i] < attendance[finish])
 		{
 			std::swap(shows[i], shows[finish]);
-			
+
 			std::swap(attendance[i], attendance[finish]);
 		}
 	}
 	std::swap(shows[finish], shows[pivot]);
 	if (pivot > start)
 	{
-		sortShowsByMostWatched(shows,attendance,start, pivot - 1);
-		sortShowsByMostWatched(shows,attendance,pivot + 1, finish);
+		sortShowsByMostWatched(shows, attendance, start, pivot - 1);
+		sortShowsByMostWatched(shows, attendance, pivot + 1, finish);
 	}
 }
 
 void TicketOffice::mostWatchedShows()const
 {
-	MyVector<Show> shows= MyVector<Show>(2);
+	MyVector<Show> shows = MyVector<Show>(2);
 	MyVector<double> attendance;
 	for (unsigned i = 0; i < halls.getSize(); i++)
 	{
@@ -249,29 +324,29 @@ void TicketOffice::mostWatchedShows()const
 			while (count < shows.getSize() && halls[i].getShows()[j].getName() != shows[count].getName())
 				count++;
 
-			if (count==shows.getSize())
+			if (count == shows.getSize())
 			{
 				shows.addElement(halls[i].getShows()[j]);
 				attendance.addElement(halls[i].getShows()[j].getAttendance());
 			}
 			else
 			{
-				double newAttendance =( attendance[count] + halls[i].getShows()[j].getAttendance()) / 2;
+				double newAttendance = (attendance[count] + halls[i].getShows()[j].getAttendance()) / 2;
 				attendance[count] = newAttendance;
 			}
-			
+
 		}
 	}
-	sortShowsByMostWatched(shows, attendance, 0, shows.getSize()-1);
+	sortShowsByMostWatched(shows, attendance, 0, shows.getSize() - 1);
 	std::cout << "Enter the number of the top shows you want to see.\n";
 	std::cout << "I want to see the top: ";
 	unsigned numberOfTopShows{};
 	std::cin >> numberOfTopShows;
-	if (numberOfTopShows<shows.getSize())
+	if (numberOfTopShows < shows.getSize())
 	{
 		for (unsigned i = 0; i < numberOfTopShows; i++)
 		{
-			std::cout << shows[i].getName()<<'\n';
+			std::cout << shows[i].getName() << '\n';
 		}
 	}
 	else

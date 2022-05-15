@@ -85,9 +85,21 @@ public:
 	 * 
 	 */
 	void boughtTicketRefference()const;
-
+	/**
+	 * @brief function that prints list with all the shows
+	 * 
+	 */
 	void showList() const;
+	/**
+	 * @brief function that prints the most watched shows
+	 * 
+	 */
 	void mostWatchedShows() const;
+	/**
+	 * @brief function that prints the least watched shows and give the user option to delete a shows
+	 * 
+	 */
+	void showsWithLeastAmountOfViewership() const;
 	/**
 	 * @brief function that writes to text file
 	 * 

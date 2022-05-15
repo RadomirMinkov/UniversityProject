@@ -85,6 +85,14 @@ public:
 	 */
 	bool addNewShow(Show const& show);
 	/**
+	 * @brief function that removes show from the hall
+	 * 
+	 * @param show the show that will be removed
+	 * @return true successful
+	 * @return false not succesful
+	 */
+	bool removeShow(Show const& show);
+	/**
 	 * @brief buying ticket for show
 	 * 
 	 * @param show the show the ticket is bought

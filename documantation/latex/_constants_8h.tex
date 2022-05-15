@@ -3,12 +3,12 @@
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-const int \mbox{\hyperlink{_constants_8h_ac8de4e2f1cce7eb7c7cc5d94e3c2d538}{COMMANDS}} = 8
-\item 
+const int \mbox{\hyperlink{_constants_8h_ac8de4e2f1cce7eb7c7cc5d94e3c2d538}{COMMANDS}} = 11
+\begin{DoxyCompactList}\small\item\em number of the commands available to the user \end{DoxyCompactList}\item 
 const char \mbox{\hyperlink{_constants_8h_ab466d631043c1983140f0a6a656cdb2e}{MAX\+\_\+\+STRING\+\_\+\+LENGTH}} = 100
-\item 
+\begin{DoxyCompactList}\small\item\em max length for the commands \end{DoxyCompactList}\item 
 const char \mbox{\hyperlink{_constants_8h_a07346211e9ed0ee8c49f47e88f2b038a}{commands\+Array}} \mbox{[}\mbox{\hyperlink{_constants_8h_ac8de4e2f1cce7eb7c7cc5d94e3c2d538}{COMMANDS}}\mbox{]}\mbox{[}\mbox{\hyperlink{_constants_8h_ab466d631043c1983140f0a6a656cdb2e}{MAX\+\_\+\+STRING\+\_\+\+LENGTH}}\mbox{]}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em array with all the available commands \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Variable Documentation}
@@ -16,7 +16,11 @@ const char \mbox{\hyperlink{_constants_8h_a07346211e9ed0ee8c49f47e88f2b038a}{com
 \index{Constants.h@{Constants.h}!COMMANDS@{COMMANDS}}
 \index{COMMANDS@{COMMANDS}!Constants.h@{Constants.h}}
 \doxysubsubsection{\texorpdfstring{COMMANDS}{COMMANDS}}
-{\footnotesize\ttfamily const int COMMANDS = 8}
+{\footnotesize\ttfamily const int COMMANDS = 11}
+
+
+
+number of the commands available to the user 
 
 \mbox{\Hypertarget{_constants_8h_a07346211e9ed0ee8c49f47e88f2b038a}\label{_constants_8h_a07346211e9ed0ee8c49f47e88f2b038a}} 
 \index{Constants.h@{Constants.h}!commandsArray@{commandsArray}}
@@ -27,12 +31,22 @@ const char \mbox{\hyperlink{_constants_8h_a07346211e9ed0ee8c49f47e88f2b038a}{com
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{= \{ \textcolor{stringliteral}{"{}Add new show:"{}}, \textcolor{stringliteral}{"{}Free seats:"{}} , \textcolor{stringliteral}{"{}Reserve a ticket:"{}}, \textcolor{stringliteral}{"{}Cancel reservation:"{}}, \textcolor{stringliteral}{"{}Buy a ticket: "{}},}
-\DoxyCodeLine{                                 \textcolor{stringliteral}{"{}Show list with reservations: "{}}, \textcolor{stringliteral}{"{}Bought ticket refference: "{}},\textcolor{stringliteral}{"{}END the program: "{}} \}}
+\DoxyCodeLine{                                 \textcolor{stringliteral}{"{}Show list with reservations: "{}}, \textcolor{stringliteral}{"{}Bought ticket refference: "{}},\textcolor{stringliteral}{"{}Show the list with the most watched shows:"{}},}
+\DoxyCodeLine{                                 \textcolor{stringliteral}{"{}Show list with all the shows that are presented: "{}}}
+\DoxyCodeLine{    ,\textcolor{stringliteral}{"{}Show list with the shows that have les that 10 percent viership in a certain period: "{}},\textcolor{stringliteral}{"{}END the program: "{}} \}}
 
 \end{DoxyCode}
+
+
+array with all the available commands 
+
 \mbox{\Hypertarget{_constants_8h_ab466d631043c1983140f0a6a656cdb2e}\label{_constants_8h_ab466d631043c1983140f0a6a656cdb2e}} 
 \index{Constants.h@{Constants.h}!MAX\_STRING\_LENGTH@{MAX\_STRING\_LENGTH}}
 \index{MAX\_STRING\_LENGTH@{MAX\_STRING\_LENGTH}!Constants.h@{Constants.h}}
 \doxysubsubsection{\texorpdfstring{MAX\_STRING\_LENGTH}{MAX\_STRING\_LENGTH}}
 {\footnotesize\ttfamily const char MAX\+\_\+\+STRING\+\_\+\+LENGTH = 100}
+
+
+
+max length for the commands 
 
