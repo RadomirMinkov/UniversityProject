@@ -101,15 +101,6 @@ public:
 	 */
 	void readFromText(std::ifstream& in);
 };
-
-/*template <typename T>
-void TicketOffice::swap(T& firstShow, T& secondShow)const
-{
-	T* temp = firstShow;
-	firstShow = secondShow;
-	secondShow = temp;
-}*/
-
 #endif // !_TICKETOFFICE_HPP
 
 

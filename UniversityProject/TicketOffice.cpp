@@ -243,10 +243,10 @@ void TicketOffice::mostWatchedShows()const
 	MyVector<double> attendance;
 	for (unsigned i = 0; i < halls.getSize(); i++)
 	{
-		for (unsigned j = 0; j < halls[i].getShows().getSize(); i++)
+		for (unsigned j = 0; j < halls[i].getShows().getSize(); j++)
 		{
 			unsigned count{ 0 };
-			while (halls[i].getShows()[j].getName() != shows[count].getName() && count < shows.getSize())
+			while (count < shows.getSize() && halls[i].getShows()[j].getName() != shows[count].getName())
 				count++;
 
 			if (count==shows.getSize())
