@@ -30,14 +30,23 @@ void TicketInterface::work()
 		if (commandNumber == 6)
 		{
 			office.reservationList();
+			std::cin.get();
 			system("CLS");
 		}
 		else if (commandNumber == 7)
 		{
 			office.boughtTicketRefference();
+			std::cin.get();
 			system("CLS");
 		}
-		else if (commandNumber == 8)
+		else if (commandNumber==8)
+		{
+			office.mostWatchedShows();
+			std::cin.get();
+			std::cin.get();
+			system("CLS");
+		}
+		else if (commandNumber == 9)
 		{
 			std::cout << "Thank you!Have a good day!";
 			return;
@@ -50,7 +59,6 @@ void TicketInterface::work()
 			{
 			case 1:
 				office.addShow(show);
-				std::cin.get();
 				break;
 			case 2:
 				office.freeSeats(show);

@@ -101,6 +101,7 @@ public:
 	unsigned getSoldTickets() const { return soldTickets; }
 	///get reserved tickets
 	unsigned getReservedTickets() const { return reservedTickets; }
+	double getAttendance() const;
 	/**
 	 * @brief function that changes the name of the show
 	 * 

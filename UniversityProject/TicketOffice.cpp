@@ -17,6 +17,7 @@ void TicketOffice::addShow(Show const& show)
 		if (halls[i]==*hall)
 		{
 			halls[i].addNewShow(show);
+			std::cin.get();
 			return;
 		}
 	}
@@ -202,6 +203,88 @@ void TicketOffice::boughtTicketRefference()const
 	}
 
 }
+
+void TicketOffice::showList() const
+{
+	MyVector<Show> shows;
+	for (unsigned i = 0; i < halls.getSize(); i++)
+	{
+		for (unsigned j = 0; j < halls[i].getShows().getSize(); i++)
+		{
+			std::cout << halls[i].getShows()[j];
+		}
+	}
+}
+void TicketOffice::sortShowsByMostWatched(MyVector<Show>& shows,MyVector<double>& attendance,unsigned start, unsigned finish)const
+{
+	if (start > finish)
+		return;
+	unsigned pivot = start;
+	for (unsigned i = start; i < finish; i++)
+	{
+		if (attendance[i] < attendance[finish])
+		{
+			std::swap(shows[i], shows[finish]);
+			
+			std::swap(attendance[i], attendance[finish]);
+		}
+	}
+	std::swap(shows[finish], shows[pivot]);
+	if (pivot > start)
+	{
+		sortShowsByMostWatched(shows,attendance,start, pivot - 1);
+		sortShowsByMostWatched(shows,attendance,pivot + 1, finish);
+	}
+}
+
+void TicketOffice::mostWatchedShows()const
+{
+	MyVector<Show> shows= MyVector<Show>(2);
+	MyVector<double> attendance;
+	for (unsigned i = 0; i < halls.getSize(); i++)
+	{
+		for (unsigned j = 0; j < halls[i].getShows().getSize(); i++)
+		{
+			unsigned count{ 0 };
+			while (halls[i].getShows()[j].getName() != shows[count].getName() && count < shows.getSize())
+				count++;
+
+			if (count==shows.getSize())
+			{
+				shows.addElement(halls[i].getShows()[j]);
+				attendance.addElement(halls[i].getShows()[j].getAttendance());
+			}
+			else
+			{
+				double newAttendance =( attendance[count] + halls[i].getShows()[j].getAttendance()) / 2;
+				attendance[count] = newAttendance;
+			}
+			
+		}
+	}
+	sortShowsByMostWatched(shows, attendance, 0, shows.getSize()-1);
+	std::cout << "Enter the number of the top shows you want to see.\n";
+	std::cout << "I want to see the top: ";
+	unsigned numberOfTopShows{};
+	std::cin >> numberOfTopShows;
+	if (numberOfTopShows<shows.getSize())
+	{
+		for (unsigned i = 0; i < numberOfTopShows; i++)
+		{
+			std::cout << shows[i].getName()<<'\n';
+		}
+	}
+	else
+	{
+		std::cout << "There are not that many shows! Here are the name of the shows we got sorted by most watched!\n";
+		for (unsigned i = 0; i < shows.getSize(); i++)
+		{
+			std::cout << shows[i].getName() << '\n';
+		}
+	}
+}
+
+
 void TicketOffice::readFromText(std::ifstream& in)
 {
 	int size;

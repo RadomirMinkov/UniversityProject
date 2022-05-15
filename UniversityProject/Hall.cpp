@@ -299,6 +299,7 @@ void Hall::readFromText(std::ifstream& out)
 {
 	out >> *this;
 }
+
 std::ostream& operator<<(std::ostream& out, Hall const& hall)
 {
 	return out << "Hall: \n"

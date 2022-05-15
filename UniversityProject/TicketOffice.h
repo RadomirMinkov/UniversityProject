@@ -1,6 +1,7 @@
 #ifndef _TICKETOFFICE_HPP
 #define _TICKETOFFICE_HPP
 
+#include <algorithm>
 #include "TicketOffice.h"
 #include "Hall.h"
 #include "MyVector.h"
@@ -14,6 +15,7 @@ class TicketOffice
 private:
 ///list of halls
 	MyVector<Hall> halls;
+	void sortShowsByMostWatched(MyVector<Show>& shows,MyVector<double>& attendance,unsigned start, unsigned finish) const;
 public:
 /**
  * @brief constructor with deffault parameters
@@ -83,6 +85,9 @@ public:
 	 * 
 	 */
 	void boughtTicketRefference()const;
+
+	void showList() const;
+	void mostWatchedShows() const;
 	/**
 	 * @brief function that writes to text file
 	 * 
@@ -96,6 +101,15 @@ public:
 	 */
 	void readFromText(std::ifstream& in);
 };
+
+/*template <typename T>
+void TicketOffice::swap(T& firstShow, T& secondShow)const
+{
+	T* temp = firstShow;
+	firstShow = secondShow;
+	secondShow = temp;
+}*/
+
 #endif // !_TICKETOFFICE_HPP
 
 

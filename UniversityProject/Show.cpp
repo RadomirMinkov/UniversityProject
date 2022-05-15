@@ -17,6 +17,11 @@ Show::~Show()
 	clear();
 }
 
+double Show::getAttendance() const
+{
+	double allSeats = hall->getRows()*hall->getSeatsOnRows()*1.0;
+	return (soldTickets+reservedTickets)/allSeats;
+}
 const char* Show::getSeatStringType(Seats seat)const
 {
 	switch (seat)
@@ -84,6 +89,8 @@ void Show::copy(Show const& other)
 		for (unsigned j = 0; j < hall->getSeatsOnRows(); j++)
 			seats[i][j] = other.seats[i][j];
 	}
+	soldTickets = other.soldTickets;
+	reservedTickets = other.reservedTickets;
 }
 char Show::place(Seats seat) const
 {

@@ -32,7 +32,7 @@ void MyStr::copy(MyStr const& other)
 MyStr::MyStr(MyStr const& other)
 	:arr(nullptr)
 {
-	copy(other);
+		copy(other);
 }
 
 MyStr& MyStr::operator=(MyStr const& other)
