@@ -1,6 +1,7 @@
 var class_date =
 [
     [ "Date", "class_date.html#a8c5618a288d7191dce7ecbaa4c8032ad", null ],
+    [ "getDateString", "class_date.html#a2a5dcb4db3ac40b6dd1c760215dfb39d", null ],
     [ "getDay", "class_date.html#a4dedf1cbd19ff221fc1f70895ba560e7", null ],
     [ "getMonth", "class_date.html#a1137d63aa6266861fb6cb47a4f2f48a9", null ],
     [ "getYear", "class_date.html#aa1e4066bffc24af79f604dabce27e3cc", null ],

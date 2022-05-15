@@ -7,7 +7,8 @@ var indexSectionsWithContent =
   4: "cm",
   5: "ms",
   6: "abdefjmnors",
-  7: "o"
+  7: "o",
+  8: "rt"
 };
 
 var indexSectionNames =
@@ -19,7 +20,8 @@ var indexSectionNames =
   4: "variables",
   5: "enums",
   6: "enumvalues",
-  7: "related"
+  7: "related",
+  8: "pages"
 };
 
 var indexSectionLabels =
@@ -31,6 +33,7 @@ var indexSectionLabels =
   4: "Variables",
   5: "Enumerations",
   6: "Enumerator",
-  7: "Friends"
+  7: "Friends",
+  8: "Pages"
 };
 

@@ -31,6 +31,7 @@ void TicketInterface::work()
 		{
 			office.reservationList();
 			std::cin.get();
+			std::cin.get();
 			system("CLS");
 		}
 		else if (commandNumber == 7)

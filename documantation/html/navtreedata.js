@@ -25,6 +25,13 @@
 var NAVTREE =
 [
   [ "Tickets", "index.html", [
+    [ "Tickets Documentation", "index.html", [
+      [ "Overview", "index.html#Overview", null ]
+    ] ],
+    [ "Refferences and GitHub", "md_doc_pages__refferences.html", [
+      [ "GitHub", "md_doc_pages__refferences.html#GitHub", null ],
+      [ "Helpers", "md_doc_pages__refferences.html#Helpers", null ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

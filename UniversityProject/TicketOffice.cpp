@@ -111,15 +111,18 @@ void TicketOffice::reservationList() const
 		std::cin >> date;
 		date.toLower();
 	} while (date != "date"&& date != "all");
-	MyStr currName(name);
-	MyStr textFile(currName + "-" + date + ".txt");
-	char* newName = new char[textFile.getSize() + 1];
-	strcpy(newName, textFile.getString());
-	std::ofstream file{ newName };
 	if (date == "date" && name == "name")
 	{
+		std::cout << "Entering name:\n";
+		std::cin >> name;
 		Date newDate;
+		std::cout << "Entering date:\n";
 		std::cin >> newDate;
+		MyStr currName(name);
+		MyStr textFile(currName + "-" + date + ".txt");
+		char* newName = new char[textFile.getSize() + 1];
+		strcpy(newName, textFile.getString());
+		std::ofstream file{ newName };
 		for (unsigned i = 0; i < halls.getSize(); i++)
 		{
 			halls[i].printReservedSeats(file, newDate, name);
@@ -127,15 +130,29 @@ void TicketOffice::reservationList() const
 	}
 	else if (date == "date" && name == "all")
 	{
+		std::cout << "Entering date:\n";
+		Date newDate;
+		std::cin >> newDate;
+		MyStr currName(name);
+		MyStr textFile(currName + "-" + date + ".txt");
+		char* newName = new char[textFile.getSize() + 1];
+		strcpy(newName, textFile.getString());
+		std::ofstream file{ newName };
 		for (unsigned i = 0; i < halls.getSize(); i++)
 		{
-			Date newDate;
-			std::cin >> newDate;
+			
 			halls[i].printReservedSeats(file, newDate, name);
 		}
 	}
 	else if (date == "all" && name == "name")
 	{
+		std::cout << "Entering name:\n";
+		std::cin >> name;
+		MyStr currName(name);
+		MyStr textFile(currName + "-" + date + ".txt");
+		char* newName = new char[textFile.getSize() + 1];
+		strcpy(newName, textFile.getString());
+		std::ofstream file{ newName };
 		for (unsigned i = 0; i < halls.getSize(); i++)
 		{
 			for (unsigned j = 0; j < halls[i].getShows().getSize(); j++)
@@ -152,6 +169,11 @@ void TicketOffice::reservationList() const
 	}
 	else if (date == "all" && name == "all")
 	{
+		MyStr currName(name);
+		MyStr textFile(currName + "-" + date + ".txt");
+		char* newName = new char[textFile.getSize() + 1];
+		strcpy(newName, textFile.getString());
+		std::ofstream file{ newName };
 		for (unsigned i = 0; i < halls.getSize(); i++)
 		{
 			for (unsigned j = 0; j < halls[i].getShows().getSize(); j++)
@@ -198,6 +220,7 @@ void TicketOffice::boughtTicketRefference()const
 			if (hallNumber == halls[i].getHallNumber())
 			{
 				halls[i].printBoughtSeats(file, beginingDate, endingDate);
+				std::cin.get();
 			}
 		}
 	}

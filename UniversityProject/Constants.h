@@ -15,5 +15,5 @@ const char MAX_STRING_LENGTH = 100;
 const char commandsArray[COMMANDS][MAX_STRING_LENGTH] = { "Add new show:", "Free seats:" , "Reserve a ticket:", "Cancel reservation:", "Buy a ticket: ",
 								 "Show list with reservations: ", "Bought ticket refference: ","Show the list with the most watched shows:",
 								 "Show list with all the shows that are presented: "
-	,"Show list with the shows that have les that 10 percent viership in a certain period: ","END the program: " };
+	,"Show list with the shows that have les that 10 percent viwership in a certain period: ","END the program: " };
 #endif // !_CONSTANTS_HPP

@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <cassert>
+
+#include "MyStr.h"
 /**
  * @brief enum that includes the months in a yea 
  * 
@@ -47,6 +49,7 @@ private:
 	 * @return false it is not leap
 	 */
 	bool isLeap(unsigned _year);
+
 public:
 
 	/**
@@ -68,6 +71,8 @@ public:
 	Month getMonth() const { return month; }
 	//get the year
 	unsigned getYear() const { return year; }
+
+	MyStr getDateString() const;
 	/**
 	 * @brief prints month with string
 	 * 
